@@ -130,10 +130,15 @@ function displayFilteredCards(cards) {
         playerPicker.classList.add("player-picker");
 
         var select = document.createElement("select");
-        select.value = card.player || 'none';
 
-        // Define the options array with consistent values
-        var options = ['none', 'court', 'draft', 'red', 'blue', 'gold', 'white'];
+        // Define the options array based on card type
+        var options;
+        if (card.type === 'court') {
+            options = ['none', 'court', 'red', 'blue', 'gold', 'white'];
+        } else {
+            options = ['none', 'draft', 'red', 'blue', 'gold', 'white'];
+        }
+
         options.forEach(function (optionValue) {
             var option = document.createElement("option");
             option.value = optionValue;
