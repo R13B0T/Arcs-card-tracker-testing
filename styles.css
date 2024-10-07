@@ -359,20 +359,20 @@ body {
     gap: 5px; /* Reduced gap from 10px to 5px */
     margin-top: auto;
     overflow: hidden; /* Hide any overflow to prevent scroll */
-    padding: 0 5px; /* Added horizontal padding */
+    padding: 0 5px; /* Add horizontal padding to prevent clipping */
     justify-content: center; /* Center the buttons */
 }
 
 /* Assignment Buttons */
 .assign-button {
-    width: 30x; /* Further reduced width from 70px to 65px */
-    height: 28px; /* Further reduced height from 30px to 28px */
+    width: 40px; /* Further reduced width */
+    height: 28px; /* Further reduced height */
     padding: 3px 6px; /* Further reduced padding */
     margin: 0; /* Remove any default margins */
     border: none; /* Remove default borders */
     border-radius: 5px;
     cursor: pointer;
-    font-size: 11px; /* Reduced font size from 12px to 11px */
+    font-size: 10px; /* Reduced font size for better fit */
     background-color: var(--button-background);
     color: var(--button-color);
     transition: background-color 0.3s, color 0.3s, transform 0.2s, border 0.3s;
@@ -428,10 +428,10 @@ body {
     }
 
     .assign-button {
-        width: 60px; /* Further reduced width */
+        width: 35px; /* Further reduced width */
         height: 26px; /* Further reduced height */
         font-size: 10px; /* Further reduced font size */
-        padding: 3px 5px; /* Further reduced padding */
+        padding: 2px 5px; /* Further reduced padding */
     }
 }
 
@@ -475,10 +475,10 @@ body {
     }
 
     .assign-button {
-        width: 55px; /* Further adjusted width for very small screens */
+        width: 30px; /* Further adjusted width for very small screens */
         height: 24px; /* Further adjusted height for very small screens */
-        font-size: 10px; /* Minimum font size */
-        padding: 3px 5px; /* Minimum padding */
+        font-size: 9px; /* Minimum font size */
+        padding: 2px 4px; /* Minimum padding */
     }
 }
 
@@ -515,10 +515,10 @@ body {
     }
 
     .assign-button {
-        width: 50px; /* Minimum width */
+        width: 25px; /* Minimum width */
         height: 22px; /* Minimum height */
-        font-size: 9px; /* Minimum font size */
-        padding: 2px 4px; /* Minimum padding */
+        font-size: 8px; /* Minimum font size */
+        padding: 1px 3px; /* Minimum padding */
     }
 }
 
