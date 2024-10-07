@@ -353,19 +353,20 @@ body {
     flex-wrap: nowrap; /* Prevent buttons from wrapping */
     gap: 10px;
     margin-top: auto;
-    overflow-x: auto; /* Allow horizontal scrolling if needed */
+    overflow: hidden; /* Hide any overflow to prevent scroll */
     padding-bottom: 5px; /* Add some padding for better spacing */
+    justify-content: center; /* Center the buttons */
 }
 
 /* Assignment Buttons */
 .assign-button {
-    width: 100px; /* Fixed width to match dropdown */
-    height: 40px; /* Fixed height to match dropdown */
-    padding: 8px 12px;
+    width: 80px; /* Reduced width */
+    height: 36px; /* Reduced height */
+    padding: 6px 10px; /* Reduced padding */
     border: none; /* Remove default borders */
     border-radius: 5px;
     cursor: pointer;
-    font-size: 14px;
+    font-size: 13px; /* Reduced font size */
     background-color: var(--button-background);
     color: var(--button-color);
     transition: background-color 0.3s, color 0.3s, transform 0.2s, border 0.3s;
@@ -391,7 +392,7 @@ body {
 /* Responsive Design */
 @media (max-width: 768px) {
     body {
-        font-size: 18px; /* Increase base font size on smaller screens */
+        font-size: 16px; /* Slightly reduced font size for better fit */
     }
 
     .navbar h1 {
@@ -399,33 +400,33 @@ body {
     }
 
     .nav-button {
-        font-size: 18px;
-        padding: 12px 18px;
+        font-size: 16px;
+        padding: 10px 15px;
     }
 
     .reset-button {
-        font-size: 16px;
-        padding: 10px 18px;
+        font-size: 14px;
+        padding: 8px 16px;
     }
 
     .filter-button {
-        font-size: 16px;
-        padding: 10px 16px;
+        font-size: 14px;
+        padding: 8px 12px;
     }
 
     .card h2 {
-        font-size: 22px;
+        font-size: 20px;
     }
 
     .card .description {
-        font-size: 16px;
+        font-size: 14px;
     }
 
     .assign-button {
-        width: 90px; /* Adjusted width for smaller screens */
-        height: 36px; /* Adjusted height for smaller screens */
-        font-size: 14px;
-        padding: 6px 10px;
+        width: 70px; /* Further reduced width */
+        height: 32px; /* Further reduced height */
+        font-size: 12px; /* Further reduced font size */
+        padding: 5px 8px; /* Further reduced padding */
     }
 }
 
@@ -469,16 +470,16 @@ body {
     }
 
     .assign-button {
-        width: 80px; /* Further adjusted width for very small screens */
-        height: 32px; /* Further adjusted height for very small screens */
-        font-size: 14px;
-        padding: 6px 10px;
+        width: 65px; /* Further adjusted width for very small screens */
+        height: 30px; /* Further adjusted height for very small screens */
+        font-size: 12px; /* Further reduced font size */
+        padding: 5px 8px; /* Further reduced padding */
     }
 }
 
 @media (max-width: 400px) {
     body {
-        font-size: 20px; /* Further increase base font size for very small screens */
+        font-size: 14px; /* Further reduce base font size for very small screens */
     }
 
     .navbar h1 {
@@ -486,33 +487,33 @@ body {
     }
 
     .nav-button {
-        font-size: 18px;
-        padding: 12px 18px;
+        font-size: 14px;
+        padding: 8px 12px;
     }
 
     .reset-button {
-        font-size: 16px;
-        padding: 10px 16px;
+        font-size: 14px;
+        padding: 8px 14px;
     }
 
     .filter-button {
-        font-size: 16px;
-        padding: 10px 14px;
+        font-size: 12px;
+        padding: 6px 10px;
     }
 
     .card h2 {
-        font-size: 22px;
+        font-size: 18px;
     }
 
     .card .description {
-        font-size: 16px;
+        font-size: 12px;
     }
 
     .assign-button {
-        width: 70px; /* Minimum width */
-        height: 30px; /* Minimum height */
-        font-size: 14px;
-        padding: 6px 8px;
+        width: 60px; /* Minimum width */
+        height: 28px; /* Minimum height */
+        font-size: 11px; /* Minimum font size */
+        padding: 4px 6px; /* Minimum padding */
     }
 }
 
