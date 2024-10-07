@@ -110,7 +110,7 @@ function displayFilteredCards(cards) {
     var cardList = document.getElementById('card-list');
     cardList.innerHTML = '';
 
-    cards.forEach(function (card) {
+    cards.forEach(function (card, index) {
         var cardElement = document.createElement("div");
         cardElement.classList.add("card");
 
@@ -129,8 +129,6 @@ function displayFilteredCards(cards) {
         var playerPicker = document.createElement("div");
         playerPicker.classList.add("player-picker");
 
-        var select = document.createElement("select");
-
         // Define the options array based on card type
         var options;
         if (card.type === 'court') {
@@ -139,28 +137,32 @@ function displayFilteredCards(cards) {
             options = ['none', 'draft', 'red', 'blue', 'gold', 'white'];
         }
 
+        // Create assignment buttons
         options.forEach(function (optionValue) {
-            var option = document.createElement("option");
-            option.value = optionValue;
-            option.textContent = optionValue.charAt(0).toUpperCase() + optionValue.slice(1);
-            select.appendChild(option);
+            var button = document.createElement("button");
+            button.classList.add("assign-button");
+            button.textContent = optionValue.charAt(0).toUpperCase() + optionValue.slice(1);
+            button.setAttribute('data-value', optionValue);
+
+            // Highlight the button if it's the current assignment
+            if (card.player === optionValue) {
+                button.classList.add("active");
+            }
+
+            // Add event listener for assignment
+            button.addEventListener('click', function () {
+                // Update the card's player assignment
+                card.player = optionValue;
+
+                // Save updated card data to local storage
+                localStorage.setItem('cardData', JSON.stringify(cardData));
+
+                // Re-render the cards to reflect changes
+                displayAllCards(currentType);
+            });
+
+            playerPicker.appendChild(button);
         });
-
-        // Ensure the select's value matches card.player
-        select.value = card.player || 'none';
-
-        select.addEventListener('change', function () {
-            var selectedValue = this.value;
-            card.player = selectedValue;
-
-            // Save updated card data to local storage
-            localStorage.setItem('cardData', JSON.stringify(cardData));
-
-            // Re-render cards to reflect changes
-            displayAllCards(currentType);
-        });
-
-        playerPicker.appendChild(select);
 
         cardElement.appendChild(title);
         cardElement.appendChild(description);
