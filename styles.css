@@ -324,7 +324,7 @@ body {
 .card {
     background-color: var(--card-background);
     border-radius: 10px;
-    padding: 20px;
+    padding: 15px; /* Reduced padding from 20px to 15px */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s;
     color: var(--font-color);
@@ -351,7 +351,7 @@ body {
 .card .player-picker {
     display: flex;
     flex-wrap: nowrap; /* Prevent buttons from wrapping */
-    gap: 10px;
+    gap: 5px; /* Reduced gap from 10px to 5px */
     margin-top: auto;
     overflow: hidden; /* Hide any overflow to prevent scroll */
     padding-bottom: 5px; /* Add some padding for better spacing */
@@ -360,13 +360,13 @@ body {
 
 /* Assignment Buttons */
 .assign-button {
-    width: 80px; /* Reduced width */
-    height: 36px; /* Reduced height */
-    padding: 6px 10px; /* Reduced padding */
+    width: 70px; /* Reduced width from 80px to 70px */
+    height: 30px; /* Reduced height from 36px to 30px */
+    padding: 4px 8px; /* Reduced padding from 6px 10px to 4px 8px */
     border: none; /* Remove default borders */
     border-radius: 5px;
     cursor: pointer;
-    font-size: 13px; /* Reduced font size */
+    font-size: 12px; /* Reduced font size from 13px to 12px */
     background-color: var(--button-background);
     color: var(--button-color);
     transition: background-color 0.3s, color 0.3s, transform 0.2s, border 0.3s;
@@ -423,10 +423,10 @@ body {
     }
 
     .assign-button {
-        width: 70px; /* Further reduced width */
-        height: 32px; /* Further reduced height */
-        font-size: 12px; /* Further reduced font size */
-        padding: 5px 8px; /* Further reduced padding */
+        width: 65px; /* Further reduced width */
+        height: 28px; /* Further reduced height */
+        font-size: 11px; /* Further reduced font size */
+        padding: 4px 7px; /* Further reduced padding */
     }
 }
 
@@ -470,10 +470,10 @@ body {
     }
 
     .assign-button {
-        width: 65px; /* Further adjusted width for very small screens */
-        height: 30px; /* Further adjusted height for very small screens */
-        font-size: 12px; /* Further reduced font size */
-        padding: 5px 8px; /* Further reduced padding */
+        width: 60px; /* Further adjusted width for very small screens */
+        height: 26px; /* Further adjusted height for very small screens */
+        font-size: 11px; /* Minimum font size */
+        padding: 4px 7px; /* Minimum padding */
     }
 }
 
@@ -510,10 +510,10 @@ body {
     }
 
     .assign-button {
-        width: 60px; /* Minimum width */
-        height: 28px; /* Minimum height */
-        font-size: 11px; /* Minimum font size */
-        padding: 4px 6px; /* Minimum padding */
+        width: 55px; /* Minimum width */
+        height: 24px; /* Minimum height */
+        font-size: 10px; /* Minimum font size */
+        padding: 3px 6px; /* Minimum padding */
     }
 }
 
