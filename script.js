@@ -126,7 +126,8 @@ function displayFilteredCards(cards) {
         var select = document.createElement("select");
         select.value = card.player || 'none';
 
-        var options = ['none', 'draft', 'red', 'blue', 'gold', 'white'];
+        // Update the options array to include 'court'
+        var options = ['none', 'court', 'red', 'blue', 'gold', 'white'];
         options.forEach(function (optionValue) {
             var option = document.createElement("option");
             option.value = optionValue;
@@ -134,9 +135,15 @@ function displayFilteredCards(cards) {
             select.appendChild(option);
         });
 
+        // Ensure the select's value matches card.player
+        select.value = card.player || 'none';
+
         select.addEventListener('change', function () {
             var selectedValue = this.value;
             card.player = selectedValue;
+
+            // Save updated card data to local storage (optional)
+            // localStorage.setItem('cardData', JSON.stringify(cardData));
 
             // Re-render cards to reflect changes
             displayAllCards(currentType);
@@ -157,7 +164,7 @@ function filterCardsBySearch(query) {
     var filteredCards = cardData.filter(function (card) {
         return card.type === currentType &&
             (card.title.toLowerCase().includes(query) ||
-            card.description.toLowerCase().includes(query));
+                card.description.toLowerCase().includes(query));
     });
 
     if (currentFilter) {
