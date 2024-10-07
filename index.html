@@ -3,52 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <title>Arcs Card Tracker</title>
-    <!-- CSS Stylesheet -->
+    <!-- Link to the CSS Stylesheet -->
     <link rel="stylesheet" href="styles.css">
-    <!-- Font Awesome for icons -->
+    <!-- Font Awesome for Icons (Optional) -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
-    <!-- Google Fonts -->
+    <!-- Google Fonts (Optional) -->
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <!-- Viewport Meta Tag for Mobile Devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-    <!-- Theme Toggle Button -->
-    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Theme"><i class="fas fa-moon"></i></button>
+    <!-- Theme Toggle Button (Optional) -->
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Theme">
+        <i class="fas fa-moon"></i>
+    </button>
 
     <!-- Navigation Bar -->
-    <div class="navbar">
+    <header class="navbar">
         <div class="navbar-header">
             <button class="reset-button" onclick="resetSelections()">New Game</button>
             <h1>Arcs Card Tracker</h1>
         </div>
-        <div class="nav-buttons">
+        <nav class="nav-buttons">
             <button class="nav-button active" data-type="court">Court</button>
             <button class="nav-button" data-type="leader">Leader</button>
             <button class="nav-button" data-type="lore">Lore</button>
-        </div>
-    </div>
+        </nav>
+    </header>
 
     <!-- Search Bar -->
-    <div class="search-container">
+    <section class="search-container">
         <label for="search-input" class="visually-hidden">Search cards</label>
         <input type="text" id="search-input" placeholder="Search cards...">
-    </div>
+    </section>
 
     <!-- Filter Buttons -->
-    <div class="filter-buttons">
+    <section class="filter-buttons">
         <button class="filter-button court-button" data-color="court">Court</button>
         <button class="filter-button draft-button" data-color="draft">Draft</button>
         <button class="filter-button red-button" data-color="red">Red</button>
         <button class="filter-button blue-button" data-color="blue">Blue</button>
         <button class="filter-button gold-button" data-color="gold">Gold</button>
         <button class="filter-button white-button" data-color="white">White</button>
-    </div>
+    </section>
 
     <!-- Card List -->
-    <div id="card-list" class="card-list">
-        <!-- Cards will be dynamically displayed here -->
-    </div>
+    <main id="card-list" class="card-list">
+        <!-- Cards will be dynamically inserted here -->
+    </main>
 
     <!-- JavaScript File -->
     <script src="script.js"></script>
