@@ -33,7 +33,13 @@ let cardData = [];
 fetch('cards.json')
     .then(response => response.json())
     .then(data => {
-        cardData = data.cards;
+        // Load from local storage if available
+        var savedData = localStorage.getItem('cardData');
+        if (savedData) {
+            cardData = JSON.parse(savedData);
+        } else {
+            cardData = data.cards;
+        }
         initializeApp();
     })
     .catch(error => console.error('Error loading card data:', error));
@@ -126,8 +132,8 @@ function displayFilteredCards(cards) {
         var select = document.createElement("select");
         select.value = card.player || 'none';
 
-        // Update the options array to include 'court'
-        var options = ['none', 'court', 'red', 'blue', 'gold', 'white'];
+        // Define the options array with consistent values
+        var options = ['none', 'court', 'draft', 'red', 'blue', 'gold', 'white'];
         options.forEach(function (optionValue) {
             var option = document.createElement("option");
             option.value = optionValue;
@@ -142,8 +148,8 @@ function displayFilteredCards(cards) {
             var selectedValue = this.value;
             card.player = selectedValue;
 
-            // Save updated card data to local storage (optional)
-            // localStorage.setItem('cardData', JSON.stringify(cardData));
+            // Save updated card data to local storage
+            localStorage.setItem('cardData', JSON.stringify(cardData));
 
             // Re-render cards to reflect changes
             displayAllCards(currentType);
@@ -215,6 +221,7 @@ function resetSelections() {
     cardData.forEach(function (card) {
         card.player = 'none';
     });
+    localStorage.removeItem('cardData'); // Clear saved data
     currentFilter = null;
     filterButtons.forEach(function (btn) {
         btn.classList.remove('active');
