@@ -350,9 +350,11 @@ body {
 
 .card .player-picker {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap; /* Prevent buttons from wrapping */
     gap: 10px;
     margin-top: auto;
+    overflow-x: auto; /* Allow horizontal scrolling if needed */
+    padding-bottom: 5px; /* Add some padding for better spacing */
 }
 
 /* Assignment Buttons */
@@ -368,6 +370,7 @@ body {
     color: var(--button-color);
     transition: background-color 0.3s, color 0.3s, transform 0.2s, border 0.3s;
     box-sizing: border-box; /* Include border in width and height */
+    flex: 0 0 auto; /* Prevent buttons from growing or shrinking */
 }
 
 .assign-button:hover {
