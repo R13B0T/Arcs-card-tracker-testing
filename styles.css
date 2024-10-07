@@ -11,6 +11,7 @@
     --button-color: #ffffff;        /* White text on buttons */
     --nav-background: #2c3e50;      /* Dark blue for header */
     --header-text-color: #ffffff;   /* White text for header */
+    --active-button-background: #2980b9; /* Darker blue for active buttons */
 }
 
 /* Dark Mode Variables */
@@ -26,6 +27,7 @@
     --button-color: #ffffff;        /* White text on buttons */
     --nav-background: #34495e;      /* Match header background to card background */
     --header-text-color: #ecf0f1;   /* Light gray text for header */
+    --active-button-background: #c0392b; /* Darker red for active buttons */
 }
 
 /* Global Styles */
@@ -71,7 +73,7 @@ body {
 
 .navbar h1 {
     margin: 0;
-    font-size: 34px;
+    font-size: 28px;
     color: var(--header-text-color);
     text-shadow: 1px 1px 2px var(--secondary-color);
 }
@@ -88,7 +90,7 @@ body {
 }
 
 .reset-button:hover {
-    background-color: var(--accent-color);
+    background-color: var(--active-button-background);
 }
 
 /* Navigation Buttons */
@@ -114,7 +116,7 @@ body {
 
 .nav-button:hover,
 .nav-button.active {
-    background-color: var(--accent-color);
+    background-color: var(--active-button-background);
 }
 
 /* Theme Toggle Button */
@@ -134,7 +136,7 @@ body {
 }
 
 .theme-toggle:hover {
-    background-color: var(--accent-color);
+    background-color: var(--active-button-background);
 }
 
 /* Search Container */
@@ -327,6 +329,9 @@ body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s;
     color: var(--font-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .card:hover {
@@ -345,22 +350,31 @@ body {
 }
 
 .card .player-picker {
-    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: auto;
 }
 
-.card select {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid var(--primary-color);
+/* Assignment Buttons */
+.assign-button {
+    padding: 8px 12px;
+    border: none;
     border-radius: 5px;
-    background-color: var(--secondary-color);
-    color: var(--primary-color);
+    cursor: pointer;
     font-size: 14px;
+    background-color: var(--button-background);
+    color: var(--button-color);
+    transition: background-color 0.3s, color 0.3s;
 }
 
-.card select:focus {
-    outline: none;
-    border-color: var(--accent-color);
+.assign-button:hover {
+    background-color: var(--active-button-background);
+}
+
+.assign-button.active {
+    background-color: var(--active-button-background);
+    color: var(--button-color);
 }
 
 /* Responsive Design */
@@ -396,9 +410,9 @@ body {
         font-size: 16px;
     }
 
-    .card select {
+    .assign-button {
         font-size: 16px;
-        padding: 10px;
+        padding: 10px 14px;
     }
 }
 
@@ -441,9 +455,9 @@ body {
         font-size: 14px;
     }
 
-    .card select {
+    .assign-button {
         font-size: 14px;
-        padding: 8px;
+        padding: 8px 12px;
     }
 }
 
@@ -479,9 +493,9 @@ body {
         font-size: 16px;
     }
 
-    .card select {
+    .assign-button {
         font-size: 16px;
-        padding: 10px;
+        padding: 10px 14px;
     }
 }
 
