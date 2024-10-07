@@ -320,7 +320,7 @@ body {
 /* Card List */
 .card-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Increased min-width to 300px */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Increased min-width to 320px */
     gap: 20px;
     padding: 20px;
 }
@@ -365,14 +365,14 @@ body {
 
 /* Assignment Buttons */
 .assign-button {
-    width: 40px; /* Further reduced width */
-    height: 28px; /* Further reduced height */
-    padding: 3px 6px; /* Further reduced padding */
+    width: 44px; /* Adjusted width based on available space */
+    height: 28px; /* Maintain a reasonable height */
+    padding: 3px 6px; /* Maintain or slightly adjust padding */
     margin: 0; /* Remove any default margins */
     border: none; /* Remove default borders */
     border-radius: 5px;
     cursor: pointer;
-    font-size: 10px; /* Reduced font size for better fit */
+    font-size: 10px; /* Ensure text fits within the button */
     background-color: var(--button-background);
     color: var(--button-color);
     transition: background-color 0.3s, color 0.3s, transform 0.2s, border 0.3s;
@@ -428,10 +428,10 @@ body {
     }
 
     .assign-button {
-        width: 35px; /* Further reduced width */
-        height: 26px; /* Further reduced height */
-        font-size: 10px; /* Further reduced font size */
-        padding: 2px 5px; /* Further reduced padding */
+        width: 40px; /* Adjusted width */
+        height: 26px; /* Adjusted height */
+        font-size: 9px; /* Adjusted font size */
+        padding: 2px 5px; /* Adjusted padding */
     }
 }
 
@@ -475,10 +475,10 @@ body {
     }
 
     .assign-button {
-        width: 30px; /* Further adjusted width for very small screens */
+        width: 35px; /* Further adjusted width for very small screens */
         height: 24px; /* Further adjusted height for very small screens */
-        font-size: 9px; /* Minimum font size */
-        padding: 2px 4px; /* Minimum padding */
+        font-size: 8px; /* Minimum font size */
+        padding: 1px 4px; /* Minimum padding */
     }
 }
 
@@ -515,10 +515,10 @@ body {
     }
 
     .assign-button {
-        width: 25px; /* Minimum width */
+        width: 30px; /* Minimum width */
         height: 22px; /* Minimum height */
-        font-size: 8px; /* Minimum font size */
-        padding: 1px 3px; /* Minimum padding */
+        font-size: 7px; /* Minimum font size */
+        padding: 0px 3px; /* Minimum padding */
     }
 }
 
