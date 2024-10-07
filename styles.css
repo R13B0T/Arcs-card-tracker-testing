@@ -71,7 +71,7 @@ body {
 
 .navbar h1 {
     margin: 0;
-    font-size: 28px;
+    font-size: 34px;
     color: var(--header-text-color);
     text-shadow: 1px 1px 2px var(--secondary-color);
 }
