@@ -1,3 +1,8 @@
+/* Apply box-sizing globally */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 /* Root Variables for Theming */
 :root {
     /* Light Mode Colors */
@@ -315,9 +320,9 @@ body {
 /* Card List */
 .card-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Increased min-width to 300px */
     gap: 20px;
-    padding: 20px; /* Added padding to match the gap between cards */
+    padding: 20px;
 }
 
 /* Individual Card */
@@ -354,23 +359,23 @@ body {
     gap: 5px; /* Reduced gap from 10px to 5px */
     margin-top: auto;
     overflow: hidden; /* Hide any overflow to prevent scroll */
-    padding-bottom: 5px; /* Add some padding for better spacing */
+    padding: 0 5px; /* Added horizontal padding */
     justify-content: center; /* Center the buttons */
 }
 
 /* Assignment Buttons */
 .assign-button {
-    width: 70px; /* Reduced width from 80px to 70px */
-    height: 30px; /* Reduced height from 36px to 30px */
-    padding: 4px 8px; /* Reduced padding from 6px 10px to 4px 8px */
+    width: 65px; /* Further reduced width from 70px to 65px */
+    height: 28px; /* Further reduced height from 30px to 28px */
+    padding: 3px 6px; /* Further reduced padding */
+    margin: 0; /* Remove any default margins */
     border: none; /* Remove default borders */
     border-radius: 5px;
     cursor: pointer;
-    font-size: 12px; /* Reduced font size from 13px to 12px */
+    font-size: 11px; /* Reduced font size from 12px to 11px */
     background-color: var(--button-background);
     color: var(--button-color);
     transition: background-color 0.3s, color 0.3s, transform 0.2s, border 0.3s;
-    box-sizing: border-box; /* Include border in width and height */
     flex: 0 0 auto; /* Prevent buttons from growing or shrinking */
 }
 
@@ -423,10 +428,10 @@ body {
     }
 
     .assign-button {
-        width: 65px; /* Further reduced width */
-        height: 28px; /* Further reduced height */
-        font-size: 11px; /* Further reduced font size */
-        padding: 4px 7px; /* Further reduced padding */
+        width: 60px; /* Further reduced width */
+        height: 26px; /* Further reduced height */
+        font-size: 10px; /* Further reduced font size */
+        padding: 3px 5px; /* Further reduced padding */
     }
 }
 
@@ -470,10 +475,10 @@ body {
     }
 
     .assign-button {
-        width: 60px; /* Further adjusted width for very small screens */
-        height: 26px; /* Further adjusted height for very small screens */
-        font-size: 11px; /* Minimum font size */
-        padding: 4px 7px; /* Minimum padding */
+        width: 55px; /* Further adjusted width for very small screens */
+        height: 24px; /* Further adjusted height for very small screens */
+        font-size: 10px; /* Minimum font size */
+        padding: 3px 5px; /* Minimum padding */
     }
 }
 
@@ -510,10 +515,10 @@ body {
     }
 
     .assign-button {
-        width: 55px; /* Minimum width */
-        height: 24px; /* Minimum height */
-        font-size: 10px; /* Minimum font size */
-        padding: 3px 6px; /* Minimum padding */
+        width: 50px; /* Minimum width */
+        height: 22px; /* Minimum height */
+        font-size: 9px; /* Minimum font size */
+        padding: 2px 4px; /* Minimum padding */
     }
 }
 
