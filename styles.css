@@ -14,7 +14,6 @@
     --active-button-background: #2980b9; /* Darker blue for active buttons */
 }
 
-/* Dark Mode Variables */
 .dark-mode {
     /* Dark Mode Colors */
     --primary-color: #ecf0f1;       /* Light gray */
@@ -358,6 +357,8 @@ body {
 
 /* Assignment Buttons */
 .assign-button {
+    width: 100px; /* Fixed width to match dropdown */
+    height: 40px; /* Fixed height to match dropdown */
     padding: 8px 12px;
     border: none; /* Remove default borders */
     border-radius: 5px;
@@ -365,7 +366,8 @@ body {
     font-size: 14px;
     background-color: var(--button-background);
     color: var(--button-color);
-    transition: background-color 0.3s, color 0.3s, transform 0.2s;
+    transition: background-color 0.3s, color 0.3s, transform 0.2s, border 0.3s;
+    box-sizing: border-box; /* Include border in width and height */
 }
 
 .assign-button:hover {
@@ -417,8 +419,10 @@ body {
     }
 
     .assign-button {
-        font-size: 16px;
-        padding: 10px 14px;
+        width: 90px; /* Adjusted width for smaller screens */
+        height: 36px; /* Adjusted height for smaller screens */
+        font-size: 14px;
+        padding: 6px 10px;
     }
 }
 
@@ -462,8 +466,10 @@ body {
     }
 
     .assign-button {
+        width: 80px; /* Further adjusted width for very small screens */
+        height: 32px; /* Further adjusted height for very small screens */
         font-size: 14px;
-        padding: 8px 12px;
+        padding: 6px 10px;
     }
 }
 
@@ -500,8 +506,10 @@ body {
     }
 
     .assign-button {
-        font-size: 16px;
-        padding: 10px 14px;
+        width: 70px; /* Minimum width */
+        height: 30px; /* Minimum height */
+        font-size: 14px;
+        padding: 6px 8px;
     }
 }
 
