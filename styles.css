@@ -379,7 +379,6 @@ body {
     border: 2px solid black; /* Add black border */
 }
 
-/* Dark mode: white border for active buttons */
 .dark-mode .assign-button.active {
     border: 2px solid white; /* White border for better contrast in dark mode */
 }
