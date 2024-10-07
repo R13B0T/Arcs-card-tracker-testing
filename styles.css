@@ -365,7 +365,7 @@ body {
 
 /* Assignment Buttons */
 .assign-button {
-    width: 65px; /* Further reduced width from 70px to 65px */
+    width: 45px; /* Further reduced width from 70px to 65px */
     height: 28px; /* Further reduced height from 30px to 28px */
     padding: 3px 6px; /* Further reduced padding */
     margin: 0; /* Remove any default margins */
@@ -420,7 +420,7 @@ body {
     }
 
     .card h2 {
-        font-size: 20px;
+        font-size: 17px;
     }
 
     .card .description {
