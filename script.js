@@ -1,15 +1,18 @@
 // Variables for theme toggle
-var themeToggle = document.getElementById('theme-toggle');
-var body = document.body;
+const themeToggle = document.getElementById('theme-toggle');
+const body = document.body;
 
-// Load theme preference
-var theme = localStorage.getItem('theme') || 'light';
-if (theme === 'dark') {
+// Load theme preference from localStorage
+const savedTheme = localStorage.getItem('theme') || 'light';
+if (savedTheme === 'dark') {
     body.classList.add('dark-mode');
     themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+} else {
+    themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
 }
 
-themeToggle.addEventListener('click', function () {
+// Event listener for theme toggle
+themeToggle.addEventListener('click', () => {
     body.classList.toggle('dark-mode');
     if (body.classList.contains('dark-mode')) {
         localStorage.setItem('theme', 'dark');
@@ -20,11 +23,11 @@ themeToggle.addEventListener('click', function () {
     }
 });
 
-// Variables for navigation
-var navButtons = document.querySelectorAll('.nav-button');
-var filterButtons = document.querySelectorAll('.filter-button');
-var currentType = 'court';
-var currentFilter = null;
+// Variables for navigation and filtering
+const navButtons = document.querySelectorAll('.nav-button');
+const filterButtons = document.querySelectorAll('.filter-button');
+let currentType = 'court';
+let currentFilter = null;
 
 // Card data will be loaded from cards.json
 let cardData = [];
@@ -33,8 +36,8 @@ let cardData = [];
 fetch('cards.json')
     .then(response => response.json())
     .then(data => {
-        // Load from local storage if available
-        var savedData = localStorage.getItem('cardData');
+        // Load from localStorage if available
+        const savedData = localStorage.getItem('cardData');
         if (savedData) {
             cardData = JSON.parse(savedData);
         } else {
@@ -47,36 +50,30 @@ fetch('cards.json')
 // Initialize the application after data is loaded
 function initializeApp() {
     // Event listeners for navigation buttons
-    navButtons.forEach(function (button) {
-        button.addEventListener('click', function () {
-            navButtons.forEach(function (btn) {
-                btn.classList.remove('active');
-            });
-            this.classList.add('active');
-            currentType = this.getAttribute('data-type');
+    navButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            navButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+            currentType = button.getAttribute('data-type');
             currentFilter = null;
-            filterButtons.forEach(function (btn) {
-                btn.classList.remove('active');
-            });
+            filterButtons.forEach(btn => btn.classList.remove('active'));
             displayAllCards(currentType);
         });
     });
 
     // Event listeners for filter buttons
-    filterButtons.forEach(function (button) {
-        button.addEventListener('click', function () {
-            filterButtons.forEach(function (btn) {
-                btn.classList.remove('active');
-            });
-            this.classList.add('active');
-            currentFilter = this.getAttribute('data-color');
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+            currentFilter = button.getAttribute('data-color');
             displayAllCards(currentType);
         });
     });
 
     // Event listener for search input
     document.getElementById('search-input').addEventListener('input', function () {
-        var query = this.value.toLowerCase();
+        const query = this.value.toLowerCase();
         filterCardsBySearch(query);
     });
 
@@ -84,22 +81,18 @@ function initializeApp() {
     displayAllCards(currentType);
 }
 
-// Function to display all cards of a certain type
+// Function to display all cards of a certain type with current filters
 function displayAllCards(type) {
     // Clear the search input
     document.getElementById('search-input').value = '';
 
-    var cardList = document.getElementById('card-list');
+    const cardList = document.getElementById('card-list');
     cardList.innerHTML = '';
 
-    var filteredCards = cardData.filter(function (card) {
-        return card.type === type;
-    });
+    let filteredCards = cardData.filter(card => card.type === type);
 
     if (currentFilter) {
-        filteredCards = filteredCards.filter(function (card) {
-            return card.player === currentFilter;
-        });
+        filteredCards = filteredCards.filter(card => card.player === currentFilter);
     }
 
     displayFilteredCards(filteredCards);
@@ -107,30 +100,31 @@ function displayAllCards(type) {
 
 // Function to display filtered cards
 function displayFilteredCards(cards) {
-    var cardList = document.getElementById('card-list');
+    const cardList = document.getElementById('card-list');
     cardList.innerHTML = '';
 
-    cards.forEach(function (card, index) {
-        var cardElement = document.createElement("div");
-        cardElement.classList.add("card");
+    cards.forEach((card, index) => {
+        const cardElement = document.createElement('div');
+        cardElement.classList.add('card');
 
-        var title = document.createElement("h2");
+        // Card Title
+        const title = document.createElement('h2');
         title.textContent = card.title;
+        cardElement.appendChild(title);
 
-        var description = document.createElement("div");
-        description.classList.add("description");
+        // Card Description
+        const description = document.createElement('div');
+        description.classList.add('description');
+        description.innerHTML = formatDescription(card.description);
+        description.style.display = card.player !== 'none' ? 'block' : 'none';
+        cardElement.appendChild(description);
 
-        // Process the description text to add bold formatting
-        var formattedDescriptionText = formatDescription(card.description);
-
-        description.innerHTML = formattedDescriptionText;
-        description.style.display = card.player !== "none" ? 'block' : 'none';
-
-        var playerPicker = document.createElement("div");
-        playerPicker.classList.add("player-picker");
+        // Player Picker (Assignment Buttons)
+        const playerPicker = document.createElement('div');
+        playerPicker.classList.add('player-picker');
 
         // Define the options array based on card type
-        var options;
+        let options;
         if (card.type === 'court') {
             options = ['none', 'court', 'red', 'blue', 'gold', 'white'];
         } else {
@@ -138,26 +132,24 @@ function displayFilteredCards(cards) {
         }
 
         // Create assignment buttons
-        options.forEach(function (optionValue) {
-            var button = document.createElement("button");
-            button.classList.add("assign-button");
+        options.forEach(optionValue => {
+            const button = document.createElement('button');
+            button.classList.add('assign-button');
             button.textContent = optionValue.charAt(0).toUpperCase() + optionValue.slice(1);
             button.setAttribute('data-value', optionValue);
-
-            // Add tooltip for accessibility
-            button.setAttribute('title', 'Assign to ' + optionValue.charAt(0).toUpperCase() + optionValue.slice(1));
+            button.setAttribute('aria-label', `Assign to ${optionValue.charAt(0).toUpperCase() + optionValue.slice(1)}`);
 
             // Highlight the button if it's the current assignment
             if (card.player === optionValue) {
-                button.classList.add("active");
+                button.classList.add('active');
             }
 
             // Add event listener for assignment
-            button.addEventListener('click', function () {
+            button.addEventListener('click', () => {
                 // Update the card's player assignment
                 card.player = optionValue;
 
-                // Save updated card data to local storage
+                // Save updated card data to localStorage
                 localStorage.setItem('cardData', JSON.stringify(cardData));
 
                 // Re-render the cards to reflect changes
@@ -167,34 +159,29 @@ function displayFilteredCards(cards) {
             playerPicker.appendChild(button);
         });
 
-        cardElement.appendChild(title);
-        cardElement.appendChild(description);
         cardElement.appendChild(playerPicker);
-
         cardList.appendChild(cardElement);
     });
 }
 
 // Function to filter cards based on search query
 function filterCardsBySearch(query) {
-    var filteredCards = cardData.filter(function (card) {
+    const filteredCards = cardData.filter(card => {
         return card.type === currentType &&
             (card.title.toLowerCase().includes(query) ||
                 card.description.toLowerCase().includes(query));
     });
 
     if (currentFilter) {
-        filteredCards = filteredCards.filter(function (card) {
-            return card.player === currentFilter;
-        });
+        filteredCards = filteredCards.filter(card => card.player === currentFilter);
     }
 
     displayFilteredCards(filteredCards);
 }
 
-// Function to format description text
+// Function to format description text with bold phrases
 function formatDescription(text) {
-    var phrasesToBold = [
+    const phrasesToBold = [
         "When Secured:",
         "Abduct (Battle):",
         "Prelude:",
@@ -212,29 +199,21 @@ function formatDescription(text) {
         // Add any other phrases you want to bold
     ];
 
-    var escapedPhrases = phrasesToBold.map(function (phrase) {
-        return phrase.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
-    });
+    const escapedPhrases = phrasesToBold.map(phrase => phrase.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&'));
+    const pattern = '\\b(' + escapedPhrases.join('|') + ')';
+    const regex = new RegExp(pattern, 'g');
 
-    var pattern = '\\b(' + escapedPhrases.join('|') + ')';
-    var regex = new RegExp(pattern, 'g');
-
-    var formattedText = text.replace(regex, function (match) {
-        return '<strong>' + match + '</strong>';
-    });
-
+    const formattedText = text.replace(regex, '<strong>$1</strong>');
     return formattedText;
 }
 
-// Function to reset selections
+// Function to reset all selections
 function resetSelections() {
-    cardData.forEach(function (card) {
+    cardData.forEach(card => {
         card.player = 'none';
     });
     localStorage.removeItem('cardData'); // Clear saved data
     currentFilter = null;
-    filterButtons.forEach(function (btn) {
-        btn.classList.remove('active');
-    });
+    filterButtons.forEach(btn => btn.classList.remove('active'));
     displayAllCards(currentType);
 }
