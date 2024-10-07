@@ -144,6 +144,9 @@ function displayFilteredCards(cards) {
             button.textContent = optionValue.charAt(0).toUpperCase() + optionValue.slice(1);
             button.setAttribute('data-value', optionValue);
 
+            // Add tooltip for accessibility
+            button.setAttribute('title', 'Assign to ' + optionValue.charAt(0).toUpperCase() + optionValue.slice(1));
+
             // Highlight the button if it's the current assignment
             if (card.player === optionValue) {
                 button.classList.add("active");
