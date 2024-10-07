@@ -44,21 +44,14 @@ body {
     font-size: 16px; /* Base font size */
 }
 
-/* Container */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
 /* Navigation Bar */
 .navbar {
     background-color: var(--nav-background);
     padding: 10px 20px;
     border-radius: 8px;
     margin-bottom: 20px;
-    position: relative;
     text-align: center;
+    position: relative;
 }
 
 .navbar-header {
@@ -200,121 +193,98 @@ body {
 }
 
 /* Specific Filter Button Colors */
-.red-button {
+.filter-button.red-button {
     background-color: red;
     color: white;
 }
 
-.red-button:hover,
-.red-button.active {
+.filter-button.red-button:hover,
+.filter-button.red-button.active {
     background-color: darkred;
     color: white;
 }
 
-.blue-button {
+.filter-button.blue-button {
     background-color: blue;
     color: white;
 }
 
-.blue-button:hover,
-.blue-button.active {
+.filter-button.blue-button:hover,
+.filter-button.blue-button.active {
     background-color: darkblue;
     color: white;
 }
 
-.gold-button {
-    background-color: yellow;
-    color: black;
-}
-
-.gold-button:hover,
-.gold-button.active {
+.filter-button.gold-button {
     background-color: gold;
     color: black;
 }
 
-.white-button {
+.filter-button.gold-button:hover,
+.filter-button.gold-button.active {
+    background-color: darkgoldenrod;
+    color: black;
+}
+
+.filter-button.white-button {
     background-color: white;
     color: black;
     border: 1px solid #ccc;
 }
 
-.white-button:hover,
-.white-button.active {
+.filter-button.white-button:hover,
+.filter-button.white-button.active {
     background-color: #f0f0f0;
     color: black;
 }
 
-.court-button {
+.filter-button.court-button {
     background-color: purple;
     color: white;
 }
 
-.court-button:hover,
-.court-button.active {
+.filter-button.court-button:hover,
+.filter-button.court-button.active {
     background-color: indigo;
     color: white;
 }
 
-.draft-button {
+.filter-button.draft-button {
     background-color: lightgray;
     color: black;
 }
 
-.draft-button:hover,
-.draft-button.active {
+.filter-button.draft-button:hover,
+.filter-button.draft-button.active {
     background-color: gray;
     color: black;
 }
 
 /* Ensure colors don't change in dark mode */
-.dark-mode .red-button,
-.dark-mode .red-button:hover,
-.dark-mode .red-button.active {
-    background-color: red;
-    color: white;
+.dark-mode .filter-button.red-button,
+.dark-mode .filter-button.blue-button,
+.dark-mode .filter-button.gold-button,
+.dark-mode .filter-button.white-button,
+.dark-mode .filter-button.court-button,
+.dark-mode .filter-button.draft-button {
+    /* Maintain the same colors in dark mode */
 }
 
-.dark-mode .blue-button,
-.dark-mode .blue-button:hover,
-.dark-mode .blue-button.active {
-    background-color: blue;
-    color: white;
-}
-
-.dark-mode .gold-button,
-.dark-mode .gold-button:hover,
-.dark-mode .gold-button.active {
-    background-color: yellow;
-    color: black;
-}
-
-.dark-mode .white-button,
-.dark-mode .white-button:hover,
-.dark-mode .white-button.active {
-    background-color: white;
-    color: black;
-}
-
-.dark-mode .court-button,
-.dark-mode .court-button:hover,
-.dark-mode .court-button.active {
-    background-color: purple;
-    color: white;
-}
-
-.dark-mode .draft-button,
-.dark-mode .draft-button:hover,
-.dark-mode .draft-button.active {
-    background-color: lightgray;
-    color: black;
-}
-
-/* Remove any conflicting hover and active styles */
-.filter-button:hover,
-.filter-button.active {
-    background-color: unset;
-    color: unset;
+.dark-mode .filter-button.red-button:hover,
+.dark-mode .filter-button.red-button.active,
+.dark-mode .filter-button.blue-button:hover,
+.dark-mode .filter-button.blue-button.active,
+.dark-mode .filter-button.gold-button:hover,
+.dark-mode .filter-button.gold-button.active,
+.dark-mode .filter-button.white-button:hover,
+.dark-mode .filter-button.white-button.active,
+.dark-mode .filter-button.court-button:hover,
+.dark-mode .filter-button.court-button.active,
+.dark-mode .filter-button.draft-button:hover,
+.dark-mode .filter-button.draft-button.active {
+    /* Maintain the same hover and active states in dark mode */
+    background-color: var(--active-button-background);
+    color: var(--button-color);
 }
 
 /* Card List */
@@ -379,6 +349,75 @@ body {
     flex: 0 0 auto; /* Prevent buttons from growing or shrinking */
 }
 
+/* Match Filter Button Colors for Assignment Buttons */
+.assign-button.red-button {
+    background-color: red;
+    color: white;
+}
+
+.assign-button.red-button:hover,
+.assign-button.red-button.active {
+    background-color: darkred;
+    color: white;
+}
+
+.assign-button.blue-button {
+    background-color: blue;
+    color: white;
+}
+
+.assign-button.blue-button:hover,
+.assign-button.blue-button.active {
+    background-color: darkblue;
+    color: white;
+}
+
+.assign-button.gold-button {
+    background-color: gold;
+    color: black;
+}
+
+.assign-button.gold-button:hover,
+.assign-button.gold-button.active {
+    background-color: darkgoldenrod;
+    color: black;
+}
+
+.assign-button.white-button {
+    background-color: white;
+    color: black;
+    border: 1px solid #ccc;
+}
+
+.assign-button.white-button:hover,
+.assign-button.white-button.active {
+    background-color: #f0f0f0;
+    color: black;
+}
+
+.assign-button.court-button {
+    background-color: purple;
+    color: white;
+}
+
+.assign-button.court-button:hover,
+.assign-button.court-button.active {
+    background-color: indigo;
+    color: white;
+}
+
+.assign-button.draft-button {
+    background-color: lightgray;
+    color: black;
+}
+
+.assign-button.draft-button:hover,
+.assign-button.draft-button.active {
+    background-color: gray;
+    color: black;
+}
+
+/* Hover and Active States for Assignment Buttons */
 .assign-button:hover {
     background-color: var(--active-button-background);
     transform: scale(1.05);
