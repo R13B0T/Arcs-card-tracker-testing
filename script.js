@@ -166,7 +166,7 @@ function displayFilteredCards(cards) {
 
 // Function to filter cards based on search query
 function filterCardsBySearch(query) {
-    const filteredCards = cardData.filter(card => {
+    let filteredCards = cardData.filter(card => {
         return card.type === currentType &&
             (card.title.toLowerCase().includes(query) ||
                 card.description.toLowerCase().includes(query));
