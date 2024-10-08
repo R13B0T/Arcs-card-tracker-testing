@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arcs Card Tracker</title>
     <!-- Link to the CSS Stylesheet -->
     <link rel="stylesheet" href="styles.css">
@@ -9,8 +10,6 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
     <!-- Google Fonts (Optional) -->
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-    <!-- Viewport Meta Tag for Mobile Devices -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
     <!-- Theme Toggle Button (Optional) -->
@@ -18,12 +17,14 @@
         <i class="fas fa-moon"></i>
     </button>
 
-    <!-- Navigation Bar -->
+    <!-- Navigation Bar with the Reset Button and Game Title -->
     <header class="navbar">
         <div class="navbar-header">
+            <!-- Reset Button to start a new game -->
             <button class="reset-button" onclick="resetSelections()">New Game</button>
             <h1>Arcs Card Tracker</h1>
         </div>
+        <!-- Navigation Buttons for different card types -->
         <nav class="nav-buttons">
             <button class="nav-button active" data-type="court">Court</button>
             <button class="nav-button" data-type="leader">Leader</button>
@@ -31,13 +32,13 @@
         </nav>
     </header>
 
-    <!-- Search Bar -->
+    <!-- Search Bar to search for specific cards -->
     <section class="search-container">
         <label for="search-input" class="visually-hidden">Search cards</label>
         <input type="text" id="search-input" placeholder="Search cards...">
     </section>
 
-    <!-- Filter Buttons -->
+    <!-- Filter Buttons to filter by players or categories -->
     <section class="filter-buttons">
         <button class="filter-button court-button" data-color="court">Court</button>
         <button class="filter-button draft-button" data-color="draft">Draft</button>
@@ -47,9 +48,17 @@
         <button class="filter-button white-button" data-color="white">White</button>
     </section>
 
-    <!-- Card List -->
+    <!-- New buttons for managing the game -->
+    <!-- Button to start a new app-controlled game -->
+    <button id="new-game-btn" class="new-game-button">New App Controlled Game</button>
+    <!-- Button to draw a new random court card -->
+    <button id="new-court-card-btn" class="new-court-card-button">New Court Card</button>
+    <!-- Button to reset the court deck and bring discarded cards back into play -->
+    <button id="reset-court-deck-btn" class="reset-deck-button">Reset Court Deck</button>
+
+    <!-- Main section where cards are dynamically inserted by the script -->
     <main id="card-list" class="card-list">
-        <!-- Cards will be dynamically inserted here by script.js -->
+        <!-- Cards will be populated here using JavaScript -->
     </main>
 
     <!-- JavaScript File -->
