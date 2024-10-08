@@ -118,14 +118,18 @@ function displayFilteredCards(cards) {
         description.innerHTML = formatDescription(card.description);
         cardElement.appendChild(description);
 
-        // Discard Button (X) for removing cards to discard pile
-        const discardButton = document.createElement('button');
-        discardButton.classList.add('discard-button');
-        discardButton.textContent = 'X';
-        discardButton.addEventListener('click', () => {
-            discardCard(card);
-        });
-        cardElement.appendChild(discardButton);
+        // Only show discard button if the card is assigned to a player
+        const validPlayers = ['court', 'red', 'blue', 'gold', 'white'];
+        if (validPlayers.includes(card.player)) {
+            // Discard Button (X) for removing cards to discard pile
+            const discardButton = document.createElement('button');
+            discardButton.classList.add('discard-button');
+            discardButton.textContent = 'X';
+            discardButton.addEventListener('click', () => {
+                discardCard(card);  // Call discard function when button is clicked
+            });
+            cardElement.appendChild(discardButton);
+        }
 
         // Player Picker for assigning the card to a player
         const playerPicker = document.createElement('div');
@@ -166,8 +170,8 @@ function displayFilteredCards(cards) {
 
 // Function to discard a card to a discard pile
 function discardCard(card) {
-    card.player = 'discarded';  // Mark the card as discarded
-    localStorage.setItem('cardData', JSON.stringify(cardData));  // Save the updated data
+    card.player = 'discarded';  // Move the card to the discard pile
+    localStorage.setItem('cardData', JSON.stringify(cardData));  // Save the updated card data
     displayAllCards(currentType);  // Refresh the card display
 }
 
@@ -203,22 +207,20 @@ function formatDescription(text) {
 document.getElementById('new-game-btn').addEventListener('click', () => {
     const playerCount = prompt("Select Player Count: 2, 3, or 4");
     if (['2', '3', '4'].includes(playerCount)) {
-        startNewGame(parseInt(playerCount));  // Start the game with the selected player count
+        startNewAppControlledGame(parseInt(playerCount));  // Start the game with the selected player count
     } else {
         alert("Invalid player count.");
     }
 });
 
-// Function to start a new app-controlled game and assign cards based on player count
-function startNewGame(playerCount) {
-    const courtCardCount = playerCount === 2 ? 3 : 4;
-    const draftCardCount = playerCount + 1;
+// Function to start the app-controlled game and assign cards
+function startNewAppControlledGame(playerCount) {
+    const courtCardCount = playerCount === 2 ? 3 : 4;  // Assign 3 court cards for 2 players, 4 for 3-4 players
+    const draftCardCount = playerCount + 1;  // Assign leader and lore cards, number of players + 1
 
-    // Assign court cards to the "Court" player
-    assignRandomCourtCards(courtCardCount);
-    
-    // Assign leader and lore cards to the "Draft" player
-    assignDraftCards(draftCardCount);
+    assignRandomCourtCards(courtCardCount);  // Assign court cards to "Court" player
+    assignDraftCards(draftCardCount, 'leader');  // Assign leader cards to "Draft" pool
+    assignDraftCards(draftCardCount, 'lore');  // Assign lore cards to "Draft" pool
 }
 
 // Assign a random number of court cards
@@ -235,8 +237,8 @@ function assignRandomCourtCards(count) {
 }
 
 // Assign random leader and lore cards to the "draft" player
-function assignDraftCards(count) {
-    const availableDraftCards = cardData.filter(card => (card.type === 'leader' || card.type === 'lore') && card.player === 'none'); // Filter leader and lore cards
+function assignDraftCards(count, type) {
+    const availableDraftCards = cardData.filter(card => card.type === type && card.player === 'none'); // Filter leader and lore cards
     const randomDraftCards = getRandomCards(availableDraftCards, count); // Get random cards for draft
 
     randomDraftCards.forEach(card => {
@@ -244,7 +246,7 @@ function assignDraftCards(count) {
     });
 
     localStorage.setItem('cardData', JSON.stringify(cardData));  // Save the updated card data
-    displayAllCards('leader');  // Refresh the display for leader/lore cards
+    displayAllCards(type);  // Refresh the display for leader/lore cards
 }
 
 // Helper function to get random cards from an array
