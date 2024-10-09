@@ -581,25 +581,50 @@ input:focus {
     outline-offset: 4px;
 }
 
-/* Style for buttons like New App Controlled Game, New Court Card, Reset Court Deck */
-.new-game-button, .new-court-card-button, .reset-deck-button {
-    padding: 10px 15px; /* Same size as the navigation buttons */
+/* Style for buttons (New App Controlled Game, New Court Card, Reset Court Deck) */
+.new-game-button, .new-court-card-button, .reset-deck-button, .toggle-control {
+    padding: 10px 15px;
     background-color: var(--button-background);
     color: var(--button-color);
     border-radius: 5px;
     margin: 10px;
     cursor: pointer;
     border: none;
+    font-size: 16px;
+    display: inline-block;
     text-align: center;
-    font-size: 16px; /* Match the size of the other buttons */
-    display: inline-block; /* Align them horizontally */
 }
 
-.new-game-button:hover, .new-court-card-button:hover, .reset-deck-button:hover {
-    background-color: var(--active-button-background); /* Darker background on hover */
+.new-game-button:hover, .new-court-card-button:hover, .reset-deck-button:hover, .toggle-control:hover {
+    background-color: var(--active-button-background);
 }
 
-/* Discard button (X) styling for removing cards */
+/* Center the buttons */
+.control-buttons-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+/* Style for toggle option */
+.toggle-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.toggle-label {
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+input[type="checkbox"] {
+    width: 40px;
+    height: 20px;
+}
+
+/* Discard button (X) styling for cards */
 .discard-button {
     position: absolute;
     top: 10px;
@@ -617,29 +642,19 @@ input:focus {
 }
 
 .discard-button:hover {
-    background-color: darkred; /* Darker red on hover */
+    background-color: darkred;
 }
 
-/* Match the size of other buttons for the new game buttons */
-.filter-buttons {
-    display: flex;
-    justify-content: center; /* Centre the buttons horizontally */
-    gap: 10px; /* Add spacing between buttons */
-    margin-bottom: 20px;
-}
-
-.filter-button {
+/* General button styling to match size with navigation buttons */
+.nav-button, .filter-button {
     padding: 10px 15px;
+    background-color: var(--button-background);
+    color: var(--button-color);
     border: none;
     border-radius: 5px;
     font-size: 16px;
     cursor: pointer;
     text-align: center;
-}
-
-.nav-button, .filter-button {
-    background-color: var(--button-background);
-    color: var(--button-color);
 }
 
 .nav-button.active, .filter-button.active {
