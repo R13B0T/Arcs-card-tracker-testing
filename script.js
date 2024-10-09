@@ -251,8 +251,7 @@ function assignDraftCards(count, type) {
         card.player = 'draft';  // Assign each card to the draft pool
     });
 
-    localStorage.setItem('cardData', JSON.stringify(cardData    });
-
+    localStorage.setItem('cardData', JSON.stringify(cardData));  // Save the updated card data
     displayAllCards(type);  // Refresh the display for leader/lore cards
 }
 
