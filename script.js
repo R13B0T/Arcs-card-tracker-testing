@@ -28,6 +28,7 @@ const navButtons = document.querySelectorAll('.nav-button');
 const filterButtons = document.querySelectorAll('.filter-button');
 let currentType = 'court'; // Default type is court cards
 let currentFilter = null;  // No filter initially
+let appControlledMode = false; // Default mode is manual
 
 // Placeholder for card data, will be populated from the JSON file
 let cardData = [];
@@ -75,6 +76,11 @@ function initializeApp() {
     document.getElementById('search-input').addEventListener('input', function () {
         const query = this.value.toLowerCase();
         filterCardsBySearch(query);  // Filter cards by search query
+    });
+
+    // Event listener for toggle to enable/disable app-controlled mode
+    document.getElementById('app-control-toggle').addEventListener('change', (event) => {
+        appControlledMode = event.target.checked;  // Set app-controlled mode based on the toggle
     });
 
     // Initial display of cards (default type is court)
@@ -245,7 +251,8 @@ function assignDraftCards(count, type) {
         card.player = 'draft';  // Assign each card to the draft pool
     });
 
-    localStorage.setItem('cardData', JSON.stringify(cardData));  // Save the updated card data
+    localStorage.setItem('cardData', JSON.stringify(cardData    });
+
     displayAllCards(type);  // Refresh the display for leader/lore cards
 }
 
@@ -277,4 +284,13 @@ document.getElementById('reset-court-deck-btn').addEventListener('click', () => 
     });
     localStorage.setItem('cardData', JSON.stringify(cardData));  // Save the reset card data
     displayAllCards('court');  // Refresh the court card display
+});
+
+// Event listener for the "New Game" button to reset all cards to 'none'
+document.querySelector('.reset-button').addEventListener('click', () => {
+    cardData.forEach(card => {
+        card.player = 'none';  // Reset all player assignments to 'none'
+    });
+    localStorage.setItem('cardData', JSON.stringify(cardData));  // Save the reset card data
+    displayAllCards(currentType);  // Refresh the display
 });
