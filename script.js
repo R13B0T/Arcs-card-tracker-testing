@@ -146,7 +146,7 @@ function displayFilteredCards(cards) {
         // Create assignment buttons
         options.forEach(optionValue => {
             const button = document.createElement('button');
-            button.classList.add('assign-button');
+            button.classList.add('assign-button', optionValue + '-button');
             button.textContent = optionValue.charAt(0).toUpperCase() + optionValue.slice(1);
             button.setAttribute('data-value', optionValue);
             button.setAttribute('aria-label', `Assign to ${optionValue.charAt(0).toUpperCase() + optionValue.slice(1)}`);
