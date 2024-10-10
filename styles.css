@@ -309,3 +309,17 @@ input:checked + .slider:before {
     overflow: hidden; /* Hide any overflow to prevent scroll */
     padding: 0 5px; /* Add horizontal padding to prevent clipping */
     justify
+    
+/* Toggle Container */
+.toggle-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+#app-controlled-toggle {
+    margin-left: 10px;
+}
+
+/* Rest of your existing styles */
+...
