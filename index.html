@@ -33,8 +33,11 @@
 
     <!-- Toggle for App Controlled Game -->
     <div class="toggle-container">
-        <input type="checkbox" id="app-controlled-toggle" />
-        <label for="app-controlled-toggle">App controlled game</label>
+        <label class="switch">
+            <input type="checkbox" id="app-controlled-toggle">
+            <span class="slider round"></span>
+        </label>
+        <span>App controlled game</span>
     </div>
 
     <!-- Search Bar -->
@@ -55,9 +58,10 @@
 
     <!-- Extra Buttons (Initially hidden) -->
     <section id="extra-buttons" class="filter-buttons" style="display: none;">
-        <button class="filter-button court-button" data-color="extra1">Extra 1</button>
-        <button class="filter-button leader-button" data-color="extra2">Extra 2</button>
-        <button class="filter-button lore-button" data-color="extra3">Extra 3</button>
+        <button class="filter-button court-button">Deal Cards</button>
+        <button class="filter-button leader-button">New Court Card</button>
+        <button class="filter-button lore-button">Return Discards</button>
+        <button class="filter-button draft-button">Discards</button>
     </section>
 
     <!-- Card List -->
