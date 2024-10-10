@@ -29,6 +29,18 @@ const filterButtons = document.querySelectorAll('.filter-button');
 let currentType = 'court';
 let currentFilter = null;
 
+// Toggle for Extra Buttons
+const appControlledToggle = document.getElementById('app-controlled-toggle');
+const extraButtonsSection = document.getElementById('extra-buttons');
+
+appControlledToggle.addEventListener('change', function () {
+    if (this.checked) {
+        extraButtonsSection.style.display = 'flex'; // Show extra buttons
+    } else {
+        extraButtonsSection.style.display = 'none'; // Hide extra buttons
+    }
+});
+
 // Card data will be loaded from cards.json
 let cardData = [];
 
@@ -79,14 +91,6 @@ function initializeApp() {
 
     // Initial display of cards
     displayAllCards(currentType);
-
-    // Event listeners for new buttons
-    document.getElementById('new-game-button').addEventListener('click', resetSelections);
-    document.getElementById('new-court-card').addEventListener('click', addNewCourtCard);
-    document.getElementById('reset-deck-button').addEventListener('click', resetDiscardedCourtCards);
-
-    // Event listener for app-controlled mode toggle
-    document.getElementById('app-controlled-toggle').addEventListener('change', handleAppControlledToggle);
 }
 
 // Function to display all cards of a certain type with current filters
@@ -215,7 +219,7 @@ function formatDescription(text) {
     return formattedText;
 }
 
-// Function to reset all selections (New Game button functionality)
+// Function to reset all selections
 function resetSelections() {
     cardData.forEach(card => {
         card.player = 'none';
@@ -224,61 +228,4 @@ function resetSelections() {
     currentFilter = null;
     filterButtons.forEach(btn => btn.classList.remove('active'));
     displayAllCards(currentType);
-}
-
-// Function to add a new court card (for New Court Card button)
-function addNewCourtCard() {
-    // Example of adding a new court card (you'll need to customize this based on the game logic)
-    const newCard = {
-        type: 'court',
-        title: 'New Court Card',
-        description: 'Description for the new court card.',
-        player: 'none'
-    };
-    cardData.push(newCard);
-    localStorage.setItem('cardData', JSON.stringify(cardData)); // Save updated cardData
-    displayAllCards(currentType); // Re-render to include new card
-}
-
-// Function to reset discarded court cards (Reset Court Deck button functionality)
-function resetDiscardedCourtCards() {
-    // Reset all cards that were discarded
-    cardData.forEach(card => {
-        if (card.player === 'discard') {
-            card.player = 'none';
-        }
-    });
-    localStorage.setItem('cardData', JSON.stringify(cardData)); // Save updated cardData
-    displayAllCards(currentType); // Re-render the cards
-}
-
-// Function to handle the App-Controlled Mode toggle
-function handleAppControlledToggle(event) {
-    const isAppControlledMode = event.target.checked;
-
-    if (isAppControlledMode) {
-        // App-Controlled Mode logic
-        // Assign random cards to players based on predefined rules for player count
-        assignCardsForAppControlledMode();
-    } else {
-        // Manual Mode logic (no automatic assignments)
-        resetSelections();
-    }
-}
-
-// Function to automatically assign cards in App-Controlled Mode
-function assignCardsForAppControlledMode() {
-    // Example of assigning random court cards to players
-    const courtCards = cardData.filter(card => card.type === 'court' && card.player === 'none');
-    const shuffledCards = courtCards.sort(() => 0.5 - Math.random()); // Shuffle the court cards
-
-    // Assign cards to players (customize based on your logic)
-    const playerAssignments = ['court', 'red', 'blue', 'gold', 'white'];
-    shuffledCards.forEach((card, index) => {
-        const player = playerAssignments[index % playerAssignments.length];
-        card.player = player;
-    });
-
-    localStorage.setItem('cardData', JSON.stringify(cardData)); // Save updated cardData
-    displayAllCards(currentType); // Re-render the cards
 }
