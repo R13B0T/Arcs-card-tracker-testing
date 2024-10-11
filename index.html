@@ -2,74 +2,61 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Arcs Card Tracker</title>
-    <!-- Link to the CSS Stylesheet -->
-    <link rel="stylesheet" href="styles.css">
-    <!-- Font Awesome for Icons (Optional) -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
-    <!-- Google Fonts (Optional) -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-    <!-- Viewport Meta Tag for Mobile Devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arcs Card Tracker</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Assuming you have a styles.css file -->
 </head>
 <body>
-    <!-- Theme Toggle Button (Optional) -->
-    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Theme">
-        <i class="fas fa-moon"></i>
-    </button>
-
-    <!-- Navigation Bar -->
-    <header class="navbar">
-        <div class="navbar-header">
-            <button class="reset-button" onclick="resetSelections()">New Game</button>
-            <h1>Arcs Card Tracker</h1>
-        </div>
-        <nav class="nav-buttons">
-            <button class="nav-button active" data-type="court">Court</button>
-            <button class="nav-button" data-type="leader">Leader</button>
-            <button class="nav-button" data-type="lore">Lore</button>
-        </nav>
-    </header>
-
-    <!-- Toggle for App Controlled Game -->
-    <div class="toggle-container">
-        <label class="switch">
-            <input type="checkbox" id="app-controlled-toggle">
-            <span class="slider round"></span>
-        </label>
-        <span>App controlled game</span>
+    <!-- Theme toggle button for switching between light and dark mode -->
+    <div class="theme-toggle-section">
+        <button id="theme-toggle" aria-label="Toggle Theme">🌙</button>
     </div>
 
-    <!-- Search Bar -->
-    <section class="search-container">
-        <label for="search-input" class="visually-hidden">Search cards</label>
+    <!-- Navigation section for selecting card types (Court, Leader, Lore) -->
+    <div class="navigation-section">
+        <button class="nav-button" data-type="court">Court</button>
+        <button class="nav-button" data-type="leader">Leader</button>
+        <button class="nav-button" data-type="lore">Lore</button>
+    </div>
+
+    <!-- New Game Button -->
+    <div class="new-game-section">
+        <button class="new-game-button">New Game</button>
+    </div>
+
+    <!-- App controlled game toggle -->
+    <div class="toggle-section">
+        <label for="app-controlled-toggle">App controlled game</label>
+        <input type="checkbox" id="app-controlled-toggle">
+    </div>
+
+    <!-- Search input to filter cards by name -->
+    <div class="search-section">
         <input type="text" id="search-input" placeholder="Search cards...">
-    </section>
+    </div>
 
-    <!-- Filter Buttons -->
-    <section class="filter-buttons">
-        <button class="filter-button court-button" data-color="court">Court</button>
-        <button class="filter-button draft-button" data-color="draft">Draft</button>
-        <button class="filter-button red-button" data-color="red">Red</button>
-        <button class="filter-button blue-button" data-color="blue">Blue</button>
-        <button class="filter-button gold-button" data-color="gold">Gold</button>
-        <button class="filter-button white-button" data-color="white">White</button>
-    </section>
+    <!-- Filter buttons for player colors and the new Deal Cards button -->
+    <div class="buttons-section">
+        <button class="filter-button" data-color="court">Court</button>
+        <button class="filter-button" data-color="draft">Draft</button>
+        <button class="filter-button" data-color="red">Red</button>
+        <button class="filter-button" data-color="blue">Blue</button>
+        <button class="filter-button" data-color="gold">Gold</button>
+        <button class="filter-button" data-color="white">White</button>
+    </div>
 
-    <!-- Extra Buttons (Initially hidden) -->
-    <section id="extra-buttons" class="filter-buttons" style="display: none;">
-        <button class="filter-button leader-button">Deal Cards</button>
-        <button class="filter-button leader-button">New Court Card</button>
-        <button class="filter-button lore-button">Return Discards</button>
-        <button class="filter-button draft-button">Discards</button>
-    </section>
+    <!-- Section for extra buttons when App controlled game is active -->
+    <div id="extra-buttons" style="display: none;">
+        <button class="extra-button deal-cards-button" onclick="dealCards()">Deal Cards</button>
+        <button class="extra-button new-court-card-button">New Court Card</button>
+        <button class="extra-button return-discards-button">Return Discards</button>
+        <button class="extra-button discards-button">Discards</button>
+    </div>
 
-    <!-- Card List -->
-    <main id="card-list" class="card-list">
-        <!-- Cards will be dynamically inserted here by script.js -->
-    </main>
+    <!-- Card list where the cards will be displayed -->
+    <div id="card-list"></div>
 
-    <!-- JavaScript File -->
+    <!-- Link to your external JavaScript file -->
     <script src="script.js"></script>
 </body>
 </html>
