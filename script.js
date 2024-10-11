@@ -61,7 +61,7 @@ function initializeApp() {
         });
     });
 
-    // Event listeners for filter buttons (Fixing Filter Button Functionality)
+    // Event listeners for filter buttons
     filterButtons.forEach(button => {
         const filterValue = button.getAttribute('data-color');
         button.addEventListener('click', () => {
