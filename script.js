@@ -61,6 +61,17 @@ function initializeApp() {
         });
     });
 
+    // Event listeners for filter buttons (Fixing Filter Button Functionality)
+    filterButtons.forEach(button => {
+        const filterValue = button.getAttribute('data-color');
+        button.addEventListener('click', () => {
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+            currentFilter = filterValue;  // Set currentFilter to selected player color
+            displayAllCards(currentType); // Re-display cards based on the filter
+        });
+    });
+
     // Event listener for search input
     document.getElementById('search-input').addEventListener('input', function () {
         const query = this.value.toLowerCase();
@@ -70,7 +81,7 @@ function initializeApp() {
     // Event listener for "Deal Cards" button
     const dealButton = document.querySelector('.deal-cards-button');
     if (dealButton) {
-        dealButton.addEventListener('click', dealCards);
+        dealButton.addEventListener('click', dealCards);  // Add listener for Deal Cards button
     }
 
     // Event listener for the "App controlled game" toggle
