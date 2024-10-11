@@ -67,8 +67,11 @@ function initializeApp() {
         filterCardsBySearch(query);  // Filter cards based on search query
     });
 
-    // Event listener for "Deal Cards" button (Correct button, not filter buttons)
-    document.querySelector('.filter-button.deal-button').addEventListener('click', dealCards);
+    // Event listener for "Deal Cards" button
+    const dealButton = document.querySelector('.deal-cards-button');
+    if (dealButton) {
+        dealButton.addEventListener('click', dealCards);
+    }
 
     // Event listener for the "App controlled game" toggle
     const appControlledToggle = document.getElementById('app-controlled-toggle');
@@ -213,18 +216,7 @@ function formatDescription(text) {
     return formattedText;
 }
 
-// Function to reset all selections
-function resetSelections() {
-    cardData.forEach(card => {
-        card.player = 'none';
-    });
-    localStorage.removeItem('cardData');  // Clear saved data
-    currentFilter = null;
-    filterButtons.forEach(btn => btn.classList.remove('active'));
-    displayAllCards(currentType);
-}
-
-// ------------------- NEW CODE FOR DEAL CARDS -------------------
+// ------------------- DEAL CARDS FUNCTIONALITY -------------------
 
 // Function to deal cards based on the number of players
 function dealCards() {
