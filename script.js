@@ -61,14 +61,17 @@ function initializeApp() {
         });
     });
 
-    // Event listeners for filter buttons
+    // Event listeners for filter buttons (Correct behavior)
     filterButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            filterButtons.forEach(btn => btn.classList.remove('active'));
-            button.classList.add('active');
-            currentFilter = button.getAttribute('data-color');
-            displayAllCards(currentType);
-        });
+        const filterType = button.getAttribute('data-color');
+        if (filterType) {
+            button.addEventListener('click', () => {
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                currentFilter = filterType;
+                displayAllCards(currentType);
+            });
+        }
     });
 
     // Event listener for search input
@@ -77,8 +80,8 @@ function initializeApp() {
         filterCardsBySearch(query);
     });
 
-    // Event listener for "Deal Cards" button
-    document.querySelector('.filter-button.court-button').addEventListener('click', dealCards);
+    // Event listener for "Deal Cards" button (attach to the correct button)
+    document.querySelector('.filter-button.deal-button').addEventListener('click', dealCards);
 
     // Event listener for toggle (App controlled game)
     const appControlledToggle = document.getElementById('app-controlled-toggle');
