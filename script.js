@@ -26,8 +26,8 @@ themeToggle.addEventListener('click', () => {
 // Variables for navigation and filtering
 const navButtons = document.querySelectorAll('.nav-button');
 const filterButtons = document.querySelectorAll('.filter-button');
-let currentType = 'court';
-let currentFilter = null;
+let currentType = 'court';  // Default card type
+let currentFilter = null;   // No filter applied initially
 
 // Card data will be loaded from cards.json
 let cardData = [];
@@ -36,7 +36,6 @@ let cardData = [];
 fetch('cards.json')
     .then(response => response.json())
     .then(data => {
-        // Load from localStorage if available
         const savedData = localStorage.getItem('cardData');
         if (savedData) {
             cardData = JSON.parse(savedData);
@@ -55,33 +54,31 @@ function initializeApp() {
             navButtons.forEach(btn => btn.classList.remove('active'));
             button.classList.add('active');
             currentType = button.getAttribute('data-type');
-            currentFilter = null;
-            filterButtons.forEach(btn => btn.classList.remove('active'));
-            displayAllCards(currentType);  // Display cards based on current type
+            currentFilter = null; // Reset filter when switching types
+            displayAllCards(currentType);
         });
     });
 
-    // Event listeners for filter buttons (Ensure correct filter behavior)
+    // Event listeners for filter buttons (to filter by player color)
     filterButtons.forEach(button => {
-        const filterValue = button.getAttribute('data-color');
         button.addEventListener('click', () => {
             filterButtons.forEach(btn => btn.classList.remove('active'));
             button.classList.add('active');
-            currentFilter = filterValue;  // Set currentFilter to selected player color
-            displayAllCards(currentType); // Re-display cards based on the filter
+            currentFilter = button.getAttribute('data-color'); // Set current filter
+            displayAllCards(currentType); // Re-display cards based on filter
         });
     });
 
     // Event listener for search input
     document.getElementById('search-input').addEventListener('input', function () {
         const query = this.value.toLowerCase();
-        filterCardsBySearch(query);  // Filter cards based on search query
+        filterCardsBySearch(query);
     });
 
-    // Event listener for "Deal Cards" button (Ensure independent functionality)
+    // Event listener for "Deal Cards" button
     const dealButton = document.querySelector('.deal-cards-button');
     if (dealButton) {
-        dealButton.addEventListener('click', dealCards);  // Add listener for Deal Cards button
+        dealButton.addEventListener('click', dealCards);
     }
 
     // Event listener for the "App controlled game" toggle
@@ -103,7 +100,7 @@ function initializeApp() {
 // Function to display all cards of a certain type with current filters
 function displayAllCards(type) {
     const cardList = document.getElementById('card-list');
-    cardList.innerHTML = '';  // Clear current card list
+    cardList.innerHTML = '';  // Clear card list
 
     let filteredCards = cardData.filter(card => card.type === type);
 
@@ -116,7 +113,7 @@ function displayAllCards(type) {
     displayFilteredCards(filteredCards);
 }
 
-// Function to display filtered cards in the card list
+// Function to display filtered cards
 function displayFilteredCards(cards) {
     const cardList = document.getElementById('card-list');
     cardList.innerHTML = '';  // Clear previous cards
@@ -220,7 +217,7 @@ function formatDescription(text) {
     ];
 
     const escapedPhrases = phrasesToBold.map(phrase => phrase.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&'));
-    const pattern = '\\b(' + escapedPhrases.join('|') + ')';
+    const pattern is '\\b(' + escapedPhrases.join('|') + ')';
     const regex = new RegExp(pattern, 'g');
 
     const formattedText = text.replace(regex, '<strong>$1</strong>');
