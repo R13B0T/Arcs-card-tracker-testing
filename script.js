@@ -61,7 +61,7 @@ function initializeApp() {
         });
     });
 
-    // Event listeners for filter buttons
+    // Event listeners for filter buttons (Ensure correct filter behavior)
     filterButtons.forEach(button => {
         const filterValue = button.getAttribute('data-color');
         button.addEventListener('click', () => {
@@ -78,7 +78,7 @@ function initializeApp() {
         filterCardsBySearch(query);  // Filter cards based on search query
     });
 
-    // Event listener for "Deal Cards" button
+    // Event listener for "Deal Cards" button (Ensure independent functionality)
     const dealButton = document.querySelector('.deal-cards-button');
     if (dealButton) {
         dealButton.addEventListener('click', dealCards);  // Add listener for Deal Cards button
