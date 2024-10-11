@@ -1,4 +1,3 @@
-
 /* Apply box-sizing globally */
 *, *::before, *::after {
     box-sizing: border-box;
@@ -253,12 +252,19 @@ input:checked + .slider:before {
 }
 
 .filter-button {
-    padding: 8px 12px;
+    padding: 10px 15px;
+    background-color: var(--button-background); /* Same style as nav-button */
+    color: var(--button-color);
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 14px;
-    transition: background-color 0.3s, color 0.3s;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.filter-button:hover,
+.filter-button.active {
+    background-color: var(--active-button-background);
 }
 
 /* Specific Filter Button Colors */
@@ -351,7 +357,7 @@ input:checked + .slider:before {
 /* Card List */
 .card-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Increased min-width to 320px */
     gap: 20px;
     padding: 20px;
 }
