@@ -80,6 +80,18 @@ function initializeApp() {
     // Event listener for "Deal Cards" button
     document.querySelector('.filter-button.court-button').addEventListener('click', dealCards);
 
+    // Event listener for toggle (App controlled game)
+    const appControlledToggle = document.getElementById('app-controlled-toggle');
+    const extraButtonsSection = document.getElementById('extra-buttons');
+    
+    appControlledToggle.addEventListener('change', function () {
+        if (this.checked) {
+            extraButtonsSection.style.display = 'flex'; // Show extra buttons
+        } else {
+            extraButtonsSection.style.display = 'none'; // Hide extra buttons
+        }
+    });
+
     // Initial display of cards
     displayAllCards(currentType);
 }
@@ -272,18 +284,4 @@ function assignRandomCards(type, count, assignment) {
     // Filter the cards by the specified type (court, leader, or lore)
     const filteredCards = cardData.filter(card => card.type === type && card.player === "none");
 
-    // Shuffle the filtered cards and pick the first 'count' number of cards
-    const shuffledCards = filteredCards.sort(() => Math.random() - 0.5);
-    const selectedCards = shuffledCards.slice(0, count);
-
-    // Assign the selected cards to the specified player assignment (court or draft)
-    selectedCards.forEach(card => {
-        card.player = assignment;
-    });
-
-    // Save the updated cardData back to localStorage
-    localStorage.setItem('cardData', JSON.stringify(cardData));
-
-    // Re-render the cards to reflect the updated assignments
-    displayAllCards(currentType);
-}
+   
