@@ -4,24 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arcs Card Tracker</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Assuming you have a styles.css file -->
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
 </head>
 <body>
-    <!-- Theme toggle button for switching between light and dark mode -->
-    <div class="theme-toggle-section">
-        <button id="theme-toggle" aria-label="Toggle Theme">🌙</button>
-    </div>
-
     <!-- Navigation section for selecting card types (Court, Leader, Lore) -->
-    <div class="navigation-section">
+    <div class="header-section">
+        <button class="new-game-button">New Game</button>
+        <h1>Arcs Card Tracker</h1>
         <button class="nav-button" data-type="court">Court</button>
         <button class="nav-button" data-type="leader">Leader</button>
         <button class="nav-button" data-type="lore">Lore</button>
-    </div>
-
-    <!-- New Game Button -->
-    <div class="new-game-section">
-        <button class="new-game-button">New Game</button>
     </div>
 
     <!-- App controlled game toggle -->
@@ -30,12 +22,12 @@
         <input type="checkbox" id="app-controlled-toggle">
     </div>
 
-    <!-- Search input to filter cards by name -->
+    <!-- Search input to filter cards -->
     <div class="search-section">
         <input type="text" id="search-input" placeholder="Search cards...">
     </div>
 
-    <!-- Filter buttons for player colors and the new Deal Cards button -->
+    <!-- Filter buttons section -->
     <div class="buttons-section">
         <button class="filter-button" data-color="court">Court</button>
         <button class="filter-button" data-color="draft">Draft</button>
@@ -53,10 +45,10 @@
         <button class="extra-button discards-button">Discards</button>
     </div>
 
-    <!-- Card list where the cards will be displayed -->
+    <!-- Card list section -->
     <div id="card-list"></div>
 
-    <!-- Link to your external JavaScript file -->
+    <!-- JavaScript Link -->
     <script src="script.js"></script>
 </body>
 </html>
