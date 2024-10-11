@@ -29,18 +29,6 @@ const filterButtons = document.querySelectorAll('.filter-button');
 let currentType = 'court';
 let currentFilter = null;
 
-// Toggle for Extra Buttons
-const appControlledToggle = document.getElementById('app-controlled-toggle');
-const extraButtonsSection = document.getElementById('extra-buttons');
-
-appControlledToggle.addEventListener('change', function () {
-    if (this.checked) {
-        extraButtonsSection.style.display = 'flex'; // Show extra buttons
-    } else {
-        extraButtonsSection.style.display = 'none'; // Hide extra buttons
-    }
-});
-
 // Card data will be loaded from cards.json
 let cardData = [];
 
@@ -88,6 +76,9 @@ function initializeApp() {
         const query = this.value.toLowerCase();
         filterCardsBySearch(query);
     });
+
+    // Event listener for "Deal Cards" button
+    document.querySelector('.filter-button.court-button').addEventListener('click', dealCards);
 
     // Initial display of cards
     displayAllCards(currentType);
@@ -227,5 +218,72 @@ function resetSelections() {
     localStorage.removeItem('cardData'); // Clear saved data
     currentFilter = null;
     filterButtons.forEach(btn => btn.classList.remove('active'));
+    displayAllCards(currentType);
+}
+
+// ------------------- NEW CODE FOR DEAL CARDS -------------------
+
+// Function to deal cards based on the number of players
+function dealCards() {
+    // Prompt the user to select the number of players
+    const numPlayers = prompt("How many players? (2, 3, or 4)");
+
+    // Validate the input
+    if (numPlayers !== "2" && numPlayers !== "3" && numPlayers !== "4") {
+        alert("Invalid number of players. Please enter 2, 3, or 4.");
+        return;
+    }
+
+    // Convert the input to a number
+    const playerCount = parseInt(numPlayers, 10);
+
+    // Determine the number of cards based on the number of players
+    let courtCardCount, leaderCardCount, loreCardCount;
+    
+    if (playerCount === 2) {
+        courtCardCount = 3;
+        leaderCardCount = 3;
+        loreCardCount = 3;
+    } else if (playerCount === 3) {
+        courtCardCount = 4;
+        leaderCardCount = 4;
+        loreCardCount = 4;
+    } else if (playerCount === 4) {
+        courtCardCount = 4;
+        leaderCardCount = 5;
+        loreCardCount = 5;
+    }
+
+    // Randomly select court cards
+    assignRandomCards("court", courtCardCount, "court");
+
+    // Randomly select leader cards
+    assignRandomCards("leader", leaderCardCount, "draft");
+
+    // Randomly select lore cards
+    assignRandomCards("lore", loreCardCount, "draft");
+
+    // Inform the user that the cards have been dealt
+    alert(`Cards have been dealt for ${playerCount} players.`);
+}
+
+// Function to randomly assign cards to a player type (court or draft)
+function assignRandomCards(type, count, assignment) {
+    // Filter the cards by the specified type (court, leader, or lore)
+    const filteredCards = cardData.filter(card => card.type === type && card.player === "none");
+
+    // Shuffle the filtered cards and pick the first 'count' number of cards
+    const shuffledCards = filteredCards.sort(() => Math.random() - 0.5);
+    const selectedCards = shuffledCards.slice(0, count);
+
+    // Assign the selected cards to the specified player assignment (court or draft)
+    selectedCards.forEach(card => {
+        card.player = assignment;
+    });
+
+    // Save the updated cardData back to localStorage
+    localStorage.setItem('cardData', JSON.stringify(cardData));
+
+    // Re-render the cards to reflect the updated assignments
     displayAllCards(currentType);
 }
