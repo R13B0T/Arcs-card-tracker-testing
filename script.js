@@ -284,4 +284,18 @@ function assignRandomCards(type, count, assignment) {
     // Filter the cards by the specified type (court, leader, or lore)
     const filteredCards = cardData.filter(card => card.type === type && card.player === "none");
 
-   
+    // Shuffle the filtered cards and pick the first 'count' number of cards
+    const shuffledCards = filteredCards.sort(() => Math.random() - 0.5);
+    const selectedCards = shuffledCards.slice(0, count);
+
+    // Assign the selected cards to the specified player assignment (court or draft)
+    selectedCards.forEach(card => {
+        card.player = assignment;
+    });
+
+    // Save the updated cardData back to localStorage
+    localStorage.setItem('cardData', JSON.stringify(cardData));
+
+    // Re-render the cards to reflect the updated assignments
+    displayAllCards(currentType);
+}
