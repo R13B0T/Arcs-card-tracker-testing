@@ -43,13 +43,13 @@ fetch('cards.json')
         } else {
             cardData = data.cards;
         }
-        initializeApp();
+        initializeApp();  // Initialize the app once data is loaded
     })
     .catch(error => console.error('Error loading card data:', error));
 
 // Initialize the application after data is loaded
 function initializeApp() {
-    // Event listeners for navigation buttons
+    // Event listeners for navigation buttons (Court, Leader, Lore)
     navButtons.forEach(button => {
         button.addEventListener('click', () => {
             navButtons.forEach(btn => btn.classList.remove('active'));
@@ -57,41 +57,28 @@ function initializeApp() {
             currentType = button.getAttribute('data-type');
             currentFilter = null;
             filterButtons.forEach(btn => btn.classList.remove('active'));
-            displayAllCards(currentType);
+            displayAllCards(currentType);  // Display cards based on current type
         });
-    });
-
-    // Event listeners for filter buttons (Correct behavior)
-    filterButtons.forEach(button => {
-        const filterType = button.getAttribute('data-color');
-        if (filterType) {
-            button.addEventListener('click', () => {
-                filterButtons.forEach(btn => btn.classList.remove('active'));
-                button.classList.add('active');
-                currentFilter = filterType;
-                displayAllCards(currentType);
-            });
-        }
     });
 
     // Event listener for search input
     document.getElementById('search-input').addEventListener('input', function () {
         const query = this.value.toLowerCase();
-        filterCardsBySearch(query);
+        filterCardsBySearch(query);  // Filter cards based on search query
     });
 
-    // Event listener for "Deal Cards" button (attach to the correct button)
+    // Event listener for "Deal Cards" button (Correct button, not filter buttons)
     document.querySelector('.filter-button.deal-button').addEventListener('click', dealCards);
 
-    // Event listener for toggle (App controlled game)
+    // Event listener for the "App controlled game" toggle
     const appControlledToggle = document.getElementById('app-controlled-toggle');
     const extraButtonsSection = document.getElementById('extra-buttons');
     
     appControlledToggle.addEventListener('change', function () {
         if (this.checked) {
-            extraButtonsSection.style.display = 'flex'; // Show extra buttons
+            extraButtonsSection.style.display = 'flex';  // Show extra buttons
         } else {
-            extraButtonsSection.style.display = 'none'; // Hide extra buttons
+            extraButtonsSection.style.display = 'none';  // Hide extra buttons
         }
     });
 
@@ -101,27 +88,26 @@ function initializeApp() {
 
 // Function to display all cards of a certain type with current filters
 function displayAllCards(type) {
-    // Clear the search input
-    document.getElementById('search-input').value = '';
-
     const cardList = document.getElementById('card-list');
-    cardList.innerHTML = '';
+    cardList.innerHTML = '';  // Clear current card list
 
     let filteredCards = cardData.filter(card => card.type === type);
 
+    // Apply filter if a specific player filter is selected
     if (currentFilter) {
         filteredCards = filteredCards.filter(card => card.player === currentFilter);
     }
 
+    // Display the filtered cards
     displayFilteredCards(filteredCards);
 }
 
-// Function to display filtered cards
+// Function to display filtered cards in the card list
 function displayFilteredCards(cards) {
     const cardList = document.getElementById('card-list');
-    cardList.innerHTML = '';
+    cardList.innerHTML = '';  // Clear previous cards
 
-    cards.forEach((card, index) => {
+    cards.forEach(card => {
         const cardElement = document.createElement('div');
         cardElement.classList.add('card');
 
@@ -141,7 +127,7 @@ function displayFilteredCards(cards) {
         const playerPicker = document.createElement('div');
         playerPicker.classList.add('player-picker');
 
-        // Define the options array based on card type
+        // Define the options array based on card type (court or draft)
         let options;
         if (card.type === 'court') {
             options = ['none', 'court', 'red', 'blue', 'gold', 'white'];
@@ -162,7 +148,7 @@ function displayFilteredCards(cards) {
                 button.classList.add('active');
             }
 
-            // Add event listener for assignment
+            // Add event listener for assignment buttons
             button.addEventListener('click', () => {
                 // Update the card's player assignment
                 card.player = optionValue;
@@ -190,10 +176,12 @@ function filterCardsBySearch(query) {
                 card.description.toLowerCase().includes(query));
     });
 
+    // Apply filter if a specific player filter is selected
     if (currentFilter) {
         filteredCards = filteredCards.filter(card => card.player === currentFilter);
     }
 
+    // Display the filtered cards
     displayFilteredCards(filteredCards);
 }
 
@@ -230,7 +218,7 @@ function resetSelections() {
     cardData.forEach(card => {
         card.player = 'none';
     });
-    localStorage.removeItem('cardData'); // Clear saved data
+    localStorage.removeItem('cardData');  // Clear saved data
     currentFilter = null;
     filterButtons.forEach(btn => btn.classList.remove('active'));
     displayAllCards(currentType);
