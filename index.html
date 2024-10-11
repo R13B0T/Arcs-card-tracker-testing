@@ -31,18 +31,21 @@
         </nav>
     </header>
 
-    <!-- Toggle for App Controlled Game -->
+    <!-- Rounded Toggle for App Controlled Game -->
     <section class="toggle-section">
-        <label for="app-controlled-toggle">App controlled game</label>
-        <input type="checkbox" id="app-controlled-toggle">
+        <label class="switch">
+            <input type="checkbox" id="app-controlled-toggle">
+            <span class="slider round"></span>
+        </label>
+        <span>App controlled game</span>
     </section>
 
     <!-- Extra buttons section (shown when App Controlled Game is active) -->
     <section id="extra-buttons" style="display: none;">
         <button class="extra-button" onclick="dealCards()">Deal Cards</button>
-        <button class="extra-button">New Court Card</button>
-        <button class="extra-button">Return Discards</button>
-        <button class="extra-button">Discards</button>
+        <button class="extra-button" onclick="newCourtCard()">New Court Card</button>
+        <button class="extra-button" onclick="returnDiscards()">Return Discards</button>
+        <button class="extra-button" onclick="showDiscards()">Discards</button>
     </section>
 
     <!-- Search Bar -->
