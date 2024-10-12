@@ -58,22 +58,32 @@ body {
     display: flex;
     flex-direction: column; /* Stack items vertically */
     align-items: center;
-    position: relative;
     gap: 10px;
 }
 
-.navbar-header .reset-button {
+.navbar-header{
     position: absolute;
     left: 20px; /* Adjust as needed */
     top: 50%;
     transform: translateY(-50%);
 }
-
+.reset-button {
+    padding: 8px 16px;
+    background-color: var(--button-background);
+    color: var(--button-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+/* Header Title */
 .navbar h1 {
     margin: 0;
     font-size: 28px;
     color: var(--header-text-color);
     text-shadow: 1px 1px 2px var(--secondary-color);
+    margin-bottom: 15px; /* Add margin to separate from buttons */
 }
 
 .reset-button {
