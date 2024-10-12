@@ -90,57 +90,61 @@ body {
     background-color: var(--active-button-background);
 }
 /* Toggle Switch Styles */
-.switch {
+.toggle-container {
+    display: flex;
+    align-items: center;
+    margin-left: 20px; /* Adjust as needed */
+}
+
+.toggle-switch {
     position: relative;
     display: inline-block;
-    width: 60px;
-    height: 34px;
-    margin-left: 20px; /* Adjust as needed */
-    vertical-align: middle;
+    width: 50px;
+    height: 24px;
+    margin-right: 10px;
 }
 
-.switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
+.toggle-switch input {
+    display: none;
 }
 
-/* The slider */
 .slider {
     position: absolute;
     cursor: pointer;
+    background-color: #ccc;
+    border-radius: 34px;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #ccc;
-    transition: .4s;
-    border-radius: 34px; /* Make it rounded */
+    transition: background-color 0.4s;
 }
 
 .slider:before {
-    position: absolute;
     content: "";
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
+    position: absolute;
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
     background-color: white;
-    transition: .4s;
-    border-radius: 50%; /* Make it rounded */
+    border-radius: 50%;
+    transition: transform 0.4s;
 }
 
-input:checked + .slider {
+.toggle-switch input:checked + .slider {
     background-color: var(--accent-color);
 }
 
-input:focus + .slider {
-    box-shadow: 0 0 1px var(--accent-color);
-}
-
-input:checked + .slider:before {
+.toggle-switch input:checked + .slider:before {
     transform: translateX(26px);
 }
+
+.toggle-text {
+    font-size: 14px;
+    color: var(--font-color);
+}
+
 
 /* Toggle Text */
 #toggle-text {
