@@ -50,42 +50,37 @@ body {
     padding: 10px 20px;
     border-radius: 8px;
     margin-bottom: 20px;
-    text-align: center;
     position: relative;
 }
 
-.navbar-header {
+/* Navbar Content */
+.navbar-content {
     display: flex;
-    flex-direction: column; /* Stack items vertically */
     align-items: center;
-    gap: 10px;
+    justify-content: center;
+    position: relative;
 }
 
-.navbar-header{
+/* Left-aligned section */
+.navbar-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     position: absolute;
     left: 20px; /* Adjust as needed */
-    top: 50%;
-    transform: translateY(-50%);
 }
-.reset-button {
-    padding: 8px 16px;
-    background-color: var(--button-background);
-    color: var(--button-color);
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 14px;
-    transition: background-color 0.3s;
-}
+
 /* Header Title */
 .navbar h1 {
     margin: 0;
     font-size: 28px;
     color: var(--header-text-color);
     text-shadow: 1px 1px 2px var(--secondary-color);
-    margin-bottom: 15px; /* Add margin to separate from buttons */
+    text-align: center;
+    flex: 1;
 }
 
+/* Reset Button */
 .reset-button {
     padding: 8px 16px;
     background-color: var(--button-background);
@@ -95,30 +90,35 @@ body {
     cursor: pointer;
     font-size: 14px;
     transition: background-color 0.3s;
+    margin-bottom: 10px; /* Space between button and toggle */
 }
 
+/* Reset Button Hover State */
 .reset-button:hover {
     background-color: var(--active-button-background);
 }
-/* Toggle Switch Styles */
+
+/* Toggle Wrapper */
 .toggle-wrapper {
     display: flex;
-    flex-direction: column; /* Stack toggle and text vertically */
-    align-items: center;
-    margin-top: 10px; /* Space between the button and toggle */
+    flex-direction: column;
+    align-items: flex-start;
 }
 
+/* Adjust the toggle switch size */
 .toggle-switch {
     position: relative;
     display: inline-block;
-    width: 40px; /* Reduced width */
-    height: 20px; /* Reduced height */
+    width: 40px; /* Adjust size as needed */
+    height: 20px;
 }
 
+/* Toggle Switch Input */
 .toggle-switch input {
     display: none; /* Hide the default checkbox */
 }
 
+/* Slider */
 .slider {
     position: absolute;
     cursor: pointer;
@@ -131,10 +131,11 @@ body {
     transition: background-color 0.4s;
 }
 
+/* Slider Knob */
 .slider:before {
     content: "";
     position: absolute;
-    height: 16px; /* Adjusted size */
+    height: 16px;
     width: 16px;
     left: 2px;
     bottom: 2px;
@@ -143,6 +144,7 @@ body {
     transition: transform 0.4s;
 }
 
+/* Toggle Switch Checked State */
 .toggle-switch input:checked + .slider {
     background-color: var(--accent-color);
 }
@@ -151,24 +153,11 @@ body {
     transform: translateX(20px); /* Adjusted for new size */
 }
 
+/* Toggle Text */
 .toggle-text {
     font-size: 14px;
     color: var(--font-color);
     margin-top: 5px; /* Space between toggle and text */
-}
-
-/* Position the toggle and text */
-.navbar-header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
-}
-
-.switch,
-#toggle-text {
-    margin-left: 10px;
 }
 
 /* Navigation Buttons */
@@ -195,15 +184,6 @@ body {
 .nav-button:hover,
 .nav-button.active {
     background-color: var(--active-button-background);
-}
-/* App Controlled Game Buttons */
-.app-control-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
-    margin-top: 10px;
-    margin-bottom: 10px;
 }
 
 /* Theme Toggle Button */
@@ -368,6 +348,16 @@ body {
     color: black;
 }
 
+/* App Controlled Game Buttons */
+.app-control-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
 /* Card List */
 .card-list {
     display: grid;
@@ -430,81 +420,6 @@ body {
     flex: 0 0 auto; /* Prevent buttons from growing or shrinking */
 }
 
-/* Match Filter Button Colors for Assignment Buttons */
-
-/* Red Button */
-.assign-button.red-button {
-    background-color: red;
-    color: white;
-}
-
-.assign-button.red-button:hover,
-.assign-button.red-button.active {
-    background-color: darkred;
-    color: white;
-}
-
-/* Blue Button */
-.assign-button.blue-button {
-    background-color: blue;
-    color: white;
-}
-
-.assign-button.blue-button:hover,
-.assign-button.blue-button.active {
-    background-color: darkblue;
-    color: white;
-}
-
-/* Gold Button */
-.assign-button.gold-button {
-    background-color: gold;
-    color: black;
-}
-
-.assign-button.gold-button:hover,
-.assign-button.gold-button.active {
-    background-color: darkgoldenrod;
-    color: black;
-}
-
-/* White Button */
-.assign-button.white-button {
-    background-color: white;
-    color: black;
-    border: 1px solid #ccc;
-}
-
-.assign-button.white-button:hover,
-.assign-button.white-button.active {
-    background-color: #f0f0f0;
-    color: black;
-}
-
-/* Court Button */
-.assign-button.court-button {
-    background-color: purple;
-    color: white;
-}
-
-.assign-button.court-button:hover,
-.assign-button.court-button.active {
-    background-color: indigo;
-    color: white;
-}
-
-/* Draft Button */
-.assign-button.draft-button {
-    background-color: lightgray;
-    color: black;
-}
-
-.assign-button.draft-button:hover,
-.assign-button.draft-button.active {
-    background-color: gray;
-    color: black;
-}
-
 /* Hover and Active States for Assignment Buttons */
 .assign-button:hover {
     background-color: var(--active-button-background);
@@ -563,15 +478,20 @@ body {
 }
 
 @media (max-width: 600px) {
-    .navbar-header {
-        flex-direction: column;
+    /* Adjust navbar-left for small screens */
+    .navbar-left {
+        position: static;
         align-items: center;
+        margin-bottom: 10px;
     }
 
-    .navbar-header .reset-button {
-        position: static;
-        transform: none;
-        margin-bottom: 10px;
+    .navbar-content {
+        flex-direction: column;
+    }
+
+    /* Center align the items */
+    .navbar-left, .toggle-wrapper {
+        align-items: center;
     }
 
     .navbar h1 {

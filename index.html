@@ -20,11 +20,12 @@
 
     <!-- Navigation Bar -->
     <header class="navbar">
-        <h1>Arcs Card Tracker</h1>
-        <div class="navbar-header">
-            <button class="reset-button" onclick="resetSelections()">New Game</button>
-            
-           <!-- App Controlled Game Toggle -->
+        <div class="navbar-content">
+            <!-- Left-aligned section -->
+            <div class="navbar-left">
+                <button class="reset-button" onclick="resetSelections()">New Game</button>
+
+                <!-- App Controlled Game Toggle -->
                 <div class="toggle-wrapper">
                     <div class="toggle-switch">
                         <input type="checkbox" id="app-controlled-toggle">
@@ -32,8 +33,10 @@
                     </div>
                     <span class="toggle-text">App Controlled Game</span>
                 </div>
+            </div>
 
-         
+            <!-- Centered Header Title -->
+            <h1>Arcs Card Tracker</h1>
         </div>
         <nav class="nav-buttons">
             <button class="nav-button active" data-type="court">Court</button>
