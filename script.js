@@ -77,6 +77,19 @@ function initializeApp() {
         filterCardsBySearch(query);
     });
 
+    // Handle App Controlled Game Toggle
+        const appControlledToggle = document.getElementById('app-controlled-toggle');
+        const appControlButtons = document.getElementById('app-control-buttons');
+
+        // Event listener for the toggle switch
+        appControlledToggle.addEventListener('change', () => {
+            if (appControlledToggle.checked) {
+                appControlButtons.style.display = 'flex';
+            } else {
+                appControlButtons.style.display = 'none';
+            }
+        });
+
     // Initial display of cards
     displayAllCards(currentType);
 }

@@ -89,6 +89,81 @@ body {
 .reset-button:hover {
     background-color: var(--active-button-background);
 }
+/* Toggle Switch Styles */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    margin-left: 20px; /* Adjust as needed */
+    vertical-align: middle;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px; /* Make it rounded */
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%; /* Make it rounded */
+}
+
+input:checked + .slider {
+    background-color: var(--accent-color);
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px var(--accent-color);
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+/* Toggle Text */
+#toggle-text {
+    margin: 0;
+    font-size: 14px;
+    color: var(--font-color);
+    text-align: center;
+    margin-top: 5px;
+}
+
+/* Position the toggle and text */
+.navbar-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+}
+
+.switch,
+#toggle-text {
+    margin-left: 10px;
+}
 
 /* Navigation Buttons */
 .nav-buttons {
@@ -114,6 +189,15 @@ body {
 .nav-button:hover,
 .nav-button.active {
     background-color: var(--active-button-background);
+}
+/* App Controlled Game Buttons */
+.app-control-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 /* Theme Toggle Button */
