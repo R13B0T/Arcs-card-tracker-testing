@@ -2,7 +2,12 @@
 *, *::before, *::after {
     box-sizing: border-box;
 }
-
+@font-face {
+    font-family: 'FMBolyarPro';
+    src: url('fonts/FMBolyarPro-300.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 /* Root Variables for Theming */
 :root {
     /* Light Mode Colors */
@@ -68,7 +73,7 @@ body {
     flex-direction: column;
     align-items: flex-start;
     position: absolute;
-    top: 60%; /* Adjusted to lower the position */
+    top: 75%; /* Adjusted to lower the position */
     left: 20px;
     transform: translateY(-50%); /* Center vertically */
 }
@@ -78,9 +83,15 @@ body {
     margin: 0;
     font-size: 28px;
     color: var(--header-text-color);
-    text-shadow: 1px 1px 2px var(--secondary-color);
     text-align: center;
     flex: 1;
+    font-family: 'FMBolyarPro', sans-serif; /* Changed font */
+}
+
+/* Remove text shadows */
+.navbar h1,
+.card h2 {
+    text-shadow: none;
 }
 
 /* Reset Button */
@@ -390,6 +401,12 @@ body {
     margin-top: 0;
     font-size: 20px;
     margin-bottom: 10px;
+    f font-family: 'FMBolyarPro', sans-serif; /* Changed font */
+}
+
+/* Remove text shadows from card headers */
+.card h2 {
+    text-shadow: none;
 }
 
 .card .description {

@@ -97,6 +97,23 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
+        // Add event listener to the reset button
+        const resetButton = document.getElementById('reset-button');
+        resetButton.addEventListener('click', resetSelections);
+
+        // Function to reset all selections
+        function resetSelections() {
+            if (confirm('Are you sure you want to start a new game? This will clear all your selections.')) {
+                cardData.forEach(card => {
+                    card.player = 'none';
+                });
+                localStorage.removeItem('cardData'); // Clear saved data
+                currentFilter = null;
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                displayAllCards(currentType);
+            }
+        }
+
         // Initial display of cards
         displayAllCards(currentType);
     }
@@ -230,18 +247,5 @@ document.addEventListener('DOMContentLoaded', () => {
         const sanitizedText = text.replace(/</g, "&lt;").replace(/>/g, "&gt;"); // Sanitize HTML
         const formattedText = sanitizedText.replace(regex, '<strong>$1</strong>');
         return formattedText;
-    }
-
-    // Function to reset all selections
-    function resetSelections() {
-        if (confirm('Are you sure you want to start a new game? This will clear all your selections.')) {
-            cardData.forEach(card => {
-                card.player = 'none';
-            });
-            localStorage.removeItem('cardData'); // Clear saved data
-            currentFilter = null;
-            filterButtons.forEach(btn => btn.classList.remove('active'));
-            displayAllCards(currentType);
-        }
     }
 });
