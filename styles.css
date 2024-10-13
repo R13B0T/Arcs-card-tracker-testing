@@ -1,13 +1,16 @@
-/* Apply box-sizing globally */
-*, *::before, *::after {
-    box-sizing: border-box;
-}
+/* Include this at the very top of your styles.css */
 @font-face {
     font-family: 'FMBolyarPro';
     src: url('fonts/FMBolyarPro-300.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
+
+/* Apply box-sizing globally */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 /* Root Variables for Theming */
 :root {
     /* Light Mode Colors */
@@ -85,7 +88,7 @@ body {
     color: var(--header-text-color);
     text-align: center;
     flex: 1;
-    font-family: 'FMBolyarPro', sans-serif; /* Changed font */
+    font-family: 'FMBolyarPro', sans-serif; /* Updated font */
 }
 
 /* Remove text shadows */
@@ -397,11 +400,12 @@ body {
     transform: translateY(-5px);
 }
 
+/* Card Titles */
 .card h2 {
     margin-top: 0;
     font-size: 20px;
     margin-bottom: 10px;
-    f font-family: 'FMBolyarPro', sans-serif; /* Changed font */
+    font-family: 'FMBolyarPro', sans-serif; /* Updated font */
 }
 
 /* Remove text shadows from card headers */

@@ -25,6 +25,20 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // Handle App Controlled Game Toggle
+    const appControlledToggle = document.getElementById('app-controlled-toggle');
+    const appControlButtons = document.getElementById('app-control-buttons');
+
+    // Event listener for the toggle switch
+    appControlledToggle.addEventListener('change', () => {
+        console.log('Toggle changed:', appControlledToggle.checked);
+        if (appControlledToggle.checked) {
+            appControlButtons.style.display = 'flex';
+        } else {
+            appControlButtons.style.display = 'none';
+        }
+    });
+
     // Variables for navigation and filtering
     const navButtons = document.querySelectorAll('.nav-button');
     const filterButtons = document.querySelectorAll('.filter-button');
@@ -51,6 +65,9 @@ document.addEventListener('DOMContentLoaded', () => {
             console.error('Error loading card data:', error);
             const cardList = document.getElementById('card-list');
             cardList.innerHTML = '<p>Error loading card data. Please try again later.</p>';
+            
+            // Initialize the app even if data loading fails
+            initializeApp();
         });
 
     // Initialize the application after data is loaded
@@ -83,36 +100,9 @@ document.addEventListener('DOMContentLoaded', () => {
             filterCardsBySearch(query);
         });
 
-        // Handle App Controlled Game Toggle
-        const appControlledToggle = document.getElementById('app-controlled-toggle');
-        const appControlButtons = document.getElementById('app-control-buttons');
-
-        // Event listener for the toggle switch
-        appControlledToggle.addEventListener('change', () => {
-            console.log('Toggle changed:', appControlledToggle.checked);
-            if (appControlledToggle.checked) {
-                appControlButtons.style.display = 'flex';
-            } else {
-                appControlButtons.style.display = 'none';
-            }
-        });
-
         // Add event listener to the reset button
         const resetButton = document.getElementById('reset-button');
         resetButton.addEventListener('click', resetSelections);
-
-        // Function to reset all selections
-        function resetSelections() {
-            if (confirm('Are you sure you want to start a new game? This will clear all your selections.')) {
-                cardData.forEach(card => {
-                    card.player = 'none';
-                });
-                localStorage.removeItem('cardData'); // Clear saved data
-                currentFilter = null;
-                filterButtons.forEach(btn => btn.classList.remove('active'));
-                displayAllCards(currentType);
-            }
-        }
 
         // Initial display of cards
         displayAllCards(currentType);
@@ -247,5 +237,18 @@ document.addEventListener('DOMContentLoaded', () => {
         const sanitizedText = text.replace(/</g, "&lt;").replace(/>/g, "&gt;"); // Sanitize HTML
         const formattedText = sanitizedText.replace(regex, '<strong>$1</strong>');
         return formattedText;
+    }
+
+    // Function to reset all selections
+    function resetSelections() {
+        if (confirm('Are you sure you want to start a new game? This will clear all your selections.')) {
+            cardData.forEach(card => {
+                card.player = 'none';
+            });
+            localStorage.removeItem('cardData'); // Clear saved data
+            currentFilter = null;
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            displayAllCards(currentType);
+        }
     }
 });
