@@ -475,10 +475,9 @@ body {
 /* Responsive Design for Medium Screens (Tablets) */
 @media (max-width: 768px) {
     .card-list {
-        grid-template-columns: 1fr; /* One column for tablets and smaller */
+        grid-template-columns: 1fr !important; /* Force single column for tablets and smaller */
     }
 
-    /* Ensure card content is not squeezed */
     .card {
         padding: 15px; 
     }
@@ -538,7 +537,7 @@ body {
     }
 
     .card-list {
-        grid-template-columns: 1fr; /* Display one card per row on mobile */
+        grid-template-columns: 1fr !important; /* Display one card per row on mobile */
         gap: 15px; /* Reduce gap between cards */
     }
 
@@ -580,7 +579,7 @@ body {
     }
 
     .card-list {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr !important; /* Ensure single column for very small screens */
     }
 
     .assign-button {
