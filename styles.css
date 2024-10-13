@@ -12,7 +12,6 @@
 
 /* Root Variables for Theming */
 :root {
-    /* Light Mode Colors */
     --primary-color: #2c3e50;
     --secondary-color: #ecf0f1;
     --accent-color: #3498db;
@@ -27,7 +26,6 @@
 }
 
 .dark-mode {
-    /* Dark Mode Colors */
     --primary-color: #ecf0f1;
     --secondary-color: #2c3e50;
     --accent-color: #e74c3c;
@@ -65,10 +63,11 @@ body {
 /* Navbar Content */
 .navbar-content {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    flex-wrap: wrap; /* Ensure buttons do not stack unnecessarily */
     gap: 10px;
+    flex-wrap: nowrap;
+    flex-direction: row;
 }
 
 /* Header Title */
@@ -80,7 +79,24 @@ body {
     flex: 1;
     font-family: 'FMBolyarPro', sans-serif;
     font-weight: 300;
-    text-shadow: none;
+}
+
+/* Navigation Buttons */
+.nav-button {
+    padding: 10px 18px;
+    background-color: var(--button-background);
+    color: var(--button-color);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    flex: 0 1 auto;
+}
+
+.nav-button:hover,
+.nav-button.active {
+    background-color: var(--active-button-background);
 }
 
 /* Reset Button */
@@ -93,7 +109,6 @@ body {
     cursor: pointer;
     font-size: 16px;
     transition: background-color 0.3s;
-    margin-bottom: 10px;
 }
 
 .reset-button:hover {
@@ -152,51 +167,6 @@ body {
 
 .slider.round:before {
     border-radius: 50%;
-}
-
-/* Toggle Text */
-.toggle-text {
-    font-size: 16px;
-    color: var(--header-text-color);
-    margin-top: 8px;
-}
-
-/* Theme Toggle Button */
-.theme-toggle {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background-color: var(--button-background);
-    color: var(--button-color);
-    border: none;
-    border-radius: 50%;
-    padding: 15px;
-    cursor: pointer;
-    z-index: 1000;
-    font-size: 20px;
-    transition: background-color 0.3s;
-}
-
-.theme-toggle:hover {
-    background-color: var(--active-button-background);
-}
-
-/* Navigation Buttons */
-.nav-button {
-    padding: 10px 18px;
-    background-color: var(--button-background);
-    color: var(--button-color);
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s;
-    margin-bottom: 10px;
-}
-
-.nav-button:hover,
-.nav-button.active {
-    background-color: var(--active-button-background);
 }
 
 /* Filter Buttons */
@@ -430,10 +400,10 @@ body {
     }
 
     .navbar-content {
-        flex-direction: row; /* Ensure buttons stay in a row */
+        flex-direction: row;
         justify-content: center;
         align-items: center;
-        gap: 8px; /* Reduce the gap between buttons */
+        gap: 8px;
     }
 
     .nav-button, .reset-button {
