@@ -457,66 +457,7 @@ body {
 }
 
 /* Apply specific colors to assignment buttons */
-.assign-button.red-button {
-    background-color: red;
-    color: white;
-}
-
-.assign-button.red-button:hover,
-.assign-button.red-button.active {
-    background-color: darkred;
-}
-
-.assign-button.blue-button {
-    background-color: blue;
-    color: white;
-}
-
-.assign-button.blue-button:hover,
-.assign-button.blue-button.active {
-    background-color: darkblue;
-}
-
-.assign-button.gold-button {
-    background-color: gold;
-    color: black;
-}
-
-.assign-button.gold-button:hover,
-.assign-button.gold-button.active {
-    background-color: goldenrod;
-}
-
-.assign-button.white-button {
-    background-color: white;
-    color: black;
-    border: 1px solid #ccc;
-}
-
-.assign-button.white-button:hover,
-.assign-button.white-button.active {
-    background-color: #f0f0f0;
-}
-
-.assign-button.court-button {
-    background-color: purple;
-    color: white;
-}
-
-.assign-button.court-button:hover,
-.assign-button.court-button.active {
-    background-color: indigo;
-}
-
-.assign-button.draft-button {
-    background-color: lightgray;
-    color: black;
-}
-
-.assign-button.draft-button:hover,
-.assign-button.draft-button.active {
-    background-color: gray;
-}
+/* ... (colors are already set above) */
 
 /* Hover and Active States for Assignment Buttons */
 .assign-button:hover {
@@ -565,10 +506,10 @@ body {
     }
 
     .assign-button {
-        width: 50px;
-        height: 32px;
-        font-size: 12px;
-        padding: 5px 8px;
+        width: 60px;
+        height: 38px;
+        font-size: 14px;
+        padding: 6px 10px;
     }
 }
 
@@ -622,18 +563,18 @@ body {
     }
 
     .card h2 {
-        font-size: 20px;
+        font-size: 22px;
     }
 
     .card .description {
-        font-size: 18px;
+        font-size: 20px;
     }
 
     .assign-button {
-        width: 60px;
-        height: 36px;
-        font-size: 14px;
-        padding: 6px 10px;
+        width: 70px;
+        height: 44px;
+        font-size: 16px;
+        padding: 8px 12px;
     }
 }
 
@@ -662,18 +603,18 @@ body {
     }
 
     .card h2 {
-        font-size: 22px;
+        font-size: 24px;
     }
 
     .card .description {
-        font-size: 20px;
+        font-size: 22px;
     }
 
     .assign-button {
-        width: 70px;
-        height: 40px;
-        font-size: 16px;
-        padding: 8px 12px;
+        width: 80px;
+        height: 48px;
+        font-size: 18px;
+        padding: 10px 14px;
     }
 }
 
