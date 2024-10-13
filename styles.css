@@ -47,10 +47,11 @@ body {
 /* Navigation Bar */
 .navbar {
     background-color: var(--nav-background);
-    padding: 10px 20px;
+    padding: 20px 20px; /* Increased padding to provide more space */
     border-radius: 8px;
     margin-bottom: 20px;
     position: relative;
+    overflow: hidden; /* Contain child elements */
 }
 
 /* Navbar Content */
@@ -67,7 +68,9 @@ body {
     flex-direction: column;
     align-items: flex-start;
     position: absolute;
-    left: 20px; /* Adjust as needed */
+    top: 50%; /* Position halfway down */
+    left: 20px;
+    transform: translateY(-50%); /* Center vertically */
 }
 
 /* Header Title */
@@ -156,7 +159,7 @@ body {
 /* Toggle Text */
 .toggle-text {
     font-size: 14px;
-    color: var(--font-color);
+    color: var(--header-text-color); /* White text */
     margin-top: 5px; /* Space between toggle and text */
 }
 
@@ -361,7 +364,7 @@ body {
 /* Card List */
 .card-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Increased min-width to 320px */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 20px;
     padding: 20px;
 }
@@ -370,7 +373,7 @@ body {
 .card {
     background-color: var(--card-background);
     border-radius: 10px;
-    padding: 15px; /* Reduced padding from 20px to 15px */
+    padding: 15px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s;
     color: var(--font-color);
@@ -396,28 +399,28 @@ body {
 
 .card .player-picker {
     display: flex;
-    flex-wrap: nowrap; /* Prevent buttons from wrapping */
-    gap: 5px; /* Reduced gap from 10px to 5px */
+    flex-wrap: nowrap;
+    gap: 5px;
     margin-top: auto;
-    overflow: hidden; /* Hide any overflow to prevent scroll */
-    padding: 0 5px; /* Add horizontal padding to prevent clipping */
-    justify-content: center; /* Center the buttons */
+    overflow: hidden;
+    padding: 0 5px;
+    justify-content: center;
 }
 
 /* Assignment Buttons */
 .assign-button {
-    width: 44px; /* Adjusted width based on available space */
-    height: 28px; /* Maintain a reasonable height */
-    padding: 3px 6px; /* Maintain or slightly adjust padding */
-    margin: 0; /* Remove any default margins */
-    border: none; /* Remove default borders */
+    width: 44px;
+    height: 28px;
+    padding: 3px 6px;
+    margin: 0;
+    border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 10px; /* Ensure text fits within the button */
+    font-size: 10px;
     background-color: var(--button-background);
     color: var(--button-color);
     transition: background-color 0.3s, color 0.3s, transform 0.2s, border 0.3s;
-    flex: 0 0 auto; /* Prevent buttons from growing or shrinking */
+    flex: 0 0 auto;
 }
 
 /* Hover and Active States for Assignment Buttons */
@@ -429,17 +432,17 @@ body {
 .assign-button.active {
     background-color: var(--active-button-background);
     color: var(--button-color);
-    border: 2px solid black; /* Add black border */
+    border: 2px solid black;
 }
 
 .dark-mode .assign-button.active {
-    border: 2px solid white; /* White border for better contrast in dark mode */
+    border: 2px solid white;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
     body {
-        font-size: 16px; /* Slightly reduced font size for better fit */
+        font-size: 16px;
     }
 
     .navbar h1 {
@@ -470,10 +473,10 @@ body {
     }
 
     .assign-button {
-        width: 40px; /* Adjusted width */
-        height: 26px; /* Adjusted height */
-        font-size: 9px; /* Adjusted font size */
-        padding: 2px 5px; /* Adjusted padding */
+        width: 40px;
+        height: 26px;
+        font-size: 9px;
+        padding: 2px 5px;
     }
 }
 
@@ -522,16 +525,16 @@ body {
     }
 
     .assign-button {
-        width: 35px; /* Further adjusted width for very small screens */
-        height: 24px; /* Further adjusted height for very small screens */
-        font-size: 8px; /* Minimum font size */
-        padding: 1px 4px; /* Minimum padding */
+        width: 35px;
+        height: 24px;
+        font-size: 8px;
+        padding: 1px 4px;
     }
 }
 
 @media (max-width: 400px) {
     body {
-        font-size: 14px; /* Further reduce base font size for very small screens */
+        font-size: 14px;
     }
 
     .navbar h1 {
@@ -562,10 +565,10 @@ body {
     }
 
     .assign-button {
-        width: 30px; /* Minimum width */
-        height: 22px; /* Minimum height */
-        font-size: 7px; /* Minimum font size */
-        padding: 0px 3px; /* Minimum padding */
+        width: 30px;
+        height: 22px;
+        font-size: 7px;
+        padding: 0px 3px;
     }
 }
 
