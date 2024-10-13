@@ -382,10 +382,10 @@ body {
     margin-bottom: 15px;
 }
 
-/* Card List */
+/* Card List for Large Screens */
 .card-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Multiple columns for larger screens */
     gap: 25px;
     padding: 25px;
 }
@@ -472,7 +472,33 @@ body {
     border: 2px solid white;
 }
 
-/* Responsive Design */
+/* Responsive Design for Medium Screens (Tablets) */
+@media (max-width: 768px) {
+    .card-list {
+        grid-template-columns: 1fr; /* One column for tablets and smaller */
+    }
+
+    /* Ensure card content is not squeezed */
+    .card {
+        padding: 15px; 
+    }
+
+    .card h2 {
+        font-size: 18px;
+    }
+
+    .card .description {
+        font-size: 14px;
+    }
+
+    .assign-button {
+        width: 60px;
+        height: 40px;
+        font-size: 14px;
+    }
+}
+
+/* Further adjustments for Mobile (smaller than 600px) */
 @media (max-width: 600px) {
     body {
         font-size: 14px;
@@ -512,8 +538,8 @@ body {
     }
 
     .card-list {
-        grid-template-columns: 1fr;
-        gap: 15px;
+        grid-template-columns: 1fr; /* Display one card per row on mobile */
+        gap: 15px; /* Reduce gap between cards */
     }
 
     .card {
@@ -537,10 +563,11 @@ body {
     .theme-toggle {
         top: 10px;
         right: 10px;
-        padding: 10px;
+        padding: 10px; /* Smaller toggle button */
     }
 }
 
+/* Further adjustments for Extra Small Screens (below 400px) */
 @media (max-width: 400px) {
     .navbar h1 {
         font-size: 22px;
