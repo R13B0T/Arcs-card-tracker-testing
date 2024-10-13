@@ -2,76 +2,46 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Arcs Card Tracker</title>
+    <!-- Step 1: Include the viewport meta tag -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website Title</title>
+    <!-- Link to your CSS file -->
     <link rel="stylesheet" href="styles.css">
-    <!-- Font Awesome for icons -->
-    <script src="https://kit.fontawesome.com/your-font-awesome-kit.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <!-- Theme Toggle Button -->
-    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Theme">
-        <i class="fas fa-moon"></i>
-    </button>
-
     <!-- Navigation Bar -->
-    <header class="navbar">
+    <div class="navbar">
         <div class="navbar-content">
-            <!-- Left-aligned section -->
-            <div class="navbar-left">
-                <button class="reset-button" id="reset-button">New Game</button>
-
-                <!-- App Controlled Game Toggle -->
-                <div class="toggle-wrapper">
-                    <label class="switch">
-                        <input type="checkbox" id="app-controlled-toggle">
-                        <span class="slider round"></span>
-                    </label>
-                    <span class="toggle-text">App Controlled Game</span>
-                </div>
-            </div>
-
-            <!-- Centered Header Title -->
-            <h1>Arcs Card Tracker</h1>
+            <h1>Your Website Header</h1>
+            <!-- You can include other elements here -->
         </div>
-
-        <!-- Navigation Buttons -->
-        <nav class="nav-buttons">
-            <button class="nav-button active" data-type="court">Court</button>
-            <button class="nav-button" data-type="leader">Leader</button>
-            <button class="nav-button" data-type="lore">Lore</button>
-        </nav>
-    </header>
-
-    <!-- Search Bar -->
-    <div class="search-container">
-        <label for="search-input" class="visually-hidden">Search Cards</label>
-        <input type="text" id="search-input" placeholder="Search cards...">
     </div>
 
     <!-- Filter Buttons -->
-    <section class="filter-buttons">
-        <button class="filter-button court-button" data-color="court">Court</button>
-        <button class="filter-button draft-button" data-color="draft">Draft</button>
-        <button class="filter-button red-button" data-color="red">Red</button>
-        <button class="filter-button blue-button" data-color="blue">Blue</button>
-        <button class="filter-button gold-button" data-color="gold">Gold</button>
-        <button class="filter-button white-button" data-color="white">White</button>
-    </section>
-
-    <!-- App Controlled Game Buttons -->
-    <section class="app-control-buttons" id="app-control-buttons" style="display: none;">
-        <button class="nav-button" id="start-game-button">Start Game</button>
-        <button class="nav-button" id="draw-court-card-button">Draw Court Card</button>
-        <button class="nav-button" id="reset-court-deck-button">Reset Court Deck</button>
-        <button class="nav-button" id="discards-button">Discards</button>
-    </section>
-
-    <!-- Card List -->
-    <div id="card-list" class="card-list">
-        <!-- Cards will be dynamically inserted here -->
+    <div class="filter-buttons">
+        <button class="filter-button red-button">Red</button>
+        <button class="filter-button blue-button">Blue</button>
+        <button class="filter-button gold-button">Gold</button>
+        <!-- Add other filter buttons as needed -->
     </div>
 
-    <!-- JavaScript File -->
+    <!-- Card List -->
+    <div class="card-list">
+        <!-- Example Card -->
+        <div class="card">
+            <h2>Card Title</h2>
+            <p class="description">Card description goes here.</p>
+            <div class="player-picker">
+                <button class="assign-button red-button">Red</button>
+                <button class="assign-button blue-button">Blue</button>
+                <button class="assign-button gold-button">Gold</button>
+                <!-- Add other assignment buttons as needed -->
+            </div>
+        </div>
+        <!-- Repeat card structure for more cards -->
+    </div>
+
+    <!-- Include your JavaScript file -->
     <script src="script.js"></script>
 </body>
 </html>
