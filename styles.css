@@ -14,32 +14,32 @@
 /* Root Variables for Theming */
 :root {
     /* Light Mode Colors */
-    --primary-color: #2c3e50;
-    --secondary-color: #ecf0f1;
-    --accent-color: #3498db;
-    --font-color: #2c3e50;
-    --background-color: #ecf0f1;
-    --card-background: #ffffff;
-    --button-background: #3498db;
-    --button-color: #ffffff;
-    --nav-background: #2c3e50;
-    --header-text-color: #ffffff;
-    --active-button-background: #2980b9;
+    --primary-color: #2c3e50;       /* Dark blue */
+    --secondary-color: #ecf0f1;     /* Light gray */
+    --accent-color: #3498db;        /* Blue */
+    --font-color: #2c3e50;          /* Dark blue (text color) */
+    --background-color: #ecf0f1;    /* Light gray (background color) */
+    --card-background: #ffffff;     /* White background for cards */
+    --button-background: #3498db;   /* Blue buttons */
+    --button-color: #ffffff;        /* White text on buttons */
+    --nav-background: #2c3e50;      /* Dark blue for header */
+    --header-text-color: #ffffff;   /* White text for header */
+    --active-button-background: #2980b9; /* Darker blue for active buttons */
 }
 
 .dark-mode {
     /* Dark Mode Colors */
-    --primary-color: #ecf0f1;
-    --secondary-color: #2c3e50;
-    --accent-color: #e74c3c;
-    --font-color: #ecf0f1;
-    --background-color: #2c3e50;
-    --card-background: #34495e;
-    --button-background: #e74c3c;
-    --button-color: #ffffff;
-    --nav-background: #34495e;
-    --header-text-color: #ecf0f1;
-    --active-button-background: #c0392b;
+    --primary-color: #ecf0f1;       /* Light gray */
+    --secondary-color: #2c3e50;     /* Dark blue */
+    --accent-color: #e74c3c;        /* Red */
+    --font-color: #ecf0f1;          /* Light gray (text color) */
+    --background-color: #2c3e50;    /* Dark blue (background color) */
+    --card-background: #34495e;     /* Darker blue for cards */
+    --button-background: #e74c3c;   /* Red buttons */
+    --button-color: #ffffff;        /* White text on buttons */
+    --nav-background: #34495e;      /* Match header background to card background */
+    --header-text-color: #ecf0f1;   /* Light gray text for header */
+    --active-button-background: #c0392b; /* Darker red for active buttons */
 }
 
 /* Global Styles */
@@ -77,7 +77,7 @@ body {
     flex-direction: column;
     align-items: flex-start;
     position: absolute;
-    top: 75%;
+    top: 75%; /* Adjusted to lower the position */
     left: 20px;
     transform: translateY(-50%);
 }
@@ -254,6 +254,7 @@ body {
     border-color: var(--accent-color);
 }
 
+/* Hide visually but remain accessible to screen readers */
 .visually-hidden {
     position: absolute;
     width: 1px;
@@ -286,7 +287,90 @@ body {
 }
 
 /* Specific Filter Button Colors */
-/* ... (same as before) */
+.filter-button.red-button,
+.assign-button.red-button {
+    background-color: red;
+    color: white;
+}
+
+.filter-button.red-button:hover,
+.filter-button.red-button.active,
+.assign-button.red-button:hover,
+.assign-button.red-button.active {
+    background-color: darkred;
+    color: white;
+}
+
+.filter-button.blue-button,
+.assign-button.blue-button {
+    background-color: blue;
+    color: white;
+}
+
+.filter-button.blue-button:hover,
+.filter-button.blue-button.active,
+.assign-button.blue-button:hover,
+.assign-button.blue-button.active {
+    background-color: darkblue;
+    color: white;
+}
+
+.filter-button.gold-button,
+.assign-button.gold-button {
+    background-color: gold;
+    color: black;
+}
+
+.filter-button.gold-button:hover,
+.filter-button.gold-button.active,
+.assign-button.gold-button:hover,
+.assign-button.gold-button.active {
+    background-color: goldenrod;
+    color: black;
+}
+
+.filter-button.white-button,
+.assign-button.white-button {
+    background-color: white;
+    color: black;
+    border: 1px solid #ccc;
+}
+
+.filter-button.white-button:hover,
+.filter-button.white-button.active,
+.assign-button.white-button:hover,
+.assign-button.white-button.active {
+    background-color: #f0f0f0;
+    color: black;
+}
+
+.filter-button.court-button,
+.assign-button.court-button {
+    background-color: purple;
+    color: white;
+}
+
+.filter-button.court-button:hover,
+.filter-button.court-button.active,
+.assign-button.court-button:hover,
+.assign-button.court-button.active {
+    background-color: indigo;
+    color: white;
+}
+
+.filter-button.draft-button,
+.assign-button.draft-button {
+    background-color: lightgray;
+    color: black;
+}
+
+.filter-button.draft-button:hover,
+.filter-button.draft-button.active,
+.assign-button.draft-button:hover,
+.assign-button.draft-button.active {
+    background-color: gray;
+    color: black;
+}
 
 /* App Controlled Game Buttons */
 .app-control-buttons {
@@ -330,6 +414,7 @@ body {
     margin-bottom: 10px;
     font-family: 'FMBolyarPro', sans-serif;
     font-weight: 300;
+    text-align: center; /* Center the card headers */
 }
 
 /* Remove text shadows from card headers */
@@ -358,7 +443,36 @@ body {
 }
 
 /* Assignment Buttons */
-/* ... (same as before) */
+.assign-button {
+    width: 44px;
+    height: 28px;
+    padding: 3px 6px;
+    margin: 0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 10px;
+    background-color: var(--button-background);
+    color: var(--button-color);
+    transition: background-color 0.3s, color 0.3s, transform 0.2s, border 0.3s;
+    flex: 0 0 auto;
+}
+
+/* Hover and Active States for Assignment Buttons */
+.assign-button:hover {
+    background-color: var(--active-button-background);
+    transform: scale(1.05);
+}
+
+.assign-button.active {
+    background-color: var(--active-button-background);
+    color: var(--button-color);
+    border: 2px solid black;
+}
+
+.dark-mode .assign-button.active {
+    border: 2px solid white;
+}
 
 /* Responsive Design */
 @media (max-width: 768px) {
@@ -386,7 +500,7 @@ body {
     }
 
     .card h2 {
-        font-size: 16px; /* Adjusted font size for medium screens */
+        font-size: 16px;
     }
 
     .card .description {
@@ -437,8 +551,12 @@ body {
         padding: 8px 12px;
     }
 
+    .card-list {
+        grid-template-columns: 1fr; /* Display one card per row on mobile */
+    }
+
     .card h2 {
-        font-size: 14px; /* Adjusted font size for small screens */
+        font-size: 14px;
     }
 
     .card .description {
@@ -478,7 +596,7 @@ body {
     }
 
     .card h2 {
-        font-size: 12px; /* Adjusted font size for very small screens */
+        font-size: 12px;
     }
 
     .card .description {
