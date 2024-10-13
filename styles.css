@@ -287,7 +287,90 @@ body {
 }
 
 /* Specific Filter Button Colors */
-/* ... (same as before) */
+.filter-button.red-button,
+.assign-button.red-button {
+    background-color: red;
+    color: white;
+}
+
+.filter-button.red-button:hover,
+.filter-button.red-button.active,
+.assign-button.red-button:hover,
+.assign-button.red-button.active {
+    background-color: darkred;
+    color: white;
+}
+
+.filter-button.blue-button,
+.assign-button.blue-button {
+    background-color: blue;
+    color: white;
+}
+
+.filter-button.blue-button:hover,
+.filter-button.blue-button.active,
+.assign-button.blue-button:hover,
+.assign-button.blue-button.active {
+    background-color: darkblue;
+    color: white;
+}
+
+.filter-button.gold-button,
+.assign-button.gold-button {
+    background-color: gold;
+    color: black;
+}
+
+.filter-button.gold-button:hover,
+.filter-button.gold-button.active,
+.assign-button.gold-button:hover,
+.assign-button.gold-button.active {
+    background-color: goldenrod;
+    color: black;
+}
+
+.filter-button.white-button,
+.assign-button.white-button {
+    background-color: white;
+    color: black;
+    border: 1px solid #ccc;
+}
+
+.filter-button.white-button:hover,
+.filter-button.white-button.active,
+.assign-button.white-button:hover,
+.assign-button.white-button.active {
+    background-color: #f0f0f0;
+    color: black;
+}
+
+.filter-button.court-button,
+.assign-button.court-button {
+    background-color: purple;
+    color: white;
+}
+
+.filter-button.court-button:hover,
+.filter-button.court-button.active,
+.assign-button.court-button:hover,
+.assign-button.court-button.active {
+    background-color: indigo;
+    color: white;
+}
+
+.filter-button.draft-button,
+.assign-button.draft-button {
+    background-color: lightgray;
+    color: black;
+}
+
+.filter-button.draft-button:hover,
+.filter-button.draft-button.active,
+.assign-button.draft-button:hover,
+.assign-button.draft-button.active {
+    background-color: gray;
+    color: black;
+}
 
 /* App Controlled Game Buttons */
 .app-control-buttons {
@@ -369,21 +452,78 @@ body {
     border-radius: 5px;
     cursor: pointer;
     font-size: 12px;
-    background-color: var(--button-background);
-    color: var(--button-color);
     transition: background-color 0.3s, color 0.3s, transform 0.2s, border 0.3s;
     flex: 0 0 auto;
 }
 
+/* Apply specific colors to assignment buttons */
+.assign-button.red-button {
+    background-color: red;
+    color: white;
+}
+
+.assign-button.red-button:hover,
+.assign-button.red-button.active {
+    background-color: darkred;
+}
+
+.assign-button.blue-button {
+    background-color: blue;
+    color: white;
+}
+
+.assign-button.blue-button:hover,
+.assign-button.blue-button.active {
+    background-color: darkblue;
+}
+
+.assign-button.gold-button {
+    background-color: gold;
+    color: black;
+}
+
+.assign-button.gold-button:hover,
+.assign-button.gold-button.active {
+    background-color: goldenrod;
+}
+
+.assign-button.white-button {
+    background-color: white;
+    color: black;
+    border: 1px solid #ccc;
+}
+
+.assign-button.white-button:hover,
+.assign-button.white-button.active {
+    background-color: #f0f0f0;
+}
+
+.assign-button.court-button {
+    background-color: purple;
+    color: white;
+}
+
+.assign-button.court-button:hover,
+.assign-button.court-button.active {
+    background-color: indigo;
+}
+
+.assign-button.draft-button {
+    background-color: lightgray;
+    color: black;
+}
+
+.assign-button.draft-button:hover,
+.assign-button.draft-button.active {
+    background-color: gray;
+}
+
 /* Hover and Active States for Assignment Buttons */
 .assign-button:hover {
-    background-color: var(--active-button-background);
     transform: scale(1.05);
 }
 
 .assign-button.active {
-    background-color: var(--active-button-background);
-    color: var(--button-color);
     border: 2px solid black;
 }
 
