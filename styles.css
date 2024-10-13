@@ -330,7 +330,6 @@ body {
     margin-bottom: 10px;
     font-family: 'FMBolyarPro', sans-serif;
     font-weight: 300;
-    text-align: center; /* Center the card headers */
 }
 
 /* Remove text shadows from card headers */
@@ -387,7 +386,7 @@ body {
     }
 
     .card h2 {
-        font-size: 16px;
+        font-size: 16px; /* Adjusted font size for medium screens */
     }
 
     .card .description {
@@ -438,12 +437,8 @@ body {
         padding: 8px 12px;
     }
 
-    .card-list {
-        grid-template-columns: 1fr; /* Display one card per row on mobile */
-    }
-
     .card h2 {
-        font-size: 14px;
+        font-size: 14px; /* Adjusted font size for small screens */
     }
 
     .card .description {
@@ -483,7 +478,7 @@ body {
     }
 
     .card h2 {
-        font-size: 12px;
+        font-size: 12px; /* Adjusted font size for very small screens */
     }
 
     .card .description {
