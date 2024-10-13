@@ -473,59 +473,16 @@ body {
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
-    body {
-        font-size: 16px;
-    }
-
-    .navbar h1 {
-        font-size: 26px;
-    }
-
-    .nav-button {
-        font-size: 18px;
-        padding: 12px 18px;
-    }
-
-    .reset-button {
-        font-size: 16px;
-        padding: 10px 20px;
-    }
-
-    .filter-button {
-        font-size: 16px;
-        padding: 10px 14px;
-    }
-
-    .card h2 {
-        font-size: 18px;
-    }
-
-    .card .description {
-        font-size: 16px;
-    }
-
-    .assign-button {
-        width: 60px;
-        height: 38px;
-        font-size: 14px;
-        padding: 6px 10px;
-    }
-}
-
 @media (max-width: 600px) {
-    /* Adjust navbar-left for small screens */
-    .navbar-left {
-        position: static;
-        align-items: center;
-        margin-bottom: 15px;
+    body {
+        font-size: 14px;
     }
 
     .navbar-content {
         flex-direction: column;
+        align-items: center;
     }
 
-    /* Center align the items */
     .navbar-left, .toggle-wrapper {
         align-items: center;
     }
@@ -535,86 +492,74 @@ body {
         margin-bottom: 15px;
     }
 
-    .nav-buttons {
-        justify-content: center;
+    .reset-button, .nav-button, .filter-button {
+        font-size: 16px;
+        padding: 10px 15px;
+        width: 100%;
     }
 
-    .nav-button {
-        font-size: 20px;
-        padding: 14px 20px;
+    #search-input {
+        width: 100%;
+        max-width: 100%;
+        padding: 10px;
+        font-size: 16px;
     }
 
-    .reset-button {
-        font-size: 18px;
-        padding: 12px 22px;
-    }
-
-    .filter-button {
-        font-size: 18px;
-        padding: 12px 16px;
+    .filter-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
     }
 
     .card-list {
-        grid-template-columns: 1fr; /* Display one card per row on mobile */
+        grid-template-columns: 1fr;
+        gap: 15px;
     }
 
     .card {
-        padding: 25px;
+        padding: 15px;
     }
 
     .card h2 {
-        font-size: 22px;
+        font-size: 18px;
     }
 
     .card .description {
-        font-size: 20px;
+        font-size: 14px;
     }
 
     .assign-button {
-        width: 70px;
-        height: 44px;
-        font-size: 16px;
-        padding: 8px 12px;
+        width: 60px;
+        height: 40px;
+        font-size: 14px;
+    }
+
+    .theme-toggle {
+        top: 10px;
+        right: 10px;
+        padding: 10px;
     }
 }
 
 @media (max-width: 400px) {
-    body {
-        font-size: 18px;
-    }
-
     .navbar h1 {
         font-size: 22px;
     }
 
-    .nav-button {
-        font-size: 22px;
-        padding: 16px 24px;
+    .reset-button, .nav-button, .filter-button {
+        font-size: 16px;
+        padding: 10px 14px;
+        width: 100%;
     }
 
-    .reset-button {
-        font-size: 20px;
-        padding: 14px 24px;
-    }
-
-    .filter-button {
-        font-size: 20px;
-        padding: 14px 18px;
-    }
-
-    .card h2 {
-        font-size: 24px;
-    }
-
-    .card .description {
-        font-size: 22px;
+    .card-list {
+        grid-template-columns: 1fr;
     }
 
     .assign-button {
-        width: 80px;
-        height: 48px;
-        font-size: 18px;
-        padding: 10px 14px;
+        width: 60px;
+        height: 38px;
+        font-size: 14px;
     }
 }
 
