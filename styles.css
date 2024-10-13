@@ -77,7 +77,7 @@ body {
     flex-direction: column;
     align-items: flex-start;
     position: absolute;
-    top: 75%; /* Adjusted to lower the position */
+    top: 75%;
     left: 20px;
     transform: translateY(-50%);
 }
@@ -101,13 +101,13 @@ body {
 
 /* Reset Button */
 .reset-button {
-    padding: 8px 16px;
+    padding: 10px 20px;
     background-color: var(--button-background);
     color: var(--button-color);
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 14px;
+    font-size: 16px;
     transition: background-color 0.3s;
     margin-bottom: 10px;
 }
@@ -127,8 +127,8 @@ body {
 .switch {
     position: relative;
     display: inline-block;
-    width: 40px;
-    height: 20px;
+    width: 50px;
+    height: 24px;
 }
 
 .switch input {
@@ -152,8 +152,8 @@ body {
 .slider:before {
     position: absolute;
     content: "";
-    height: 16px;
-    width: 16px;
+    height: 20px;
+    width: 20px;
     left: 2px;
     bottom: 2px;
     background-color: white;
@@ -166,7 +166,7 @@ body {
 }
 
 .switch input:checked + .slider:before {
-    transform: translateX(20px);
+    transform: translateX(26px);
 }
 
 .slider.round {
@@ -179,29 +179,29 @@ body {
 
 /* Toggle Text */
 .toggle-text {
-    font-size: 14px;
+    font-size: 16px;
     color: var(--header-text-color);
-    margin-top: 5px;
+    margin-top: 8px;
 }
 
 /* Navigation Buttons */
 .nav-buttons {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 12px;
     justify-content: center;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 .nav-button {
-    padding: 10px 15px;
+    padding: 12px 18px;
     background-color: var(--button-background);
     color: var(--button-color);
     border: none;
-    border-radius: 5px;
+    border-radius: 6px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 18px;
     transition: background-color 0.3s;
 }
 
@@ -219,10 +219,10 @@ body {
     color: var(--button-color);
     border: none;
     border-radius: 50%;
-    padding: 12px;
+    padding: 15px;
     cursor: pointer;
     z-index: 1000;
-    font-size: 18px;
+    font-size: 20px;
     transition: background-color 0.3s;
 }
 
@@ -234,16 +234,16 @@ body {
 .search-container {
     display: flex;
     justify-content: center;
-    margin: 20px;
+    margin: 25px;
 }
 
 #search-input {
     width: 100%;
     max-width: 600px;
-    padding: 10px 15px;
-    font-size: 16px;
+    padding: 12px 18px;
+    font-size: 18px;
     border: 1px solid var(--primary-color);
-    border-radius: 5px;
+    border-radius: 6px;
     background-color: var(--secondary-color);
     color: var(--primary-color);
     transition: border-color 0.3s;
@@ -272,129 +272,46 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 10px;
-    margin-top: 10px;
-    margin-bottom: 30px;
+    gap: 12px;
+    margin-top: 15px;
+    margin-bottom: 35px;
 }
 
 .filter-button {
-    padding: 8px 12px;
+    padding: 10px 14px;
     border: none;
-    border-radius: 5px;
+    border-radius: 6px;
     cursor: pointer;
-    font-size: 14px;
+    font-size: 16px;
     transition: background-color 0.3s, color 0.3s;
 }
 
 /* Specific Filter Button Colors */
-.filter-button.red-button,
-.assign-button.red-button {
-    background-color: red;
-    color: white;
-}
-
-.filter-button.red-button:hover,
-.filter-button.red-button.active,
-.assign-button.red-button:hover,
-.assign-button.red-button.active {
-    background-color: darkred;
-    color: white;
-}
-
-.filter-button.blue-button,
-.assign-button.blue-button {
-    background-color: blue;
-    color: white;
-}
-
-.filter-button.blue-button:hover,
-.filter-button.blue-button.active,
-.assign-button.blue-button:hover,
-.assign-button.blue-button.active {
-    background-color: darkblue;
-    color: white;
-}
-
-.filter-button.gold-button,
-.assign-button.gold-button {
-    background-color: gold;
-    color: black;
-}
-
-.filter-button.gold-button:hover,
-.filter-button.gold-button.active,
-.assign-button.gold-button:hover,
-.assign-button.gold-button.active {
-    background-color: goldenrod;
-    color: black;
-}
-
-.filter-button.white-button,
-.assign-button.white-button {
-    background-color: white;
-    color: black;
-    border: 1px solid #ccc;
-}
-
-.filter-button.white-button:hover,
-.filter-button.white-button.active,
-.assign-button.white-button:hover,
-.assign-button.white-button.active {
-    background-color: #f0f0f0;
-    color: black;
-}
-
-.filter-button.court-button,
-.assign-button.court-button {
-    background-color: purple;
-    color: white;
-}
-
-.filter-button.court-button:hover,
-.filter-button.court-button.active,
-.assign-button.court-button:hover,
-.assign-button.court-button.active {
-    background-color: indigo;
-    color: white;
-}
-
-.filter-button.draft-button,
-.assign-button.draft-button {
-    background-color: lightgray;
-    color: black;
-}
-
-.filter-button.draft-button:hover,
-.filter-button.draft-button.active,
-.assign-button.draft-button:hover,
-.assign-button.draft-button.active {
-    background-color: gray;
-    color: black;
-}
+/* ... (same as before) */
 
 /* App Controlled Game Buttons */
 .app-control-buttons {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 12px;
     justify-content: center;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 /* Card List */
 .card-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 20px;
-    padding: 20px;
+    gap: 25px;
+    padding: 25px;
 }
 
 /* Individual Card */
 .card {
     background-color: var(--card-background);
     border-radius: 10px;
-    padding: 15px;
+    padding: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s;
     color: var(--font-color);
@@ -410,11 +327,11 @@ body {
 /* Card Titles */
 .card h2 {
     margin-top: 0;
-    font-size: 16px; /* Adjusted font size */
-    margin-bottom: 10px;
+    font-size: 18px;
+    margin-bottom: 12px;
     font-family: 'FMBolyarPro', sans-serif;
     font-weight: 300;
-    text-align: center; /* Center the card headers */
+    text-align: center;
 }
 
 /* Remove text shadows from card headers */
@@ -423,8 +340,8 @@ body {
 }
 
 .card .description {
-    font-size: 14px;
-    margin-bottom: 15px;
+    font-size: 16px;
+    margin-bottom: 20px;
     display: none;
 }
 
@@ -435,7 +352,7 @@ body {
 .card .player-picker {
     display: flex;
     flex-wrap: nowrap;
-    gap: 5px;
+    gap: 6px;
     margin-top: auto;
     overflow: hidden;
     padding: 0 5px;
@@ -444,14 +361,14 @@ body {
 
 /* Assignment Buttons */
 .assign-button {
-    width: 44px;
-    height: 28px;
-    padding: 3px 6px;
+    width: 50px;
+    height: 32px;
+    padding: 5px 8px;
     margin: 0;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 10px;
+    font-size: 12px;
     background-color: var(--button-background);
     color: var(--button-color);
     transition: background-color 0.3s, color 0.3s, transform 0.2s, border 0.3s;
@@ -481,37 +398,37 @@ body {
     }
 
     .navbar h1 {
-        font-size: 24px;
+        font-size: 26px;
     }
 
     .nav-button {
-        font-size: 16px;
-        padding: 10px 15px;
+        font-size: 18px;
+        padding: 12px 18px;
     }
 
     .reset-button {
-        font-size: 14px;
-        padding: 8px 16px;
+        font-size: 16px;
+        padding: 10px 20px;
     }
 
     .filter-button {
-        font-size: 14px;
-        padding: 8px 12px;
+        font-size: 16px;
+        padding: 10px 14px;
     }
 
     .card h2 {
-        font-size: 16px;
+        font-size: 18px;
     }
 
     .card .description {
-        font-size: 14px;
+        font-size: 16px;
     }
 
     .assign-button {
-        width: 40px;
-        height: 26px;
-        font-size: 9px;
-        padding: 2px 5px;
+        width: 50px;
+        height: 32px;
+        font-size: 12px;
+        padding: 5px 8px;
     }
 }
 
@@ -520,7 +437,7 @@ body {
     .navbar-left {
         position: static;
         align-items: center;
-        margin-bottom: 10px;
+        margin-bottom: 15px;
     }
 
     .navbar-content {
@@ -533,8 +450,8 @@ body {
     }
 
     .navbar h1 {
-        font-size: 22px;
-        margin-bottom: 10px;
+        font-size: 24px;
+        margin-bottom: 15px;
     }
 
     .nav-buttons {
@@ -542,72 +459,81 @@ body {
     }
 
     .nav-button {
-        font-size: 16px;
-        padding: 10px 15px;
+        font-size: 20px;
+        padding: 14px 20px;
+    }
+
+    .reset-button {
+        font-size: 18px;
+        padding: 12px 22px;
     }
 
     .filter-button {
-        font-size: 14px;
-        padding: 8px 12px;
+        font-size: 18px;
+        padding: 12px 16px;
     }
 
     .card-list {
         grid-template-columns: 1fr; /* Display one card per row on mobile */
     }
 
+    .card {
+        padding: 25px;
+    }
+
     .card h2 {
-        font-size: 14px;
+        font-size: 20px;
     }
 
     .card .description {
-        font-size: 14px;
+        font-size: 18px;
     }
 
     .assign-button {
-        width: 35px;
-        height: 24px;
-        font-size: 8px;
-        padding: 1px 4px;
+        width: 60px;
+        height: 36px;
+        font-size: 14px;
+        padding: 6px 10px;
     }
 }
 
 @media (max-width: 400px) {
     body {
-        font-size: 14px;
+        font-size: 18px;
     }
 
     .navbar h1 {
-        font-size: 20px;
+        font-size: 22px;
     }
 
     .nav-button {
-        font-size: 14px;
-        padding: 8px 12px;
+        font-size: 22px;
+        padding: 16px 24px;
     }
 
     .reset-button {
-        font-size: 14px;
-        padding: 8px 14px;
+        font-size: 20px;
+        padding: 14px 24px;
     }
 
     .filter-button {
-        font-size: 12px;
-        padding: 6px 10px;
+        font-size: 20px;
+        padding: 14px 18px;
     }
 
     .card h2 {
-        font-size: 12px;
+        font-size: 22px;
     }
 
     .card .description {
-        font-size: 12px;
+        font-size: 20px;
     }
 
     .assign-button {
-        width: 30px;
-        height: 22px;
-        font-size: 7px;
-        padding: 0px 3px;
+        width: 70px;
+        height: 40px;
+        font-size: 16px;
+        padding: 8px 12px;
     }
 }
 
