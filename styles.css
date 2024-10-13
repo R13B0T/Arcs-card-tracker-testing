@@ -416,7 +416,7 @@ body {
 /* Card Titles */
 .card h2 {
     margin-top: 0;
-    font-size: 20px;
+    font-size: 16px;
     margin-bottom: 10px;
     font-family: 'FMBolyarPro', sans-serif; /* Updated font */
     font-weight: 300; /* Match font weight */

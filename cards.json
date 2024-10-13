@@ -2,433 +2,433 @@
   "cards": [
     {
       "type": "court",
-      "title": "LOYAL ENGINEERS (Materials)",
+      "title": "Loyal Engineers (Materials)",
       "description": "If you Provoke Outrage, keep this card. You may spend any resources as Material. You ignore Outrage when spending Material for its Prelude action.",
       "player": "none"
     },
     {
       "type": "court",
-      "title": "GATEKEEPERS (Fuel)",
+      "title": "Gatekeepers (Fuel)",
       "description": "When you battle in a gate, you may collect 2 more dice. Prelude: You may discard this to place 1 ship in each gate (unless out of play).",
       "player": "none"
     },
     {
       "type": "court",
-      "title": "LOYAL MARINES (Weapons)",
+      "title": "Loyal Marines (Weapons)",
       "description": "If you Provoke Outrage, keep this card. You may spend any resources as Weapons. You ignore Outrage when spending Weapons for their Prelude action. Prelude: You may discard this to place 3 ships in a system you control.",
       "player": "none"
     },
     {
       "type": "court",
-      "title": "SWORN GUARDIANS (Relic)",
+      "title": "Sworn Guardians (Relic)",
       "description": "Rivals cannot steal your resources and other Guild cards. If this card is stolen, bury it (Place it on the bottom of the Court deck).",
       "player": "none"
     },
     {
       "type": "court",
-      "title": "SONG OF FREEDOM (VOX)",
+      "title": "Song of Freedom (VOX)",
       "description": "When Secured: You may return any one city you control to its player board. Shuffle this card into the Court deck. You can't seize the initiative if you have it or if it's already seized this round!",
       "player": "none"
     },
     {
       "type": "court",
-      "title": "MINING INTEREST (Materials)",
+      "title": "Mining Interest (Materials)",
       "description": "Manufacture (Build): Gain 1 Material. Prelude: You may discard this to gain Material up to your number of empty resource slots. If the Material supply empties steal the Material instead.",
       "player": "none"
     },
     {
       "type": "court",
-      "title": "SHIPPING INTEREST (Fuel)",
+      "title": "Shipping Interest (Fuel)",
       "description": "Synthesize (Build): Gain 1 Fuel. Prelude: You may discard this to gain Fuel up to your number of empty resource slots. If the Fuel supply empties steal the Fuel instead.",
       "player": "none"
     },
     {
       "type": "court",
-      "title": "LATTICE SPIES (Psionic)",
+      "title": "Lattice Spies (Psionic)",
       "description": "Prelude: Before any other actions you may discard this to seize the initiative.",
       "player": "none"
     },
     {
       "type": "court",
-      "title": "ELDER BROKER (Relic)",
+      "title": "Elder Broker (Relic)",
       "description": "Trade (Tax): Choose a Rival city you control. Swap 1 resource with that Rival—take a resource of that city type from them and give them a resource they don't have. Prelude: You may discard this to gain 1 Material, 1 Fuel, and 1 Weapon.",
       "player": "none"
     },
     {
       "type": "court",
-      "title": "GUILD STRUGGLE (VOX)",
+      "title": "Guild Struggle (VOX)",
       "description": "When Secured: You may steal 1 Guild card from a Rival. Shuffle all Guild cards from the Court discard pile into the Court deck. Discard Guild Struggle.",
       "player": "none"
     },
     {
       "type": "court",
-      "title": "MATERIAL CARTEL (Materials)",
+      "title": "Material Cartel (Materials)",
       "description": "You keep the Material supply on here. After scoring Rivals discard all Material. Prelude: You may discard this to steal 1 Material.",
       "player": "none"
     },
     {
       "type": "court",
-      "title": "SPACING UNION (Fuel)",
+      "title": "Spacing Union (Fuel)",
       "description": "Prelude: You may place this card next to a face-up played Mobilization card. When the round ends draw that card into your hand and discard this card.",
       "player": "none"
     },
     {
       "type": "court",
-      "title": "CALL TO ACTION (VOX)",
+      "title": "Call to Action (VOX)",
       "description": "When Secured: Draw 1 action card from the bottom of the action discard pile. Discard Call to Action.",
       "player": "none"
     },
     {
       "type": "court",
-      "title": "FARSEERS (Psionic)",
+      "title": "Farseers (Psionic)",
       "description": "When you declare an ambition, look at a Rival's hand. You may swap cards with them. Prelude: You may discard this and any number of cards from your hand. Draw the same number of cards including Farseers from the bottom of the action discard pile.",
       "player": "none"
     },
     {
       "type": "court",
-      "title": "RELIC FENCE (Relic)",
+      "title": "Relic Fence (Relic)",
       "description": "Prelude: Once per turn you may discard 1 resource to gain 1 Relic.",
       "player": "none"
     },
     {
       "type": "court",
-      "title": "ADMIN UNION (Materials)",
+      "title": "Admin Union (Materials)",
       "description": "Prelude: You may place this card next to a face-up played Administration card. When the round ends draw that card into your hand and discard this card.",
       "player": "none"
     },
     {
       "type": "court",
-      "title": "ARMS UNION (Weapons)",
+      "title": "Arms Union (Weapons)",
       "description": "Prelude: You may place this card next to a face-up played Aggression card. When the round ends draw that card into your hand and discard this card.",
       "player": "none"
     },
     {
       "type": "court",
-      "title": "SECRET ORDER (Psionic)",
+      "title": "Secret Order (Psionic)",
       "description": "When you declare Keeper or Empath do not place the zero marker.",
       "player": "none"
     },
     {
       "type": "court",
-      "title": "GALACTIC BARDS (Relic)",
+      "title": "Galactic Bards (Relic)",
       "description": "When you Surpass or Pivot before taking any actions you may declare the ambition on your played card if an ambition has not been declared yet this round.",
       "player": "none"
     },
     {
       "type": "court",
-      "title": "CONSTRUCTION UNION (Materials)",
+      "title": "Construction Union (Materials)",
       "description": "Prelude: You may place this card next to a face-up played Construction card. When the round ends draw that card into your hand and discard this card.",
       "player": "none"
     },
     {
       "type": "court",
-      "title": "PRISON WARDENS (Weapons)",
+      "title": "Prison Wardens (Weapons)",
       "description": "Pressgang (Build): Return any number of your Captives to gain any 1 resource for each. Execute (Influence): Move any number of your captives to your trophies. Prelude: You may discard this to place 3 ships in a system you control.",
       "player": "none"
     },
     {
       "type": "court",
-      "title": "LOYAL EMPATHS (Psionic)",
+      "title": "Loyal Empaths (Psionic)",
       "description": "If you Provoke Outrage keep this card. You may spend any resources as Psionic. You ignore Outrage when spending Psionic for its Prelude action.",
       "player": "none"
     },
     {
       "type": "court",
-      "title": "MASS UPRISING (VOX)",
+      "title": "Mass Uprising (VOX)",
       "description": "When Secured: Choose a cluster on the map. You place 1 ship in each system of that cluster. Discard this card.",
       "player": "none"
     },
     {
       "type": "court",
-      "title": "FUEL CARTEL (Fuel)",
+      "title": "Fuel Cartel (Fuel)",
       "description": "You keep the Fuel supply on here. After scoring Rivals discard all Fuel. Prelude: You may discard this to steal 1 Fuel.",
       "player": "none"
     },
     {
       "type": "court",
-      "title": "SKIRMISHERS (Weapons)",
+      "title": "Skirmishers (Weapons)",
       "description": "After you roll in battle you may reroll a number of skirmish dice up to your total Weapon icons from resources and cards. Prelude: You may discard this to place 3 ships in a system you control.",
       "player": "none"
     },
     {
       "type": "court",
-      "title": "SILVER-TONGUES (Psionic)",
+      "title": "Silver-Tongues (Psionic)",
       "description": "Prelude: You may discard this to steal a Guild card or resource.",
       "player": "none"
     },
     {
       "type": "court",
-      "title": "POPULIST DEMANDS (VOX)",
+      "title": "Populist Demands (VOX)",
       "description": "When Secured: You may declare any ambition. Discard this card.",
       "player": "none"
     },
     {
       "type": "court",
-      "title": "LOYAL PILOTS (Fuel)",
+      "title": "Loyal Pilots (Fuel)",
       "description": "If you Provoke Outrage keep this card. You may spend any resources as Fuel. You ignore Outrage when spending Fuel for its Prelude action.",
       "player": "none"
     },
     {
       "type": "court",
-      "title": "COURT ENFORCERS (Weapons)",
+      "title": "Court Enforcers (Weapons)",
       "description": "Abduct (Battle): Capture all Rival agents from a card in the Court that has fewer Rival agents than your total Weapon icons from resources and cards. Prelude: You may discard this to place 3 ships in a system you control.",
       "player": "none"
     },
     {
       "type": "court",
-      "title": "LOYAL KEEPERS (Relic)",
+      "title": "Loyal Keepers (Relic)",
       "description": "If you Provoke Outrage, keep this card. You may spend any resources as Relics. You ignore Outrage when spending Relics for their Prelude action.",
       "player": "none"
     },
     {
       "type": "leader",
-      "title": "ELDER (Leader)",
+      "title": "Elder (Leader)",
       "description": "Beloved. After defending in battle you may influence if the attacker took any Trophies. Rivals cannot Ransack the Court when they battle you. Just. When you're scoring Tyrant gain no Power for second place and gain Power for second place if you get first place. (Don't get bonus city Power.)",
       "player": "none"
     },
     {
       "type": "leader",
-      "title": "REBEL (Leader)",
+      "title": "Rebel (Leader)",
       "description": "Committed. In battle, you collect 2 extra dice. Disorganized. You cannot move more than 2 ships at a time.",
       "player": "none"
     },
     {
       "type": "leader",
-      "title": "MYSTIC (Leader)",
+      "title": "Mystic (Leader)",
       "description": "Attuned. When you Copy or Pivot in order to tax you gain 1 Psionic along with the taxed resource. Cryptic. In setup place agents on your Material and Fuel Outrage slots on your player board.",
       "player": "none"
     },
     {
       "type": "leader",
-      "title": "WARRIOR (Leader)",
+      "title": "Warrior (Leader)",
       "description": "Tactical. When you Copy or Pivot to battle you may move before or after you battle. Violent. When you're scoring Empath gain no Power for second place and gain Power for second place if you get first place.",
       "player": "none"
     },
     {
       "type": "leader",
-      "title": "FUEL-DRINKER (Leader)",
+      "title": "Fuel-Drinker (Leader)",
       "description": "Insatiable. When you Copy or Pivot in order to tax you gain 1 Fuel along with the taxed resource. Lavish. After scoring you must discard all of your Fuel if the Tycoon ambition was scored.",
       "player": "none"
     },
     {
       "type": "leader",
-      "title": "FEASTBRINGER (Leader)",
+      "title": "Feastbringer (Leader)",
       "description": "Charismatic. When you Copy or Pivot to secure a card you may influence before or after you secure. Generous. To declare an ambition you must give 1 Guild card to your Rival with the least Power.",
       "player": "none"
     },
     {
       "type": "leader",
-      "title": "UPSTART (Leader)",
+      "title": "Upstart (Leader)",
       "description": "Ambitious. When you declare an ambition you may gain any resource. Callow. You can only tax Loyal cities if you control them.",
       "player": "none"
     },
     {
       "type": "leader",
-      "title": "DEMAGOGUE (Leader)",
+      "title": "Demagogue (Leader)",
       "description": "Bold. When you declare an ambition you may influence any number of cards in the Court once. Paranoid. You cannot secure Guild cards with only 1 Loyal agent on them.",
       "player": "none"
     },
     {
       "type": "leader",
-      "title": "ARCHIVIST (Leader)",
+      "title": "Archivist (Leader)",
       "description": "Learned. After setup gain 2 extra lore cards—draw 5 lore, keep 2, and scrap the other 3 (returning them to the box). Academic. When you're scoring Tycoon gain no Power for second place and gain Power for second place if you get first place.",
       "player": "none"
     },
     {
       "type": "leader",
-      "title": "OVERSEER (Leader)",
+      "title": "Overseer (Leader)",
       "description": "Ruthless. Once per turn when you tax any city or build a ship at a starport you may hit the building to take that action again. Hated. In setup scrap 2 Loyal ships and 3 Loyal agents.",
       "player": "none"
     },
     {
       "type": "leader",
-      "title": "CORSAIR (Leader)",
+      "title": "Corsair (Leader)",
       "description": "Tricky. When attacking in battle you may reroll raid dice up to the number of different resources you have. Wary. When attacking in battle you cannot collect more assault dice than skirmish dice.",
       "player": "none"
     },
     {
       "type": "leader",
-      "title": "ANARCHIST (Leader)",
+      "title": "Anarchist (Leader)",
       "description": "Decentralized. In setup scrap your 2 leftmost cities from your player board. Inspiring. You may tax Rival cities ignoring control and you may tax empty building slots like Loyal cities.",
       "player": "none"
     },
     {
       "type": "leader",
-      "title": "SHAPER (Leader)",
+      "title": "Shaper (Leader)",
       "description": "Mythic. After you tax a city, you may place 1 resource you have over the planet's resource icon. Ancient. You cannot Catapult move from starports but you can Catapult move from gates.",
       "player": "none"
     },
     {
       "type": "leader",
-      "title": "AGITATOR (Leader)",
+      "title": "Agitator (Leader)",
       "description": "Firebrand. When you Copy or Pivot in order to tax you gain 1 Weapon along with the taxed resource. Irregular. If a Rival attacks you in battle and rolls they take hits equal to your Weapon icons.",
       "player": "none"
     },
     {
       "type": "lore",
-      "title": "TOOL-PRIESTS (Lore)",
+      "title": "Tool-Priests (Lore)",
       "description": "Summon (Build): Once per turn, build 1 ship at any city you control. Yes, even Rival cities you control!",
       "player": "none"
     },
     {
       "type": "lore",
-      "title": "GALACTIC RIFLES (Lore)",
+      "title": "Galactic Rifles (Lore)",
       "description": "Fire Rifles (Battle): Like in a battle, choose a system and collect skirmish dice for fresh Loyal ships there. Choose a defender in an adjacent system, roll the collected dice, and deal 1 hit to the defender per Hit rolled.",
       "player": "none"
     },
     {
       "type": "lore",
-      "title": "GATE PORTS (Lore)",
+      "title": "Gate Ports (Lore)",
       "description": "You may build starports on gates (max 1 per gate). When Rival ships take a move into a gate you control with a fresh Loyal starport, capture 1 agent of that Rival.",
       "player": "none"
     },
     {
       "type": "lore",
-      "title": "CLOUD CITIES (Lore)",
+      "title": "Cloud Cities (Lore)",
       "description": "You may build cities on planets outside their building slots (max 1 per planet). This costs 1 resource of the planet type.",
       "player": "none"
     },
     {
       "type": "lore",
-      "title": "SPRINTER DRIVES (Lore)",
+      "title": "Sprinter Drives (Lore)",
       "description": "When you move fresh Loyal ships, you may move any of them one more time. (Damaged ships can move with them once but won't move one more time.)",
       "player": "none"
     },
     {
       "type": "lore",
-      "title": "MIRROR PLATING (Lore)",
+      "title": "Mirror Plating (Lore)",
       "description": "When you defend in battle, add 1 Intercept to the attacker's roll if they rolled any number of assault dice.",
       "player": "none"
     },
     {
       "type": "lore",
-      "title": "HIDDEN HARBORS (Lore)",
+      "title": "Hidden Harbors (Lore)",
       "description": "You always build ships fresh. When defending in battle, the attacker cannot collect raid dice if you have a fresh defending starport.",
       "player": "none"
     },
     {
       "type": "lore",
-      "title": "LIVING STRUCTURES (Lore)",
+      "title": "Living Structures (Lore)",
       "description": "Nurture (Build): Tax a Loyal city. Prune (Repair): Replace a Loyal starport with a Loyal city or vice versa.",
       "player": "none"
     },
     {
       "type": "lore",
-      "title": "GATE STATIONS (Lore)",
+      "title": "Gate Stations (Lore)",
       "description": "You may build cities on gates (max 1 per gate). A gate city’s type matches all cities in its cluster. Players may tax it for 1 resource of any of those cities.",
       "player": "none"
     },
     {
       "type": "lore",
-      "title": "RAILGUN ARRAYS (Lore)",
+      "title": "Railgun Arrays (Lore)",
       "description": "When defending in battle, before the attacker collects dice, they must take 1 hit if any Loyal defending ships are fresh.",
       "player": "none"
     },
     {
       "type": "lore",
-      "title": "SIGNAL BREAKER (Lore)",
+      "title": "Signal Breaker (Lore)",
       "description": "When attacking in battle, if all attacking ships are fresh at the start of the battle, you ignore 1 Intercept you roll.",
       "player": "none"
     },
     {
       "type": "lore",
-      "title": "ANCIENT HOLDINGS (Lore)",
+      "title": "Ancient Holdings (Lore)",
       "description": "This card has one resource slot with a raid cost of 4 keys. You can hold one resource here, adding to your ambitions. You can spend it.",
       "player": "none"
     },
     {
       "type": "lore",
-      "title": "REPAIR DRONES (Lore)",
+      "title": "Repair Drones (Lore)",
       "description": "After you battle as the attacker, repair 1 Loyal attacking ship.",
       "player": "none"
     },
     {
       "type": "lore",
-      "title": "SEEKER TORPEDOES (Lore)",
+      "title": "Seeker Torpedoes (Lore)",
       "description": "When attacking in battle, after rolling dice, you may reroll up to 1 assault die for each fresh Loyal attacking ship.",
       "player": "none"
     },
     {
       "type": "lore",
-      "title": "PREDICTIVE SENSORS (Lore)",
+      "title": "Predictive Sensors (Lore)",
       "description": "When defending in battle, before the attacker collects dice, you may move any number of fresh Loyal ships from systems adjacent to the battle system into it.",
       "player": "none"
     },
     {
       "type": "lore",
-      "title": "FORCE BEAMS (Lore)",
+      "title": "Force Beams (Lore)",
       "description": "Guide (Move): Move any number of ships (even if not Loyal) from a system with a fresh Loyal starport to an adjacent system, or vice versa, ignoring move modifiers.",
       "player": "none"
     },
     {
       "type": "lore",
-      "title": "RAIDER EXOSUITS (Lore)",
+      "title": "Raider Exosuits (Lore)",
       "description": "When attacking in battle, if there are no defending buildings, you may collect up to 1 raid die. (This is not an extra die. Follow the limit of 1 die per ship.)",
       "player": "none"
     },
     {
       "type": "lore",
-      "title": "SURVIVAL OVERRIDES (Lore)",
+      "title": "Survival Overrides (Lore)",
       "description": "Martyr (Move): Destroy 1 fresh Loyal ship on the map to destroy 1 ship that is not Loyal in its system, taking it as a Trophy. (Your Loyal ship does not become a Trophy.)",
       "player": "none"
     },
     {
       "type": "lore",
-      "title": "EMPATH'S VISION (Lore)",
+      "title": "Empath's Vision (Lore)",
       "description": "While Empath is declared, if you roll any dice (even outside battle), you may reroll any number of them once. Prelude: You may discard this to clear your Psionic Outrage.",
       "player": "none"
     },
     {
       "type": "lore",
-      "title": "EMPATH'S BOND (Lore)",
+      "title": "Empath's Bond (Lore)",
       "description": "While Empath is declared, you may tax any cities, and build ships and Catapult move with any starports, like they are Loyal. (Don't take Captives. Build ships damaged in blockaded systems.)",
       "player": "none"
     },
     {
       "type": "lore",
-      "title": "KEEPER'S TRUST (Lore)",
+      "title": "Keeper's Trust (Lore)",
       "description": "While Keeper is declared, Rivals cannot steal resources from you that are the same as resources they have already. Prelude: You may discard this to clear your Relic Outrage.",
       "player": "none"
     },
     {
       "type": "lore",
-      "title": "KEEPER'S SOLIDARITY (Lore)",
+      "title": "Keeper's Solidarity (Lore)",
       "description": "While Keeper is declared, Rivals cannot steal Guild cards from you while you have any resources of the same type. (If you have both Relics and Sworn Guardians, neither can be stolen!)",
       "player": "none"
     },
     {
       "type": "lore",
-      "title": "WARLORD'S CRUELTY (Lore)",
+      "title": "Warlord's Cruelty (Lore)",
       "description": "While Warlord is declared, you may tax any cities that you already taxed this turn. Prelude: You may discard this to clear your Weapon Outrage.",
       "player": "none"
     },
     {
       "type": "lore",
-      "title": "WARLORD'S TERROR (Lore)",
+      "title": "Warlord's Terror (Lore)",
       "description": "While Warlord is declared, you may spend Captives in your Prelude, returning them, to influence once for each.",
       "player": "none"
     },
     {
       "type": "lore",
-      "title": "TYRANT'S EGO (Lore)",
+      "title": "Tyrant's Ego (Lore)",
       "description": "While Tyrant is declared, you may spend Captives in your Prelude, returning them, to secure once for each. Prelude: You may discard this to clear your Weapon Outrage.",
       "player": "none"
     },
     {
       "type": "lore",
-      "title": "TYRANT'S AUTHORITY (Lore)",
+      "title": "Tyrant's Authority (Lore)",
       "description": "Annex (Build): While Tyrant is declared, replace any city or starport you control with a Loyal city or starport, respectively. (Cities return to player boards.)",
       "player": "none"
     },
     {
       "type": "lore",
-      "title": "TYCOON'S AMBITION (Lore)",
+      "title": "Tycoon's Ambition (Lore)",
       "description": "While Tycoon is declared, before any other actions, you may discard all your Material and Fuel to declare exactly 1 undeclared ambition. Do not place the zero marker. (You may do this just after declaring Tycoon.)",
       "player": "none"
     },
     {
       "type": "lore",
-      "title": "TYCOON'S CHARM (Lore)",
+      "title": "Tycoon's Charm (Lore)",
       "description": "Prelude: While Tycoon is declared, you may discard any number of Material and Fuel to gain 1 resource for each. Prelude: You may discard this to clear your Material and Fuel Outrage.",
       "player": "none"
     }
