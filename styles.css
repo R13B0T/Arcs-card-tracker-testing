@@ -47,7 +47,7 @@ body {
 /* Navigation Bar */
 .navbar {
     background-color: var(--nav-background);
-    padding: 20px 20px; /* Increased padding to provide more space */
+    padding: 30px 20px; /* Increased padding to provide more space */
     border-radius: 8px;
     margin-bottom: 20px;
     position: relative;
@@ -68,7 +68,7 @@ body {
     flex-direction: column;
     align-items: flex-start;
     position: absolute;
-    top: 50%; /* Position halfway down */
+    top: 60%; /* Adjusted to lower the position */
     left: 20px;
     transform: translateY(-50%); /* Center vertically */
 }
@@ -395,6 +395,11 @@ body {
 .card .description {
     font-size: 14px;
     margin-bottom: 15px;
+    display: none; /* Initially hide description */
+}
+
+.card .description.visible {
+    display: block; /* Show when assigned */
 }
 
 .card .player-picker {

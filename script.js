@@ -136,7 +136,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const description = document.createElement('div');
             description.classList.add('description');
             description.innerHTML = formatDescription(card.description);
-            description.style.display = 'block';
+
+            // Show description only if assigned to someone other than 'none'
+            if (card.player !== 'none') {
+                description.classList.add('visible');
+            }
             cardElement.appendChild(description);
 
             // Player Picker (Assignment Buttons)

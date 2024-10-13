@@ -3,17 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Arcs Card Tracker</title>
-    <!-- Link to the CSS Stylesheet -->
     <link rel="stylesheet" href="styles.css">
-    <!-- Font Awesome for Icons (Optional) -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
-    <!-- Google Fonts (Optional) -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-    <!-- Viewport Meta Tag for Mobile Devices -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font Awesome for icons -->
+    <script src="https://kit.fontawesome.com/your-font-awesome-kit.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <!-- Theme Toggle Button (Optional) -->
+    <!-- Theme Toggle Button -->
     <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Theme">
         <i class="fas fa-moon"></i>
     </button>
@@ -38,6 +33,8 @@
             <!-- Centered Header Title -->
             <h1>Arcs Card Tracker</h1>
         </div>
+
+        <!-- Navigation Buttons -->
         <nav class="nav-buttons">
             <button class="nav-button active" data-type="court">Court</button>
             <button class="nav-button" data-type="leader">Leader</button>
@@ -46,10 +43,10 @@
     </header>
 
     <!-- Search Bar -->
-    <section class="search-container">
-        <label for="search-input" class="visually-hidden">Search cards</label>
+    <div class="search-container">
+        <label for="search-input" class="visually-hidden">Search Cards</label>
         <input type="text" id="search-input" placeholder="Search cards...">
-    </section>
+    </div>
 
     <!-- Filter Buttons -->
     <section class="filter-buttons">
@@ -60,6 +57,7 @@
         <button class="filter-button gold-button" data-color="gold">Gold</button>
         <button class="filter-button white-button" data-color="white">White</button>
     </section>
+
     <!-- App Controlled Game Buttons -->
     <section class="app-control-buttons" id="app-control-buttons" style="display: none;">
         <button class="nav-button" id="start-game-button">Start Game</button>
@@ -69,9 +67,9 @@
     </section>
 
     <!-- Card List -->
-    <main id="card-list" class="card-list">
-        <!-- Cards will be dynamically inserted here by script.js -->
-    </main>
+    <div id="card-list" class="card-list">
+        <!-- Cards will be dynamically inserted here -->
+    </div>
 
     <!-- JavaScript File -->
     <script src="script.js"></script>
