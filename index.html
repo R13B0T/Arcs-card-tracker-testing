@@ -2,19 +2,45 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <!-- Step 1: Include the viewport meta tag -->
+    <!-- Viewport meta tag for responsive design -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Website Title</title>
     <!-- Link to your CSS file -->
     <link rel="stylesheet" href="styles.css">
+    <!-- Import Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Navigation Bar -->
     <div class="navbar">
         <div class="navbar-content">
             <h1>Your Website Header</h1>
-            <!-- You can include other elements here -->
+            <!-- Left-aligned section -->
+            <div class="navbar-left">
+                <button class="reset-button">Reset</button>
+                <!-- Toggle Wrapper -->
+                <div class="toggle-wrapper">
+                    <label class="switch">
+                        <input type="checkbox" id="theme-toggle">
+                        <span class="slider round"></span>
+                    </label>
+                    <span class="toggle-text">Dark Mode</span>
+                </div>
+            </div>
         </div>
+    </div>
+
+    <!-- Navigation Buttons -->
+    <div class="nav-buttons">
+        <button class="nav-button">Home</button>
+        <button class="nav-button">About</button>
+        <button class="nav-button">Contact</button>
+    </div>
+
+    <!-- Search Container -->
+    <div class="search-container">
+        <label for="search-input" class="visually-hidden">Search</label>
+        <input type="text" id="search-input" placeholder="Search...">
     </div>
 
     <!-- Filter Buttons -->
@@ -22,7 +48,9 @@
         <button class="filter-button red-button">Red</button>
         <button class="filter-button blue-button">Blue</button>
         <button class="filter-button gold-button">Gold</button>
-        <!-- Add other filter buttons as needed -->
+        <button class="filter-button white-button">White</button>
+        <button class="filter-button court-button">Court</button>
+        <button class="filter-button draft-button">Draft</button>
     </div>
 
     <!-- Card List -->
@@ -35,10 +63,12 @@
                 <button class="assign-button red-button">Red</button>
                 <button class="assign-button blue-button">Blue</button>
                 <button class="assign-button gold-button">Gold</button>
-                <!-- Add other assignment buttons as needed -->
+                <button class="assign-button white-button">White</button>
+                <button class="assign-button court-button">Court</button>
+                <button class="assign-button draft-button">Draft</button>
             </div>
         </div>
-        <!-- Repeat card structure for more cards -->
+        <!-- Repeat the card structure for additional cards -->
     </div>
 
     <!-- Include your JavaScript file -->
