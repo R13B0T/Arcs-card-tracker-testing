@@ -233,7 +233,7 @@ body {
 }
 
 .card h2 {
-    font-size: 14px;
+    font-size: 12px;
     text-align: center;
     font-family: 'FMBolyarPro', sans-serif;
 }
@@ -251,7 +251,7 @@ body {
 .card .player-picker {
     display: flex;
     justify-content: center;
-    gap: 6px;
+    gap: 3px;
 }
 
 /* Assignment Buttons (Smaller Size & Centered Text) */
