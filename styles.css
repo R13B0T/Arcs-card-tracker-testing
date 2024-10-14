@@ -55,13 +55,14 @@ body {
 .navbar {
     background-color: var(--nav-background);
     padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
     border-radius: 8px;
     margin-bottom: 20px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center; /* Centering all navbar content */
     align-items: center;
-    flex-wrap: wrap;
-    width: 100%; /* Full width of the page */
+    position: relative;
 }
 
 .navbar h1 {
@@ -71,10 +72,9 @@ body {
     text-align: center;
     font-family: 'FMBolyarPro', sans-serif;
     font-weight: 300;
-    flex: 1;
+    flex-grow: 1;
 }
 
-/* Navbar Content */
 .navbar-content {
     display: flex;
     justify-content: center;
@@ -87,16 +87,10 @@ body {
 .navbar-content .nav-button-group {
     display: flex;
     justify-content: center;
-    width: 100%;
-}
-
-/* Centered Court, Leader, Lore Buttons */
-.nav-button-group {
-    display: flex;
-    justify-content: center;
     gap: 10px;
 }
 
+/* Centered Court, Leader, Lore Buttons */
 .nav-button {
     padding: 10px 20px;
     background-color: var(--button-background);
@@ -116,15 +110,15 @@ body {
 /* Search Bar */
 .search-bar {
     display: flex;
-    justify-content: center; /* Center the search bar */
+    justify-content: center;
     margin-bottom: 20px;
 }
 
 .search-bar input[type="text"] {
     padding: 10px;
     font-size: 16px;
-    width: 80%; /* Slightly bigger search field */
-    max-width: 400px; /* Limit search bar size */
+    width: 100%;
+    max-width: 400px; /* Ensuring the search bar size is balanced */
     border: 1px solid #ccc;
     border-radius: 5px;
 }
@@ -132,7 +126,7 @@ body {
 /* Cards Layout */
 .card-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Ensuring cards resize properly */
     gap: 20px;
     padding: 20px;
 }
@@ -171,14 +165,14 @@ body {
     gap: 6px;
 }
 
-/* Assignment Buttons (Smaller Size & Colored) */
+/* Assignment Buttons */
 .assign-button {
-    width: 40px; /* Make the buttons smaller to fit the card */
+    width: 45px; /* Adjusted to better fit cards */
     padding: 5px;
     font-size: 12px;
     cursor: pointer;
     flex: 0 0 auto;
-    background-color: var(--button-background); /* Restoring the button colours */
+    background-color: var(--button-background); /* Restored button colors */
     color: var(--button-color);
     border: none;
     border-radius: 5px;
@@ -199,6 +193,7 @@ body {
     .navbar h1 {
         font-size: 24px;
     }
+
     .nav-button, .reset-button, .filter-button, .assign-button {
         padding: 8px 14px;
         font-size: 14px;
