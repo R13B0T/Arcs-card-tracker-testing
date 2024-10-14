@@ -81,13 +81,15 @@ body {
     display: flex;
     justify-content: center;
     gap: 10px;
+    margin-top: 20px; /* Add spacing to move buttons below the title */
+    position: relative;
+    z-index: 1; /* Ensuring the buttons are layered properly */
 }
 
 .nav-button {
-    padding: 10px 20px;
+    padding: 10px 16px;
     background-color: var(--button-background);
     color: var(--button-color);
-    border: none;
     border-radius: 5px;
     font-size: 16px;
     cursor: pointer;
@@ -115,7 +117,17 @@ body {
     background-color: var(--active-button-background);
 }
 
-/* Toggle Switch */
+/* App Controlled Game Toggle - Added a bigger gap between the toggle and New Game button */
+.toggle-wrapper {
+    position: absolute;
+    top: 60px; /* Increased gap between the New Game button and the toggle */
+    left: 20px; /* Aligned to the left */
+    display: flex;
+    flex-direction: column; /* Stack toggle and text */
+    align-items: flex-start;
+    gap: 5px; /* Reduce gap between toggle and text */
+}
+
 .switch {
     position: relative;
     display: inline-block;
@@ -161,19 +173,13 @@ body {
     transform: translateX(26px);
 }
 
-.slider.round {
-    border-radius: 34px;
-}
-
-.slider.round:before {
-    border-radius: 50%;
-}
 /* Text for Toggle */
 .toggle-text {
     font-size: 14px;
     color: var(--header-text-color);
-    text-align: left;}
-    
+    text-align: left;
+}
+
 /* Search Bar */
 .search-bar {
     display: flex;
