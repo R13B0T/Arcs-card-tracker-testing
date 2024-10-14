@@ -99,7 +99,21 @@ body {
     background-color: var(--active-button-background);
 }
 
+/* Reset Button */
+.reset-button {
+    padding: 10px 20px;
+    background-color: var(--button-background);
+    color: var(--button-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
 
+.reset-button:hover {
+    background-color: var(--active-button-background);
+}
 
 /* Toggle Switch */
 .switch {
