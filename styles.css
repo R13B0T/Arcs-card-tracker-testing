@@ -99,16 +99,16 @@ body {
     background-color: var(--active-button-background);
 }
 
-/* New Game Button - Styled like the filter buttons */
+/* New Game Button - Styled exactly like the filter buttons */
 .new-game-button {
     position: absolute;
     top: 20px;
     left: 20px;
-    padding: 10px 16px;
+    padding: 8px 12px; /* Same padding as the filter buttons */
     background-color: var(--button-background);
     color: var(--button-color);
     border-radius: 5px;
-    font-size: 14px;
+    font-size: 14px; /* Same font size as filter buttons */
     border: none;
     cursor: pointer;
     text-align: center;
@@ -119,15 +119,15 @@ body {
     background-color: var(--active-button-background);
 }
 
-/* App Controlled Game Toggle - Moved to the left with text underneath */
+/* App Controlled Game Toggle - Closer to New Game button */
 .toggle-wrapper {
     position: absolute;
-    top: 60px; /* Moved down */
-    left: 20px; /* Aligned to the left */
+    top: 40px; /* Closer to the New Game button */
+    left: 20px;
     display: flex;
-    flex-direction: column; /* Stack toggle and text */
+    flex-direction: column;
     align-items: flex-start;
-    gap: 5px;
+    gap: 2px; /* Reduce gap between toggle and text */
 }
 
 .switch {
@@ -179,7 +179,7 @@ input:checked + .slider:before {
 .toggle-text {
     font-size: 14px;
     color: var(--header-text-color);
-    text-align: left; /* Align the text to the left under the toggle */
+    text-align: left;
 }
 
 
