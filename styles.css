@@ -5,12 +5,13 @@
     font-style: normal;
 }
 
-/* Apply box-sizing globally */
-*, *::before, *::after {
+/* Global Styles */
+*,
+*::before,
+*::after {
     box-sizing: border-box;
 }
 
-/* Root Variables for Theming */
 :root {
     --primary-color: #2c3e50;
     --secondary-color: #ecf0f1;
@@ -39,7 +40,7 @@
     --active-button-background: #c0392b;
 }
 
-/* Global Styles */
+/* Base Body Styling */
 body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
@@ -53,325 +54,130 @@ body {
 /* Navigation Bar */
 .navbar {
     background-color: var(--nav-background);
-    padding: 30px 20px;
+    padding: 20px;
     border-radius: 8px;
     margin-bottom: 20px;
-    position: relative;
-    overflow: hidden;
-}
-
-/* Navbar Content */
-.navbar-content {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    gap: 10px;
-    flex-wrap: nowrap;
-    flex-direction: row;
+    flex-wrap: wrap;
 }
 
-/* Header Title */
 .navbar h1 {
     margin: 0;
     font-size: 28px;
     color: var(--header-text-color);
     text-align: center;
-    flex: 1;
     font-family: 'FMBolyarPro', sans-serif;
     font-weight: 300;
 }
 
-/* Navigation Buttons */
-.nav-button {
-    padding: 10px 18px;
-    background-color: var(--button-background);
-    color: var(--button-color);
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s;
-    flex: 0 1 auto;
+.navbar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
 }
 
-.nav-button:hover,
-.nav-button.active {
-    background-color: var(--active-button-background);
-}
-
-/* Reset Button */
-.reset-button {
-    padding: 10px 20px;
+/* Buttons */
+.nav-button, .reset-button, .filter-button, .assign-button {
     background-color: var(--button-background);
     color: var(--button-color);
     border: none;
     border-radius: 5px;
-    cursor: pointer;
+    padding: 10px 20px;
     font-size: 16px;
+    cursor: pointer;
     transition: background-color 0.3s;
+    flex: 0 0 auto;
 }
 
+.nav-button:hover,
+.nav-button.active,
+.filter-button.active,
 .reset-button:hover {
     background-color: var(--active-button-background);
 }
 
-/* Toggle Switch */
-.switch {
-    position: relative;
-    display: inline-block;
-    width: 50px;
-    height: 24px;
-}
-
-.switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-}
-
-.slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    transition: .4s;
-    border-radius: 34px;
-}
-
-.slider:before {
-    position: absolute;
-    content: "";
-    height: 20px;
-    width: 20px;
-    left: 2px;
-    bottom: 2px;
-    background-color: white;
-    transition: .4s;
-    border-radius: 50%;
-}
-
-.switch input:checked + .slider {
-    background-color: var(--accent-color);
-}
-
-.switch input:checked + .slider:before {
-    transform: translateX(26px);
-}
-
-.slider.round {
-    border-radius: 34px;
-}
-
-.slider.round:before {
-    border-radius: 50%;
-}
-
-/* Filter Buttons */
-.filter-buttons {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-.filter-button {
-    padding: 10px 14px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-/* Specific Filter Button Colors */
-.filter-button.red-button,
-.assign-button.red-button {
-    background-color: red;
-    color: white;
-}
+/* Specific Color Buttons */
+.filter-button.red-button { background-color: red; }
+.filter-button.blue-button { background-color: blue; }
+.filter-button.gold-button { background-color: gold; }
+.filter-button.white-button { background-color: white; color: black; border: 1px solid #ccc; }
 
 .filter-button.red-button:hover,
-.filter-button.red-button.active,
-.assign-button.red-button:hover,
-.assign-button.red-button.active {
-    background-color: darkred;
-    color: white;
-}
-
-.filter-button.blue-button,
-.assign-button.blue-button {
-    background-color: blue;
-    color: white;
-}
-
 .filter-button.blue-button:hover,
-.filter-button.blue-button.active,
-.assign-button.blue-button:hover,
-.assign-button.blue-button.active {
-    background-color: darkblue;
-    color: white;
-}
-
-.filter-button.gold-button,
-.assign-button.gold-button {
-    background-color: gold;
-    color: black;
-}
-
 .filter-button.gold-button:hover,
-.filter-button.gold-button.active,
-.assign-button.gold-button:hover,
-.assign-button.gold-button.active {
-    background-color: goldenrod;
-    color: black;
-}
-
-.filter-button.white-button,
-.assign-button.white-button {
-    background-color: white;
-    color: black;
-    border: 1px solid #ccc;
-}
-
 .filter-button.white-button:hover,
-.filter-button.white-button.active,
-.assign-button.white-button:hover,
-.assign-button.white-button.active {
-    background-color: #f0f0f0;
-    color: black;
+.assign-button.red-button.active,
+.assign-button.blue-button.active,
+.assign-button.gold-button.active {
+    background-color: var(--active-button-background);
 }
 
-.filter-button.court-button,
-.assign-button.court-button {
-    background-color: purple;
-    color: white;
-}
-
-.filter-button.court-button:hover,
-.filter-button.court-button.active,
-.assign-button.court-button:hover,
-.assign-button.court-button.active {
-    background-color: indigo;
-    color: white;
-}
-
-.filter-button.draft-button,
-.assign-button.draft-button {
-    background-color: lightgray;
-    color: black;
-}
-
-.filter-button.draft-button:hover,
-.filter-button.draft-button.active,
-.assign-button.draft-button:hover,
-.assign-button.draft-button.active {
-    background-color: gray;
-    color: black;
-}
-
-/* App Controlled Game Buttons */
-.app-control-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    justify-content: center;
-    margin-top: 15px;
-    margin-bottom: 15px;
-}
-
-/* Card List for Large Screens */
+/* Cards Layout */
 .card-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 25px;
-    padding: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 20px;
 }
 
-/* Individual Card */
 .card {
     background-color: var(--card-background);
-    border-radius: 10px;
     padding: 20px;
+    border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s;
-    color: var(--font-color);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
 }
 
 .card:hover {
     transform: translateY(-5px);
 }
 
-/* Card Titles */
 .card h2 {
-    margin-top: 0;
     font-size: 18px;
-    margin-bottom: 12px;
-    font-family: 'FMBolyarPro', sans-serif;
-    font-weight: 300;
     text-align: center;
-}
-
-.card h2 {
-    text-shadow: none;
+    font-family: 'FMBolyarPro', sans-serif;
 }
 
 .card .description {
-    font-size: 16px;
-    margin-bottom: 20px;
     display: none;
 }
 
 .card .description.visible {
     display: block;
+    margin-bottom: 10px;
 }
 
+/* Player Picker */
 .card .player-picker {
     display: flex;
-    flex-wrap: nowrap;
-    gap: 6px;
-    margin-top: auto;
-    overflow: hidden;
-    padding: 0 5px;
     justify-content: center;
+    gap: 6px;
 }
 
 /* Assignment Buttons */
 .assign-button {
     width: 50px;
-    height: 32px;
-    padding: 5px 8px;
-    margin: 0;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    padding: 5px;
     font-size: 12px;
-    transition: background-color 0.3s, color 0.3s, transform 0.2s, border 0.3s;
+    cursor: pointer;
     flex: 0 0 auto;
 }
 
-/* Hover and Active States for Assignment Buttons */
-.assign-button:hover {
-    transform: scale(1.05);
-}
-
-.assign-button.active {
-    border: 2px solid black;
-}
-
-.dark-mode .assign-button.active {
-    border: 2px solid white;
-}
-
-/* Responsive Design for Medium Screens (Tablets) */
+/* Responsive Styling for Mobile */
 @media (max-width: 768px) {
+    .navbar h1 {
+        font-size: 24px;
+    }
+    .nav-button, .reset-button, .filter-button, .assign-button {
+        padding: 8px 14px;
+        font-size: 14px;
+    }
+
     .card-list {
-        grid-template-columns: 1fr !important; /* Force single column for tablets and smaller */
+        grid-template-columns: 1fr;
     }
 
     .card {
@@ -379,70 +185,11 @@ body {
     }
 
     .card h2 {
-        font-size: 18px;
-    }
-
-    .card .description {
-        font-size: 14px;
+        font-size: 16px;
     }
 
     .assign-button {
         width: 60px;
-        height: 40px;
-        font-size: 14px;
-    }
-}
-
-/* Further adjustments for Mobile (smaller than 600px) */
-@media (max-width: 600px) {
-    body {
-        font-size: 14px;
-    }
-
-    .navbar-content {
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        gap: 8px;
-    }
-
-    .nav-button, .reset-button {
-        width: auto;
-        padding: 8px 12px;
-        font-size: 14px;
-    }
-
-    .navbar {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-    }
-
-    .filter-buttons {
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
-
-    .card-list {
-        grid-template-columns: 1fr !important;
-        gap: 15px;
-    }
-
-    .card {
-        padding: 15px;
-    }
-
-    .card h2 {
-        font-size: 18px;
-    }
-
-    .card .description {
-        font-size: 14px;
-    }
-
-    .assign-button {
-        width: 60px;
-        height: 40px;
         font-size: 14px;
     }
 
@@ -453,25 +200,17 @@ body {
     }
 }
 
-/* Further adjustments for Extra Small Screens (below 400px) */
 @media (max-width: 400px) {
     .navbar h1 {
-        font-size: 22px;
+        font-size: 20px;
     }
 
-    .reset-button, .nav-button, .filter-button {
-        font-size: 16px;
-        padding: 10px 14px;
-        width: 100%;
+    .nav-button, .reset-button, .filter-button {
+        font-size: 12px;
+        padding: 6px 10px;
     }
 
-    .card-list {
-        grid-template-columns: 1fr !important;
-    }
-
-    .assign-button {
-        width: 60px;
-        height: 38px;
+    .card h2 {
         font-size: 14px;
     }
 }
@@ -488,12 +227,4 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
     background-color: var(--accent-color);
-}
-
-/* Accessibility Focus States */
-button:focus,
-select:focus,
-input:focus {
-    outline: 2px dashed var(--accent-color);
-    outline-offset: 4px;
 }
