@@ -99,7 +99,7 @@ body {
     background-color: var(--active-button-background);
 }
 
-/* New Game Button (styled similar to filter buttons) */
+/* New Game Button - Styled like the filter buttons */
 .new-game-button {
     position: absolute;
     top: 20px;
@@ -112,19 +112,21 @@ body {
     border: none;
     cursor: pointer;
     transition: background-color 0.3s;
+    text-align: center;
 }
 
 .new-game-button:hover {
     background-color: var(--active-button-background);
 }
 
-/* App Controlled Game Toggle */
+/* App Controlled Game Toggle - Smaller and styled properly */
 .toggle-wrapper {
     position: absolute;
     top: 20px;
     right: 20px;
     display: flex;
     align-items: center;
+    gap: 10px;
 }
 
 .switch {
@@ -174,7 +176,6 @@ input:checked + .slider:before {
 
 /* Text for Toggle */
 .toggle-text {
-    margin-left: 10px;
     font-size: 14px;
     color: var(--header-text-color);
 }
@@ -205,7 +206,7 @@ input:checked + .slider:before {
 }
 
 .filter-button {
-    padding: 8px 14px;
+    padding: 10px 16px;
     background-color: var(--button-background);
     color: var(--button-color);
     border-radius: 5px;
