@@ -104,36 +104,37 @@ body {
     position: absolute;
     top: 20px;
     left: 20px;
-    padding: 8px 14px;
+    padding: 10px 16px;
     background-color: var(--button-background);
     color: var(--button-color);
     border-radius: 5px;
     font-size: 14px;
     border: none;
     cursor: pointer;
-    transition: background-color 0.3s;
     text-align: center;
+    transition: background-color 0.3s;
 }
 
 .new-game-button:hover {
     background-color: var(--active-button-background);
 }
 
-/* App Controlled Game Toggle - Smaller and styled properly */
+/* App Controlled Game Toggle - Moved to the left with text underneath */
 .toggle-wrapper {
     position: absolute;
-    top: 20px;
-    right: 20px;
+    top: 60px; /* Moved down */
+    left: 20px; /* Aligned to the left */
     display: flex;
-    align-items: center;
-    gap: 10px;
+    flex-direction: column; /* Stack toggle and text */
+    align-items: flex-start;
+    gap: 5px;
 }
 
 .switch {
     position: relative;
     display: inline-block;
-    width: 34px;  /* Smaller size */
-    height: 20px;  /* Smaller size */
+    width: 34px;
+    height: 20px;
 }
 
 .switch input {
@@ -178,7 +179,9 @@ input:checked + .slider:before {
 .toggle-text {
     font-size: 14px;
     color: var(--header-text-color);
+    text-align: left; /* Align the text to the left under the toggle */
 }
+
 
 /* Search Bar */
 .search-bar {
