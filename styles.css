@@ -60,7 +60,7 @@ body {
     border-radius: 8px;
     margin-bottom: 20px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center; /* Centered the header title */
     align-items: center;
     position: relative;
 }
@@ -73,17 +73,14 @@ body {
     text-align: center;
     font-family: 'FMBolyarPro', sans-serif;
     font-weight: 300;
-    flex-grow: 1;
 }
 
-/* Center the Court, Leader, Lore buttons horizontally */
+/* Court, Leader, Lore Buttons (Centered below title) */
 .navbar-content {
     display: flex;
     justify-content: center;
     gap: 10px;
-    margin-top: 20px; /* Add spacing to move buttons below the title */
-    position: relative;
-    z-index: 1; /* Ensuring the buttons are layered properly */
+    margin-top: 10px;
 }
 
 .nav-button {
@@ -102,7 +99,7 @@ body {
     background-color: var(--active-button-background);
 }
 
-/* Reset Button (formerly New Game) - Styled like the filter buttons */
+/* Reset Button (formerly New Game) */
 .reset-button {
     position: absolute;
     top: 20px;
@@ -122,15 +119,15 @@ body {
     background-color: var(--active-button-background);
 }
 
-/* App Controlled Game Toggle - Added a bigger gap between the toggle and Reset button */
+/* App Controlled Game Toggle */
 .toggle-wrapper {
     position: absolute;
-    top: 70px; /* Increased gap between the Reset button and the toggle */
-    left: 20px; /* Aligned to the left */
+    top: 80px; /* Increased gap */
+    left: 20px;
     display: flex;
-    flex-direction: column; /* Stack toggle and text */
+    flex-direction: column; /* Text placed below toggle */
     align-items: flex-start;
-    gap: 5px;
+    gap: 5px; /* Small gap between toggle and text */
 }
 
 .switch {
@@ -183,15 +180,15 @@ body {
     font-size: 14px;
     color: var(--header-text-color);
     text-align: left;
-    margin-top: 5px; /* Adjust spacing between the toggle and its label */
+    margin-top: 5px;
 }
 
-/* Search Bar - Reduced padding above */
+/* Search Bar */
 .search-bar {
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
-    padding-top: 5px; /* Reduced padding to minimize space between elements */
+    padding-top: 5px;
 }
 
 .search-bar input[type="text"] {
@@ -203,7 +200,7 @@ body {
     border-radius: 5px;
 }
 
-/* Filter Buttons (Slightly bigger, similar to assignment buttons) */
+/* Filter Buttons */
 .filter-buttons {
     display: flex;
     justify-content: center;
@@ -270,7 +267,7 @@ body {
     gap: 6px;
 }
 
-/* Assignment Buttons (Smaller Size & Centered Text) */
+/* Assignment Buttons */
 .assign-button {
     width: 45px;
     padding: 5px;
@@ -278,7 +275,7 @@ body {
     text-align: center;
     cursor: pointer;
     flex: 0 0 auto;
-    background-color: var(--button-background); /* Restored button colors */
+    background-color: var(--button-background);
     color: var(--button-color);
     border: none;
     border-radius: 5px;
