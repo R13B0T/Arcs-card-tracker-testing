@@ -54,14 +54,10 @@ body {
 /* Header Bar */
 .navbar {
     background-color: var(--nav-background);
-    padding: 20px;
-    width: 100%;
-    box-sizing: border-box;
+    padding: 10px 20px;
     border-radius: 8px;
     margin-bottom: 20px;
-    display: flex;
-    justify-content: center; /* Centered the header title */
-    align-items: center;
+    text-align: center;
     position: relative;
 }
 
@@ -70,39 +66,14 @@ body {
     margin: 0;
     font-size: 28px;
     color: var(--header-text-color);
-    text-align: center;
     font-family: 'FMBolyarPro', sans-serif;
     font-weight: 300;
 }
 
-/* Court, Leader, Lore Buttons (Centered below title) */
-.navbar-content {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 10px;
-}
-
-.nav-button {
-    padding: 10px 16px;
-    background-color: var(--button-background);
-    color: var(--button-color);
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.nav-button:hover,
-.nav-button.active {
-    background-color: var(--active-button-background);
-}
-
-/* Reset Button (formerly New Game) */
+/* Reset Button (New Game) */
 .reset-button {
     position: absolute;
-    top: 20px;
+    top: 10px;
     left: 20px;
     padding: 10px 16px;
     background-color: var(--button-background);
@@ -122,12 +93,11 @@ body {
 /* App Controlled Game Toggle */
 .toggle-wrapper {
     position: absolute;
-    top: 80px; /* Increased gap */
+    top: 60px; /* Adjusted to fit below New Game button */
     left: 20px;
     display: flex;
-    flex-direction: column; /* Text placed below toggle */
-    align-items: flex-start;
-    gap: 5px; /* Small gap between toggle and text */
+    flex-direction: column;
+    gap: 5px;
 }
 
 .switch {
@@ -175,12 +145,25 @@ body {
     transform: translateX(26px);
 }
 
-/* Text for Toggle */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
 .toggle-text {
     font-size: 14px;
     color: var(--header-text-color);
-    text-align: left;
-    margin-top: 5px;
+}
+
+/* Court, Leader, Lore Buttons */
+.nav-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
 }
 
 /* Search Bar */
@@ -188,7 +171,6 @@ body {
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
-    padding-top: 5px;
 }
 
 .search-bar input[type="text"] {
@@ -228,7 +210,7 @@ body {
 /* Cards Layout */
 .card-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Ensuring cards resize properly */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 20px;
     padding: 20px;
 }
@@ -267,7 +249,6 @@ body {
     gap: 6px;
 }
 
-/* Assignment Buttons */
 .assign-button {
     width: 45px;
     padding: 5px;
