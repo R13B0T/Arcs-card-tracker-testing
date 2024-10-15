@@ -26,6 +26,20 @@
     --active-button-background: #2980b9;
 }
 
+.dark-mode {
+    --primary-color: #ecf0f1;
+    --secondary-color: #2c3e50;
+    --accent-color: #e74c3c;
+    --font-color: #ecf0f1;
+    --background-color: #2c3e50;
+    --card-background: #34495e;
+    --button-background: #e74c3c;
+    --button-color: #ffffff;
+    --nav-background: #34495e;
+    --header-text-color: #ecf0f1;
+    --active-button-background: #c0392b;
+}
+
 /* Base Body Styling */
 body {
     margin: 0;
@@ -88,7 +102,7 @@ body {
     background-color: var(--active-button-background);
 }
 
-/* Reset Button (previously New Game) - Styled like the filter buttons */
+/* Reset Button (formerly New Game) - Styled like the filter buttons */
 .reset-button {
     position: absolute;
     top: 20px;
@@ -233,7 +247,7 @@ body {
 }
 
 .card h2 {
-    font-size: 12px;
+    font-size: 18px;
     text-align: center;
     font-family: 'FMBolyarPro', sans-serif;
 }
@@ -251,7 +265,7 @@ body {
 .card .player-picker {
     display: flex;
     justify-content: center;
-    gap: 3px;
+    gap: 6px;
 }
 
 /* Assignment Buttons (Smaller Size & Centered Text) */
