@@ -125,12 +125,12 @@ body {
 /* App Controlled Game Toggle - Added a bigger gap between the toggle and Reset button */
 .toggle-wrapper {
     position: absolute;
-    top: 60px; /* Increased gap between the Reset button and the toggle */
+    top: 70px; /* Increased gap between the Reset button and the toggle */
     left: 20px; /* Aligned to the left */
     display: flex;
     flex-direction: column; /* Stack toggle and text */
     align-items: flex-start;
-    gap: 5px; /* Reduce gap between toggle and text */
+    gap: 5px;
 }
 
 .switch {
@@ -183,20 +183,22 @@ body {
     font-size: 14px;
     color: var(--header-text-color);
     text-align: left;
+    margin-top: 5px; /* Adjust spacing between the toggle and its label */
 }
 
-/* Search Bar */
+/* Search Bar - Reduced padding above */
 .search-bar {
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
+    padding-top: 5px; /* Reduced padding to minimize space between elements */
 }
 
 .search-bar input[type="text"] {
     padding: 12px;
     font-size: 16px;
     width: 80%;
-    max-width: 400px; /* Ensuring the search bar size is balanced */
+    max-width: 400px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
